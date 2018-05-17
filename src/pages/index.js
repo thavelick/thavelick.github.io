@@ -6,15 +6,15 @@ const IndexPage = () => (
   <div className="h-card">
 
     <h1>Me in 10 seconds</h1>
-    <p>I'm a thinker, software engineer and manager, reander, arm chair scientist, and amateur philosopher.</p>
+    <p>I'm a thinker, software engineer and manager, reader, arm chair scientist, and amateur philosopher.</p>
     <p>I believe in focusing on the long term over the short, and that done is better than perfect.</p>
-    <p>I grew up and live in the Denver aera but have a soft spot for San Francisco and Portland.</p>
+    <p>I grew up and live in the Denver area but have a soft spot for San Francisco and Portland.</p>
 
     <h1>Around the web</h1>
     <ul>
       <li><a className="u-url" href="https://www.facebook.com/thavelick" rel="me">Facebook</a></li>
       <li><a className="u-url" href="https://twitter.com/thavelick/" rel="me">Twitter</a></li>
-      <li><a className="u-url" href="https://github.com/thavelick/" rel="me">Github</a></li>
+      <li><a className="u-url" href="https://github.com/thavelick/" rel="me">GitHub</a></li>
       <li><a className="u-url" href="https://stackoverflow.com/users/30529/tristan-havelick" rel="me">Stack Overflow</a></li>
     </ul>
 
