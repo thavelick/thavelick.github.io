@@ -4,12 +4,10 @@ import me from './me.jpg';
 
 const IndexPage = () => (
   <div className="h-card">
-
     <h1>Me in 10 seconds</h1>
-    <p>I'm a thinker, software engineer and manager, reader, arm chair scientist, and amateur philosopher.</p>
-    <p>I believe in focusing on the long term over the short, and that done is better than perfect.</p>
-    <p>I grew up and live in the Denver area but have a soft spot for San Francisco and Portland.</p>
-
+    <p className="u-note">
+      I'm a thinker, software engineer and manager, reader, arm chair scientist, and amateur philosopher. I believe in focusing on the long term over the short, and that done is better than perfect. I grew up and live in the Denver area but have a soft spot for San Francisco and Portland.
+    </p>
     <h1>Around the web</h1>
     <ul>
       <li><a className="u-url" href="https://www.facebook.com/thavelick" rel="me">Facebook</a></li>
@@ -28,7 +26,7 @@ const IndexPage = () => (
     </ul>
 
     <h1>Photo</h1>
-    <img className="mePhoto" src={me} alt="photo of Tristan Havelick"/>
+    <img className="mePhoto u-photo" src={me} alt="photo of Tristan Havelick"/>
   </div>
 );
 
