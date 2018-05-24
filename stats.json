@@ -1,8 +1,8 @@
 {
   "assetsByChunkName": {
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-d142e20db12d8d526259.js",
-      "component---src-pages-index-js-d142e20db12d8d526259.js.map"
+      "component---src-pages-index-js-fad1a50468f0d18ed0de.js",
+      "component---src-pages-index-js-fad1a50468f0d18ed0de.js.map"
     ],
     "path---": [
       "path----34fdbdbd592b5ce376d1.js",
@@ -17,21 +17,29 @@
       "path---index-a0e39f21c11f6a62c5ab.js.map"
     ],
     "component---src-pages-404-js": [
-      "component---src-pages-404-js-18507ddf70a0ed9a03c2.js",
-      "component---src-pages-404-js-18507ddf70a0ed9a03c2.js.map"
+      "component---src-pages-404-js-3cd4720d94efe60f0b02.js",
+      "component---src-pages-404-js-3cd4720d94efe60f0b02.js.map"
     ],
     "commons": [
-      "commons-d49a2d1560d8d7ccfc79.js",
-      "commons-d49a2d1560d8d7ccfc79.js.map"
+      "commons-0c961af4250069caef0a.js",
+      "commons-0c961af4250069caef0a.js.map"
     ],
     "path---404-html": [
       "path---404-html-a0e39f21c11f6a62c5ab.js",
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
     ],
+    "path---music": [
+      "path---music-9b90e38e46f8587a8f93.js",
+      "path---music-9b90e38e46f8587a8f93.js.map"
+    ],
+    "component---src-pages-music-js": [
+      "component---src-pages-music-js-87903ced9d6c814735e4.js",
+      "component---src-pages-music-js-87903ced9d6c814735e4.js.map"
+    ],
     "app": [
-      "app-888839f63df0df81d6ba.js",
+      "app-53db0c2ed5f2e8cce42f.js",
       "build-js-styles.css",
-      "app-888839f63df0df81d6ba.js.map",
+      "app-53db0c2ed5f2e8cce42f.js.map",
       "build-js-styles.css.map"
     ],
     "path---404": [
