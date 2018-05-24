@@ -624,3 +624,11 @@ pre tt:after {
   height: 100px;
 
 }
+
+ul.showBullets {
+  list-style-type: disc;
+}
+
+ul.showBullets li {
+  margin-left: 50px;
+}

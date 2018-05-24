@@ -27,6 +27,10 @@ const IndexPage = () => (
 
     <h1>Photo</h1>
     <img className="mePhoto u-photo" src={me} alt="photo of Tristan Havelick"/>
+
+    <h1>Music</h1>
+    <p>See what I've been <Link to='/music'>listening to</Link></p>
+
   </div>
 );
 
