@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{vBl1:function(e,n,a){"use strict";a.r(n),a.d(n,"query",(function(){return r}));var t=a("q1tI"),l=a.n(t);n.default=function(e){var n=e.data.allRecentTrack.edges;return l.a.createElement("div",null,l.a.createElement("h1",null,"What I've Been Listening To"),l.a.createElement("ul",{className:"showBullets"},n.map((function(e){var n=e.node;return l.a.createElement("li",null,n.name," by ",n.artist," from ",n.album)}))))};var r="1718687656"}}]);
+//# sourceMappingURL=component---src-pages-music-js-7cbe76e436e880920d29.js.map
