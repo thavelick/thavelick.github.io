@@ -1,20 +1,23 @@
 import React from "react";
-
+import Layout from "../components/layout"
+import { graphql } from "gatsby";
 export default ({ data }) => {
   const tracks = data.allRecentTrack.edges;
 
   return (
-    <div>
-      <h1>What I've Been Listening To</h1>
-      <ul className="showBullets">
-        {tracks.map(({ node }) => (
+    <Layout>
+      <div>
+        <h1>What I've Been Listening To</h1>
+        <ul className="showBullets">
+          {tracks.map(({ node }) => (
 
-          <li>
-            {node.name} by {node.artist} from {node.album}
-          </li>
-        ))}
-    </ul>
+            <li>
+              {node.name} by {node.artist} from {node.album}
+            </li>
+          ))}
+        </ul>
       </div>
+    </Layout>
   );
 };
 
