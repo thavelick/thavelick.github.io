@@ -1,8 +1,7 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
-  "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "tristan-havelick-website",
+  "description": "Tristan Havelick's Website",
+  "author": "Tristan Havelick <tristan@havelick.com>",
   "dependencies": {
     "axios": "^0.21.0",
     "gatsby": "^2.26.1",
@@ -14,10 +13,6 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",

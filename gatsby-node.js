@@ -1,6 +1,5 @@
 const axios = require('axios');
 const crypto = require('crypto');
-const moment = require('moment');
 
 exports.sourceNodes = async ({ boundActionCreators }) => {
   const { createNode } = boundActionCreators;
