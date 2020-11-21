@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../components/layout"
 import { graphql } from "gatsby";
 export default ({ data }) => {
-  const tracks = data.allRecentTrack.edges;
+  const tracks = data.allSpotifyRecentTrack.edges;
 
   return (
     <Layout>
@@ -12,7 +12,7 @@ export default ({ data }) => {
           {tracks.map(({ node }) => (
 
             <li>
-              {node.name} by {node.artist} from {node.album}
+              {node.track.name} by {node.track.artists[0].name} from {node.track.album.name}
             </li>
           ))}
         </ul>
@@ -22,16 +22,22 @@ export default ({ data }) => {
 };
 
 export const query = graphql`
-  query RecentTracksQuery {
-    allRecentTrack {
-      edges {
-        node {
+query RecentTracks {
+  allSpotifyRecentTrack(limit: 15) {
+    edges {
+      node {
+        track {
           name
-          album
-          artist
-          timestamp
+          artists {
+            name
+          }
+          album {
+            name
+          }
         }
       }
     }
   }
+}
+
 `;
