@@ -16,9 +16,9 @@ jobs:
         name: Install Dependencies
         command: npm install
       - save_cache:
-          key: v1-npm-deps-{{ checksum "package-lock.json" }}
-          paths:
-            - ./node_modules
+        key: v1-npm-deps-{{ checksum "package-lock.json" }}
+        paths:
+          - ./node_modules
       - run:
         name: Build Site
         command: npm run build
@@ -27,4 +27,4 @@ jobs:
         command: gatsby deploy
         when:
           condition:
-            equal: [ circle, << pipeline.git.branch >> ]
+          equal: [ circle, << pipeline.git.branch >> ]
