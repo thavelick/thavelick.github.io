@@ -1,6 +1,7 @@
 ---
+path: /welcome
 title: An Obligitory Yet Useless Introduction
-date: "2015-05-22"
+date: "2018-05-22"
 ---
 
 I'm joining the IndieWeb revolution by creating my own personal website again for the first time in

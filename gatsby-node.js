@@ -1,30 +1,42 @@
-const axios = require('axios');
-const crypto = require('crypto');
+const { createFilePath } = require(`gatsby-source-filesystem`);
+const path = require("path");
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    })
+  }
+}
 
-exports.sourceNodes = async ({ boundActionCreators }) => {
-  const { createNode } = boundActionCreators;
-  const recentTracks = () => axios.get('https://libre.fm/2.0/?method=user.getrecenttracks&user=thavelick&page=1&limit=10&format=json');
-  const res = await recentTracks();
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+  const articleTemplate = path.resolve(`src/templates/article.js`);
 
-  res.data.recenttracks.track.map((track, i) => {
-    const trackNode = {
-      id: `${i}`,
-      parent: '__SOURCE__',
-      internal: {
-        type: 'recentTrack'
-      },
-      children: [],
-      artist: track.artist['#text'],
-      album: track.album['#text'],
-      name: track.name,
-      timestamp: track.date.uts
-    };
-    const contentDigest = crypto
-          .createHash('md5')
-          .update(JSON.stringify(trackNode))
-          .digest('hex');
-
-    trackNode.internal.contentDigest = contentDigest;
-    createNode(trackNode);
-  });
-};
+  const result = await graphql(`
+    query {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            frontmatter {
+              path
+            }
+          }
+        }
+      }
+    }
+  `)
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.path,
+      component: articleTemplate,
+      context: {}
+    })
+  })
+}
