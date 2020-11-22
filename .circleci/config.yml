@@ -35,7 +35,7 @@ jobs:
 workflows:
   commit: 
     jobs:
-      - bulid
+      - build
   nightly:
     triggers:
       - schedule:
