@@ -26,4 +26,4 @@ jobs:
           condition:
             equal: [ circle, << pipeline.git.branch >> ]
           steps:
-            - run: gatsby deploy
+            - run: npm run deploy_only
