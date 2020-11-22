@@ -20,5 +20,8 @@ jobs:
           paths:
             - ./node_modules
       - run:
+          branches:
+            only:
+              - master 
           name: Gatsby Deploy
           command: npm run deploy
