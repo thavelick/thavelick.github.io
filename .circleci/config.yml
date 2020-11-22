@@ -27,4 +27,4 @@ jobs:
           command: gatsby deploy
           when:
             condition:
-            equal: [ circle, << pipeline.git.branch >> ]
+              equal: [ circle, << pipeline.git.branch >> ]
