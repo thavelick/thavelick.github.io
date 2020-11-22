@@ -7,17 +7,24 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          keys:
-            # Find a cache corresponding to this specific package-lock.json
-            - v1-npm-deps-{{ checksum "package-lock.json" }}
-            # Fallback cache to be used
-            - v1-npm-deps-
+        keys:
+          # Find a cache corresponding to this specific package-lock.json
+          - v1-npm-deps-{{ checksum "package-lock.json" }}
+          # Fallback cache to be used
+          - v1-npm-deps-
       - run:
-          name: Install Dependencies
-          command: npm install
+        name: Install Dependencies
+        command: npm install
       - save_cache:
           key: v1-npm-deps-{{ checksum "package-lock.json" }}
           paths:
             - ./node_modules
       - run:
-          command: npm run build
+        name: Build Site
+        command: npm run build
+      - run:
+        name: Deploy
+        command: gatsby deploy
+        when:
+          condition:
+            equal: [ circle, << pipeline.git.branch >> ]
