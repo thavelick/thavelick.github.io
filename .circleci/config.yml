@@ -22,9 +22,8 @@ jobs:
       - run:
           name: Build Site
           command: npm run build
-      - run:
-          name: Deploy
-          command: gatsby deploy
-          when:
-            condition:
-              equal: [ circle, << pipeline.git.branch >> ]
+      - when:
+          condition:
+            equal: [ circle, << pipeline.git.branch >> ]
+          steps:
+            - run: gatsby deploy
