@@ -21,4 +21,11 @@ That said, I have in some ways come to dread the day after christmas. When I com
 
 At the same time, I've come to realize of late that I get much more enjoyment out of doing things than having things.  I really enjoyed the last couple books I read, but I enjoy discussing such books with people almost more than reading.  I enjoy listening to music, but I most enjoy hearing new music a friend recommended, or going to a concert (either classical or rock).  Overall, I've found that more happiness comes from gaining memories rather than possessions.  I've even seen a lot of research to back up that proposition.  On that note, I have the following suggestions to gift givers out there:
 
+    * If you're going to give some kind of media give the digital kind, if the recipient is like me and is so inclined.
+    * Instead of giving someone an art book, offer to visit your favorite museum with them, or buy them a membership.
+    * Instead of giving someone a DVD, buy them some movie tickets and offer to join them.
+    * In lieu of a CD, offer to take someone to a concert, play, musical, or symphony.
+    * Rather than giving a cookbook or gadget, invite your recipient over to cook something with you or clip a few of your own favorite recipes.
+
+
 Sure, there are many out there who like getting stuff for christmas. I know when I was younger and had a severe shortage of stuff, I would have been disappointed if my christmas consisted of things from the above list. Also, many times a physical gift really is best. If  you are endowed with amazing talent at creating or finding unique gifts, keep it up.  A place can always be found for something truly heartfelt or amazing.  But if your christmas shopping typically consists of a visit to the mall, best buy, or a web superstore, and you can't figure out what to give to your Wookie friend when he already owns too many combs (see [this video](https://www.youtube.com/watch?v=OSWCQ7ALEms)) , give the above list a shot.
