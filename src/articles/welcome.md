@@ -1,6 +1,6 @@
 ---
 path: /welcome
-title: An Obligitory Yet Useless Introduction
+title: An Obligatory Yet Useless Introduction
 date: "2018-05-22"
 ---
 *[I wrote this a couple years back in draft form and never got around to publishing it. I'm a little less enthusiastic about the "IndieWeb" revolution now, but it does serve  introduce the blog reasonably well]*
