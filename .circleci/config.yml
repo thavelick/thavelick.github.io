@@ -1,6 +1,10 @@
 version: 2.1
 jobs:
   build:
+    filters:
+          branches:
+            ignore:
+              - master
     docker:
       - image: circleci/node:14
     working_directory: ~/gatsby-site
