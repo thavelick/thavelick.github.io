@@ -8,7 +8,7 @@ export default ({ data }) => {
     <Layout>
       <div>
         <h1>What I've Been Listening To</h1>
-        <ul className="showBullets">
+        <ul>
           {tracks.map(({ node }) => (
 
             <li>
