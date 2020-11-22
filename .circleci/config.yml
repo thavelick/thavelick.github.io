@@ -29,4 +29,6 @@ jobs:
             - add_ssh_keys:
                 fingerprints:
                   - "ed:e7:b5:5c:0d:ce:23:18:8a:9b:b7:b9:fb:f7:78:2b"
+            - run: git config user.email "cricle@havelick.com"
+            - run: git config user.name "Tristan Havelick via CircleCI"
             - run: npm run deploy_only
