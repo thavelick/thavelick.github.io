@@ -1,0 +1,34 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/node:14
+    working_directory: ~/gatsby-site
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            # Find a cache corresponding to this specific package-lock.json
+            - v1-npm-deps-{{ checksum "package-lock.json" }}
+            # Fallback cache to be used
+            - v1-npm-deps-
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - save_cache:
+          key: v1-npm-deps-{{ checksum "package-lock.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Build Site
+          command: npm run build
+      - when:
+          condition:
+            equal: [ master, << pipeline.git.branch >> ]
+          steps:
+            - add_ssh_keys:
+                fingerprints:
+                  - "32:12:a0:59:8b:6b:51:c3:70:d7:e9:d1:28:d5:ed:e1"
+            - run: git config user.email "cricle@havelick.com"
+            - run: git config user.name "Tristan Havelick via CircleCI"
+            - run: npm run deploy_only
