@@ -23,7 +23,7 @@ export default ({ data }) => {
 
 export const query = graphql`
 query RecentTracks {
-  allSpotifyRecentTrack(limit: 15) {
+  allSpotifyRecentTrack(limit: 15, sort: {order: DESC, fields: played_at}) {
     edges {
       node {
         track {
