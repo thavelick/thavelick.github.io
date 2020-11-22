@@ -26,4 +26,7 @@ jobs:
           condition:
             equal: [ circle, << pipeline.git.branch >> ]
           steps:
+            - add_ssh_keys:
+              fingerprints:
+                - "ed:e7:b5:5c:0d:ce:23:18:8a:9b:b7:b9:fb:f7:78:2b"
             - run: npm run deploy_only
