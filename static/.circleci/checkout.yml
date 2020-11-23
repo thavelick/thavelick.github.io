@@ -1,0 +1,14 @@
+version: 2.1
+jobs:
+  skip:
+    working_directory: ~/trsitanhavelick
+    docker: [ image: circleci/circleci/node:14 ]
+    steps: [ checkout ] # A simple step otherwise the build breaks with syntax errors
+workflows:
+  version: 2
+  master:
+    jobs:
+    - skip:
+        filters:
+          branches:
+            ignore: [ master ]
