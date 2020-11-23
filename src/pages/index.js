@@ -9,19 +9,11 @@ const IndexPage = ({ data }) => {
   const articles = data.allMarkdownRemark.edges;
   return(
     <Layout>
-      <div className="h-card">
         <h1>Me in 10 seconds</h1>
-        <p className="u-note">
-          I'm a thinker, software engineer and manager, reader, arm chair scientist, and amateur philosopher. I believe in focusing on the long term over the short, and that done is better than perfect. I grew up and live in the Denver area but have a soft spot for San Francisco and Portland.
+        <p>
+            I'm a thinker, software engineer and manager, reader, arm chair scientist, and amateur philosopher. I believe in focusing on the long term over the short, and that done is better than perfect. I grew up and live in the Denver area but have a soft spot for San Francisco and Portland.
         </p>
-        <h1>Around the web</h1>
-        <ul>
-          <li><a className="u-url" href="https://www.facebook.com/thavelick" rel="me">Facebook</a></li>
-          <li><a className="u-url" href="https://twitter.com/thavelick/" rel="me">Twitter</a></li>
-          <li><a className="u-url" href="https://github.com/thavelick/" rel="me">GitHub</a></li>
-          <li><a className="u-url" href="https://stackoverflow.com/users/30529/tristan-havelick" rel="me">Stack Overflow</a></li>
-        </ul>
-
+        
         <h1>Newest Articles</h1>
         <ul>
           {articles.map(({ node }) => (
@@ -29,7 +21,24 @@ const IndexPage = ({ data }) => {
               <Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
             </li>
           ))}
+         
         </ul>
+        <ul style={{ listStyleType: 'none' }}>
+            <li><Link to='/blog'>All Articles</Link></li>
+        </ul>
+        
+        <h1>Music</h1>
+        <p>See what I've been <Link to='/music'>listening to</Link></p>
+
+        <div className="h-card">
+            <h1>Around the web</h1>
+            <ul>
+                <li><a className="u-url" href="https://www.facebook.com/thavelick" rel="me">Facebook</a></li>
+                <li><a className="u-url" href="https://twitter.com/thavelick/" rel="me">Twitter</a></li>
+                <li><a className="u-url" href="https://github.com/thavelick/" rel="me">GitHub</a></li>
+                <li><a className="u-url" href="https://stackoverflow.com/users/30529/tristan-havelick" rel="me">Stack Overflow</a></li>
+            </ul>
+        </div>
 
         <h1>Contact</h1>
         <p>
@@ -40,15 +49,10 @@ const IndexPage = ({ data }) => {
           <li>Email: <a href="mailto:tristan@havelick.com" className="u-email">tristan@havelick.com</a></li>
         </ul>
 
-        <h1>Photo</h1>
         <img className="mePhoto u-photo" src={me} alt="Tristan Havelick"/>
-
-        <h1>Music</h1>
-        <p>See what I've been <Link to='/music'>listening to</Link></p>
-
-      </div>
     </Layout>
-  )};
+  )
+};
 
 export default IndexPage;
 

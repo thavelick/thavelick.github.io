@@ -6,7 +6,9 @@ yarn-error.log
 # Build directory
 /public
 .DS_Store
+.vscode
 
 # Secure Environment Variables
 .env
 .env.*
+
