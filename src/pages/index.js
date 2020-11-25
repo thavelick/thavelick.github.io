@@ -27,6 +27,9 @@ const IndexPage = ({ data }) => {
             <li><Link to='/blog'>All Articles</Link></li>
         </ul>
         
+        <h1>Books </h1>
+        <p>See what I've been <Link to='/books'>reading</Link></p>
+
         <h1>Music</h1>
         <p>See what I've been <Link to='/music'>listening to</Link></p>
 
