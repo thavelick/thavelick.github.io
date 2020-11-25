@@ -26,5 +26,12 @@ module.exports = {
         fetchRecent: true,
       },
     },
+    {
+      resolve: '@halkeye/gatsby-source-goodreads',
+      options: {
+        developerKey: process.env.GOODREADS_API_KEY,
+        goodReadsUserId: process.env.GOODREADS_USER_ID,
+      }
+    }
   ]
 };
