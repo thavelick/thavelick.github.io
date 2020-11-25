@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from "gatsby";
 import Header from '../components/header';
 import './layout.css';
 
-const Layout = ({ children }) => (
+const Layout = ( props ) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -16,10 +16,16 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={data => (
-      <div>
+    render={data => {
+      let fullTitle = data.site.siteMetadata.title;
+      if (props.title) {
+        fullTitle = `${fullTitle} : ${props.title}`;
+      }
+
+      return (
+        <div>
           <Helmet
-            title={data.site.siteMetadata.title}
+            title={fullTitle}
             meta={[
               { name: 'description', content: 'Sample' },
               { name: 'keywords', content: 'sample, something' },
@@ -34,15 +40,17 @@ const Layout = ({ children }) => (
               paddingTop: 0
             }}
           >
-            {children}
+            {props.children}
           </div>
         </div>
-    )} />
+      )
+    }} />
   
 );
 
 Layout.propTypes = {
-  children: PropTypes.func
+  children: PropTypes.func,
+  title: PropTypes.string,
 };
 
 export default Layout;

@@ -5,7 +5,7 @@ export default ({ data }) => {
   const tracks = data.allSpotifyRecentTrack.edges;
 
   return (
-    <Layout>
+    <Layout title="Music">
       <div>
         <h1>What I've Been Listening To</h1>
         <ul>

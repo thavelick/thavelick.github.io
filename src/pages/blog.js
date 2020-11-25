@@ -6,7 +6,7 @@ import { graphql } from 'gatsby';
 const ArticleListPage = ({ data }) => {
     const articles = data.allMarkdownRemark.edges;
     return(
-        <Layout>
+        <Layout title="Blog">
             <h1>Articles</h1>
             <ul>
             {articles.map(({ node }) => (

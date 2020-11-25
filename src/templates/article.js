@@ -3,10 +3,11 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 export default function Template({ data }) {
   const { markdownRemark: post } = data
+  const title = post.frontmatter.title;
   return (
-    <Layout>
+    <Layout title={title}>
         <article></article>
-        <h1>{post.frontmatter.title}</h1>
+        <h1>{title}</h1>
         <small>Posted {post.frontmatter.date}</small>
         <div
           className="article-content"
