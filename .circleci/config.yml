@@ -3,6 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:14
+    resource_class: small
     working_directory: ~/gatsby-site
     steps:
       - checkout
