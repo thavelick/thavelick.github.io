@@ -19,7 +19,7 @@ module.exports = {
       resolve: 'gatsby-source-spotify',
       options: {
         clientId: process.env.SPOTIFY_CLIENT_ID,
-        clientSecret:process.env.SPOTIFY_CLIENT_SECRET,
+        clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
         refreshToken: process.env.SPOTIFY_REFRESH_TOKEN,
     
         fetchPlaylists: false, 
@@ -32,6 +32,12 @@ module.exports = {
         developerKey: process.env.GOODREADS_API_KEY,
         goodReadsUserId: process.env.GOODREADS_USER_ID,
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-plausible`,
+      options: {
+        domain: `tristanhavelick.com`,
+      },
+    },
   ]
 };
