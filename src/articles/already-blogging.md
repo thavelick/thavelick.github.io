@@ -10,23 +10,37 @@ My recent return to updating my website and finally getting around to starting a
 >Or consider yourself. Do you avoid having conversations with your friends when you think you have nothing original to say? Do you share things with them? Do you give advice? Do you help to understand things?
 
 Second, the article gave me a lot of ideas on where to find something to write about including:
-* Scouring old IM logs and emails for things you said that seemed useful to others
-* Looking at comments you've made on other peoples posts
-* Thinking about advice you repeatedly give to friends
-* Look through notes taken when researching different topics
+* Scouring old IM logs and emails for things you said that seemed useful to others.
+* Looking at comments you've made on other peoples posts.
+* Thinking about advice you repeatedly give to friends.
+* Look through notes taken when researching different topics.
 
 This got me thinking about other sources I could use for article ideas and it hit me: I'd already written a lot of article-like content but it was spread scattershot over the web. I then collected a few of these, made some minor edits and they became the first few articles on this site. The oldest of which I adapted from a StackOverflow post I wrote all the way back in 2008! 
 
 ## Where to find articles you've already written to add to your blog
 There are a lot of places you can probably find content you've written that you can adapt to blog articles. Some you can likely import directly into your blog and others you might need to edit and or flesh out a little.
-* Posts you've written on third party blogging platforms like Medium, Blogger or BlogSpot
+* Posts you've written on third party blogging platforms like Medium, Blogger or BlogSpot.
 * Questions you've asked or answered on Q&A websites like Quora, StackOverflow or StackExchange. In these cases you might need to edit them a bit so they make sense in a more narrative form, but doing so is probably quicker and easier than you anticipated.
-* Forum posts
-* Entries from your personal journal (it's probably a good idea to heavily edit here and not post everything en masse)
-* Articles or documentation you've written for work that might be useful for a wider audience. Check with your boss before adapting any of this work, but chances are they'll approve so long as you aren't revealing anything proprietary or that could be a security risk
+* Forum posts.
+* Entries from your personal journal (it's probably a good idea to heavily edit these and obviously not post everything en masse).
+* Articles or documentation you've written for work that might be useful for a wider audience. Check with your boss before adapting any of this work, but chances are they'll approve so long as you aren't revealing anything proprietary or that could be a security risk.
 * If you're a programmer, README's from open source tools you've developed.
-* Notes you've taken when learning something new
-* Content you've written on old, now defunct websites accessed through the [Wayback Machine](https://archive.org/web/web.php)
+* Notes you've taken when learning something new.
+* Content you've written on old, now defunct websites accessed through the [Wayback Machine](https://archive.org/web/web.php).
+* Content that has been removed by changing moderation standards. When I wrote the original post behind my article on getting [my first software development job](/breaking-into-coding) on [StackOverflow](http://stackoverflow.com) they allowed open ended questions. When the site decided to focus on questions with more definitive answers, my answer was removed by moderators even though many people found it useful. Adding it to my blog makes this long missing advice public again.
+* Long posts from Facebook or Twitter threads that others outside your friend circle might find useful.
 
 ## Why you shouldn't worry about duplicating content
-Collecting all of your writing in your blog can allow people that would otherwise only find one or two fragments of your writing to find them all. Second, it's a great motivational exercise. It makes writing seem like a less daunting and new task. Once doing it, you realize you've actually been writing for years, and now have something to show for it.
+
+Collecting all of your writing in your blog can allow people that would otherwise only find one or two fragments of your writing to read all you've had to say if they are so inclined.
+
+Also, it's a great motivational exercise. It makes writing seem like a less daunting and new task. Once doing it, you'll realize you've actually been writing for years, and now have something to show for it. That should make future writing easier. 
+
+SEO experts sometimes rail against duplicate content. This might make you think I'm crazy for advocating using it. However, generally [duplicate content won't penalize your rankings](https://searchengineland.com/myth-duplicate-content-penalty-259657), it just won't count positively toward your rankings so content from the original site might rank more highly that the one on your new blog. If you're really worried about this you can add a `noindex` meta tag to the page to make search engines ignore it. That way at least people who come to your blog through other articles can still get value out of it. 
+
+## It doesn't matter that your old writing wasn't that great
+
+Think about one of your favorite blogs. One you've read for years perhaps. Go there, and click into the author's archives and read their first few posts. Chances are they will suck compared to what they're posting today. It's natural for writing to improve over time and for your thinking on a topic to change. Make minor (or even major) edits if you feel the need. Write some  introductory text that gives context about what was happening when you wrote the article.
+## Don't stop with the old stuff
+
+Of course, the idea here is not to just collect a bunch of old personal writing artifacts, but to give your blog (and your brain) a bit of a jump start. Once you've added a few older articles, spend some time to write some new ones. If your thoughts on a topic have changed, write a follow up post. Or write something entirely different. 
