@@ -26,5 +26,11 @@ module.exports = {
         fetchRecent: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-plausible`,
+      options: {
+        domain: `tristanhavelick.com`,
+      },
+    },
   ]
 };
