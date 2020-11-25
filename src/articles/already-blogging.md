@@ -15,7 +15,7 @@ Second, the article gave me a lot of ideas on where to find something to write a
 * Thinking about advice you repeatedly give to friends.
 * Look through notes taken when researching different topics.
 
-This got me thinking about other sources I could use for article ideas and it hit me: I'd already written a lot of article-like content but it was spread scattershot over the web. I then collected a few of these, made some minor edits and they became the first few articles on this site. The oldest of which I adapted from a StackOverflow post I wrote all the way back in 2008! 
+This got me thinking about other sources I could use for article ideas and it hit me: I'd already written a lot of article-like content but it was spread scattershot over the web. I then collected a few of these, made some minor edits and they became the first few articles on this site. The oldest of which I adapted from a StackOverflow post I wrote all the way back in 2008! If you're starting a blog, you should look around the web to find things you've already written and consider adding them as back dated posts on the new site.
 
 ## Where to find articles you've already written to add to your blog
 There are a lot of places you can probably find content you've written that you can adapt to blog articles. Some you can likely import directly into your blog and others you might need to edit and or flesh out a little.
