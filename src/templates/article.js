@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import Link from "gatsby-link";
+import { PossibleFragmentSpreads } from "graphql/validation/rules/PossibleFragmentSpreads";
 
 export default function Template({ data }) {
   const { markdownRemark: post } = data
@@ -11,7 +12,7 @@ export default function Template({ data }) {
         <Link to="/blog">Articles</Link>
         <article>
           <h1>{title}</h1>
-          <small>Posted {post.frontmatter.date}</small>
+          <small>Posted {post.frontmatter.date} - {post.timeToRead} minute read</small>
           <div
             className="article-content"
             dangerouslySetInnerHTML={{ __html: post.html }}
@@ -29,6 +30,7 @@ export const pageQuery = graphql`
           date(fromNow: true)
           title
         }
+        timeToRead
     }
   }
 `;
