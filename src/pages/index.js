@@ -24,7 +24,7 @@ const IndexPage = ({ data }) => {
          
         </ul>
         <ul style={{ listStyleType: 'none' }}>
-            <li><Link to='/blog'>All Articles</Link></li>
+            <li><Link to='/blog'>All Articles</Link> - <Link to='/rss.xml'>RSS</Link></li>
         </ul>
         
         <h1>Books </h1>

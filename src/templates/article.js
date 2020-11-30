@@ -2,7 +2,6 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import Link from "gatsby-link";
-import { PossibleFragmentSpreads } from "graphql/validation/rules/PossibleFragmentSpreads";
 
 export default function Template({ data }) {
   const { markdownRemark: post } = data
