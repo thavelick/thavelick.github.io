@@ -41,6 +41,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+          plugins: [`gatsby-remark-extract-keywords`],
+      },
+    },
+    {
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `
