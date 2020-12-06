@@ -3,7 +3,7 @@
   "description": "Tristan Havelick's Website",
   "author": "Tristan Havelick <tristan@havelick.com>",
   "dependencies": {
-    "@halkeye/gatsby-source-goodreads": "https://github.com/thavelick/gatsby-source-goodreads#axios_upgrade",
+    "@halkeye/gatsby-source-goodreads": "0.1.0",
     "dotenv": "^8.2.0",
     "gatsby": "^2.26.1",
     "gatsby-link": "^2.5.0",
