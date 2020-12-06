@@ -26,10 +26,10 @@ const Layout = ( props ) => (
         <div>
           <Helmet
             title={fullTitle}
-            meta={[
-              { name: 'description', content: 'Sample' },
-              { name: 'keywords', content: 'sample, something' },
-            ]}
+            // meta={[
+            //   { name: 'description', content: 'Sample' },
+            //   { name: 'keywords', content: 'sample, something' },
+            // ]}
           />
           <Header siteTitle={data.site.siteMetadata.title} />
           <div
