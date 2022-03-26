@@ -209,7 +209,6 @@ img {
   margin: 0 0 1.45rem;
 }
 h1 {
-  color: inherit;
   font-size: 2.25rem;
   color: #2541b2;
 }
@@ -225,7 +224,7 @@ h2 {
   line-height: 1.1;
 }
 h2 {
-  color: inherit;
+  color: #2541b2;
   font-size: 1.62671rem;
 }
 h3 {
@@ -237,7 +236,7 @@ h4 {
   margin-right: 0;
   margin-top: 0;
   padding: 0;
-  color: inherit;
+  color: #2541b2;
   font-family: Tahoma, Verdana, sans-serif;
   font-weight: 700;
   text-rendering: optimizeLegibility;
@@ -255,7 +254,7 @@ h6 {
   margin-right: 0;
   margin-top: 0;
   padding: 0;
-  color: inherit;
+  color: #2541b2;
   font-family: Tahoma, Verdana, sans-serif;
   font-weight: 700;
   text-rendering: optimizeLegibility;
@@ -426,3 +425,4 @@ ul {
   padding: 0px 1.0875rem 1.45rem;
   padding-top:0;
 }
+
