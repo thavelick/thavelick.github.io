@@ -1,24 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<rss version="2.0">
   <channel>
     <title>
-<![CDATA[TristanHavelick.com]]>
+TristanHavelick.com
     </title>
     <description>
-<![CDATA[Tristan Havelick's Blog]]>
+Tristan Havelick's Blog
     </description>
     <link>https://tristanhavelick.com</link>
-    <pubDate>Thu, 03 Mar 2022 00:10:39 GMT</pubDate>
+    <pubDate>Wed, 02 Mar 2022 17:10:39 MST</pubDate>
     <item>
       <title>
-<![CDATA[Slowing down to combat burnout]]>
+Slowing down to combat burnout
       </title>
       <description>
-<![CDATA[Last week, a co-worker asked me if I had any resources that he could point his employees to that could help dealing with burn-out. I couldn…]]>
+Last week, a co-worker asked me if I had any resources that he could point his employees to that could help dealing with burn-out. I couldn…
       </description>
       <link>https://tristanhavelick.com/burnout/</link>
       <guid isPermaLink="false">https://tristanhavelick.com/burnout/</guid>
-      <pubDate>Sun, 06 Dec 2020 00:00:00 GMT</pubDate>
+      <pubDate>Sat, 05 Dec 2020 17:00:00 MST</pubDate>
       <content>
         <p>Last week, a co-worker asked me if I had any resources that he could point his employees to that could help dealing with burn-out. I couldn't really think of any, but went through my list of usual strategies including:</p>
         <ul>
@@ -39,14 +38,14 @@
     </item>
     <item>
       <title>
-<![CDATA[Thinking of starting a blog? You likely already have]]>
+Thinking of starting a blog? You likely already have
       </title>
       <description>
-<![CDATA[My recent return to updating my website and finally getting around to starting a blog on my own site was inspired in large part by Alexey…]]>
+My recent return to updating my website and finally getting around to starting a blog on my own site was inspired in large part by Alexey…
       </description>
       <link>https://tristanhavelick.com/already-blogging/</link>
       <guid isPermaLink="false">https://tristanhavelick.com/already-blogging/</guid>
-      <pubDate>Tue, 24 Nov 2020 00:00:00 GMT</pubDate>
+      <pubDate>Mon, 23 Nov 2020 17:00:00 MST</pubDate>
       <content>
         <p>My recent return to updating my website and finally getting around to starting a blog on my own site was inspired in large part by Alexey Guzey's article on 
         <a href="https://guzey.com/personal/why-have-a-blog/">Why you should start a blog right now</a>. In it, he helped me overcome my biggest objections to starting. First, he convinced me that it doesn't matter if I don't come up with anything original to say:</p>
@@ -93,14 +92,14 @@
     </item>
     <item>
       <title>
-<![CDATA[An Obligatory Yet Useless Introduction]]>
+An Obligatory Yet Useless Introduction
       </title>
       <description>
-<![CDATA[I wrote this a couple years back in draft form and never got around to publishing it. I'm a little less enthusiastic about the "IndieWeb…]]>
+I wrote this a couple years back in draft form and never got around to publishing it. I'm a little less enthusiastic about the "IndieWeb…
       </description>
       <link>https://tristanhavelick.com/welcome/</link>
       <guid isPermaLink="false">https://tristanhavelick.com/welcome/</guid>
-      <pubDate>Tue, 22 May 2018 00:00:00 GMT</pubDate>
+      <pubDate>Mon, 21 May 2018 18:00:00 MDT</pubDate>
       <content>
         <p>
           <em>[I wrote this a couple years back in draft form and never got around to publishing it. I'm a little less enthusiastic about the "IndieWeb" revolution now, but it does serve introduce the blog reasonably well]</em>
@@ -110,14 +109,14 @@
     </item>
     <item>
       <title>
-<![CDATA[Why I haven’t been playing with my new amazing PS4]]>
+Why I haven’t been playing with my new amazing PS4
       </title>
       <description>
-<![CDATA[This article has been adapted from a post I wrote at Medium, years ago. It was revised and published here on 2020-11-21 cover image  For…]]>
+This article has been adapted from a post I wrote at Medium, years ago. It was revised and published here on 2020-11-21 cover image  For…
       </description>
       <link>https://tristanhavelick.com/ps4/</link>
       <guid isPermaLink="false">https://tristanhavelick.com/ps4/</guid>
-      <pubDate>Sun, 03 Jan 2016 00:00:00 GMT</pubDate>
+      <pubDate>Sat, 02 Jan 2016 17:00:00 MST</pubDate>
       <content>
         <p>
           <em>[This article has been adapted from a post I wrote at Medium, years ago. It was revised and published here on 2020-11-21]</em>
@@ -142,14 +141,14 @@
     </item>
     <item>
       <title>
-<![CDATA[Thoughts on consumer goods and christmas 2010]]>
+Thoughts on consumer goods and christmas 2010
       </title>
       <description>
-<![CDATA[This article originally appeared on Blog Spot and was published here on 2020-11-22 In recent months I've come to realization that I can buy…]]>
+This article originally appeared on Blog Spot and was published here on 2020-11-22 In recent months I've come to realization that I can buy…
       </description>
       <link>https://tristanhavelick.com/consumerism/</link>
       <guid isPermaLink="false">https://tristanhavelick.com/consumerism/</guid>
-      <pubDate>Wed, 01 Dec 2010 00:00:00 GMT</pubDate>
+      <pubDate>Tue, 30 Nov 2010 17:00:00 MST</pubDate>
       <content>
         <p>
           <em>[This article originally appeared on Blog Spot and was published here on 2020-11-22]</em>
@@ -176,14 +175,14 @@
     </item>
     <item>
       <title>
-<![CDATA[How I Got My First Programming Job]]>
+How I Got My First Programming Job
       </title>
       <description>
-<![CDATA[This article is based on a stack overflow answer that was deleted after the site mvoed away from more open ended questions. I published it…]]>
+This article is based on a stack overflow answer that was deleted after the site mvoed away from more open ended questions. I published it…
       </description>
       <link>https://tristanhavelick.com/breaking-into-coding/</link>
       <guid isPermaLink="false">https://tristanhavelick.com/breaking-into-coding/</guid>
-      <pubDate>Fri, 05 Dec 2008 00:00:00 GMT</pubDate>
+      <pubDate>Thu, 04 Dec 2008 17:00:00 MST</pubDate>
       <content>
         <p>
           <em>[This article is based on a stack overflow answer that was deleted after the site mvoed away from more open ended questions. I published it here on 11/21/2020]</em>
