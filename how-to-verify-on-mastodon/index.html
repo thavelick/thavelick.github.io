@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html>
-
-<head>
+<html><head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="/styles.css">
+  <link href="/styles.css" rel="stylesheet">
   <title>Tristan Havelick -- How to Verify on Mastodon</title>
-  <link rel="alternate" type="application/rss+xml" title="TristanHavelick.com" href="/rss.xml">
+  <link href="/rss.xml" rel="alternate" title="TristanHavelick.com" type="application/rss+xml">
 </head>
 
 <body>
-  <div class="title-outer">
-    <div class="title-inner">
-      <h1><a href="/">Tristan Havelick</a></h1>
-    </div>
-  </div>
+  
   <div class="content">
     <a href="/blog">Articles</a>
     <article>
@@ -49,7 +42,7 @@
         The first step in verifying yourself is linking from your Mastodon profile to your website.
         This should be your public website that people trust is run by you or your organization.
         To do this, follow these steps:
-      <ol>
+      </p><ol>
         <li>
           Go to your profile page on Mastodon. Click on "Edit Profile" under your username on the left.
 
@@ -68,15 +61,15 @@
 
       This will add a link to your website in your profile. However this isn't enough to verify
       you.
-      </p>
+      <p></p>
       <h2>Linking back to your Mastodon account from your website</h2>
       <p>
         Now, you need to add a link to your Mastodon account from your website. The easiest way to
         do this is to steal the bit of HTML code that Mastodon generates for you. To do this, just
         hit the copy button to the right of where you added your website on your Mastodon profile
         page, under "Verification". The HTML code will look something like this:
-      <pre><code>&lt;a href="https://your-mastodon.site/@YourMastodonUser" rel="me"&gt;Mastodon&lt;/a&gt;</code></pre>
-      </p>
+      </p><pre><code>&lt;a href="https://your-mastodon.site/@YourMastodonUser" rel="me"&gt;Mastodon&lt;/a&gt;</code></pre>
+      <p></p>
       <p>
         The important bit here is the <code>rel="me"</code> part. This says "this link is to a page that I control and
         represents me".
@@ -100,6 +93,6 @@
       </p>
     </article>
   </div>
-</body>
 
-</html>
+
+</body></html>
