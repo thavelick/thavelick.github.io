@@ -9,6 +9,54 @@ Tristan Havelick's Blog
     <link>https://tristanhavelick.com</link>
     <pubDate>Sat, 05 Dec 2020 17:00:00 MST</pubDate>
     <item>
+      <title>Thoughts on Yuval Noah Harari's "Nexus"</title>
+      <link>https://tristanhavelick.com/nexus/</link>
+      <pubDate>Sun, 01 Dec 2024 12:31:00 MST</pubDate>
+      <content>
+        <![CDATA[
+    <p>
+    Sapiens by Yuval Harari is probably the last non-fiction book I read that had a big effect
+    on how I view the world.
+    After years of buying into the new atheism and the skeptics movement, the book really helped
+    me soften to religious and spiritual people again and that there is value in believing things
+    that aren't true actually can have value.
+    So when I saw <i>Nexus</i> had been written and focused on Information Networks and how AI
+    might effect society moving forward I was pretty excited as AI has always been a big interest
+    of mine and has already been making big changes in my corner of the world. Although it wasn't
+    as earth shattering to my worldview, it did change my perspective on some things.
+    </p>
+    <p>
+    One, was explaining the difference between autocracy and totalitarianism.
+    Autocracy refers to societies with a single powerful leader with no checks on their power.
+    However, an autocratic leader, historically would be limited by the scope of their view. Sure,
+    a Roman Emperor could monitor and exact revenge on those he didn't like close to home, but
+    managing every aspect of people's lives in a city thousands of miles away was impossible.
+    In the 20th century, with technology like the telegraph, totalitarianism came about.
+    Stalin, for instance, could plant spies and get reports from across the entirety of the U.S.S.R
+    and control things at a greater distance with greater ease.
+    In fact, getting too much information was often a more difficult problem than not having enough.
+    One of the things Harari argues is that AI technology will make it easy for totalitarians to
+    micromanage across vast areas even more effectively because it can collect and filter through
+    large sets of data about people to identify potential bad actors. China's social reputation
+    scoring system might be an example of this that already exists.
+    </p>
+    <p>
+    But, he brings up the point that AI, on the other hand, could be used to fight against such total
+    control.
+    If dissidents against a totalitarian power can make bots that share anti government ideas
+    online without being traceable back to the original author, perhaps AI can help those fighting
+    gain their own reach.
+    </p>
+
+    <p>
+    Beyond giving me some ideas on how to think about how AI might affect the world, the book really
+    drove home for me that History can be an interesting lens to look at current and future events
+    through.
+    I haven't generally read a lot of history, but maybe that should change.
+    </p>
+    ]]></content>
+    </item>
+    <item>
       <title>Tristan Havelick</title>
       <link>https://tristanhavelick.com/index.html</link>
       <pubDate>Sun, 06 Nov 2022 21:04:40 </pubDate>
@@ -116,9 +164,9 @@ Last week, a co-worker asked me if I had any resources that he could point his e
           <li>Working on something different. Variety can powerful</li>
           <li>Collaborating through difficult work</li>
         </ul>
-        <p>But the list felt flat. I wasn't sure if anything I'd come up with would really be helpful. A few days later, I reread 
+        <p>But the list felt flat. I wasn't sure if anything I'd come up with would really be helpful. A few days later, I reread
         <a href="https://sive.rs/tilt">a story from Derek Sivers</a>about slowing down on a difficult drive and explicitly ignoring those people who it might annoy, thus making the drive much more enjoyable. He reminds us to adjust adjust our environment to what we need even if it's inconvenient to others.</p>
-        <p>The story reminded me a burnout combatting strategy I'd used in the past: 
+        <p>The story reminded me a burnout combatting strategy I'd used in the past:
         <strong>Slow down and focus on craftsmanship</strong>. Often burnout comes when you feel stress always be getting something done, always moving on to the next thing that's needed. Instead of getting things done as quickly as possibly, it can help to take the slow route. Zoom in on the little details. Take a lot more time to make what you're working on as perfect as you can. In a software development context, is each variable name as good as it could be? Could any lines of code be removed? Could we make it perform faster? If what you're working on feels repetitive, could you make the computer do the work for you? Could the code be rewritten to be more readable?</p>
         <p>When it works, this strategy helps me find the beauty in my work again. Sometimes I go a bit overboard and end up with an over-engineered mess I have to throw away. But when I do, the quick solution and simple solution I started with ends up feeling much better as now I've seen the flaws in the alternative. And of course, burnout can be caused by the reverse too. Sometimes, if I've been to in the weeds of the details and too focused on making things perfect it can help to step back and come up with a quick and un-elegant solution instead.</p>
         <p>The feeling of burnout is your brain's way of telling you that something needs to change. So, the next time that feeling settles upon you consider that perhaps the solution is as simple as changing the pace and focus of your work.</p>
@@ -135,7 +183,7 @@ My recent return to updating my website and finally getting around to starting a
       <guid isPermaLink="false">https://tristanhavelick.com/already-blogging/</guid>
       <pubDate>Mon, 23 Nov 2020 17:00:00 MST</pubDate>
       <content>
-        <p>My recent return to updating my website and finally getting around to starting a blog on my own site was inspired in large part by Alexey Guzey's article on 
+        <p>My recent return to updating my website and finally getting around to starting a blog on my own site was inspired in large part by Alexey Guzey's article on
         <a href="https://guzey.com/personal/why-have-a-blog/">Why you should start a blog right now</a>. In it, he helped me overcome my biggest objections to starting. First, he convinced me that it doesn't matter if I don't come up with anything original to say:</p>
         <blockquote>
           <p>Consider a university professor teaching a course. Does she say anything original? Do you think she should cancel her course because somebody else discovered the things she wants to teach? Or does she have to cancel her course simply because there is a similar course at some other university?</p>
@@ -159,18 +207,18 @@ My recent return to updating my website and finally getting around to starting a
           <li>Articles or documentation you've written for work that might be useful for a wider audience. Check with your boss before adapting any of this work, but chances are they'll approve so long as you aren't revealing anything proprietary or that could be a security risk.</li>
           <li>If you're a programmer, README's from open source tools you've developed.</li>
           <li>Notes you've taken when learning something new.</li>
-          <li>Content you've written on old, now defunct websites accessed through the 
+          <li>Content you've written on old, now defunct websites accessed through the
           <a href="https://archive.org/web/web.php">Wayback Machine</a>.</li>
-          <li>Content that has been removed by changing moderation standards. When I wrote the original post behind my article on getting 
-          <a href="/breaking-into-coding">my first software development job</a>on 
+          <li>Content that has been removed by changing moderation standards. When I wrote the original post behind my article on getting
+          <a href="/breaking-into-coding">my first software development job</a>on
           <a href="http://stackoverflow.com">StackOverflow</a>they allowed open ended questions. When the site decided to focus on questions with more definitive answers, my answer was removed by moderators even though many people found it useful. Adding it to my blog makes this long missing advice public again.</li>
           <li>Long posts from Facebook or Twitter threads that others outside your friend circle might find useful.</li>
         </ul>
         <h2>Why you shouldn't worry about duplicating content</h2>
         <p>Collecting all of your writing in your blog can allow people that would otherwise only find one or two fragments of your writing to read all you've had to say if they are so inclined.</p>
         <p>Also, it's a great motivational exercise. It makes writing seem like a less daunting and new task. Once doing it, you'll realize you've actually been writing for years, and now have something to show for it. That should make future writing easier.</p>
-        <p>SEO experts sometimes rail against duplicate content. This might make you think I'm crazy for advocating using it. However, generally 
-        <a href="https://searchengineland.com/myth-duplicate-content-penalty-259657">duplicate content won't penalize your rankings</a>, it just won't count positively toward your rankings so content from the original site might rank more highly that the one on your new blog. If you're really worried about this you can add a 
+        <p>SEO experts sometimes rail against duplicate content. This might make you think I'm crazy for advocating using it. However, generally
+        <a href="https://searchengineland.com/myth-duplicate-content-penalty-259657">duplicate content won't penalize your rankings</a>, it just won't count positively toward your rankings so content from the original site might rank more highly that the one on your new blog. If you're really worried about this you can add a
         <code>noindex</code>meta tag to the page to make search engines ignore it. That way at least people who come to your blog through other articles can still get value out of it.</p>
         <h2>It doesn't matter that your old writing wasn't that great</h2>
         <p>Think about one of your favorite blogs. One you've read for years perhaps. Go there, and click into the author's archives and read their first few posts. Chances are they will suck compared to what they're posting today. It's natural for writing to improve over time and for your thinking on a topic to change. Make minor (or even major) edits if you feel the need. Write some introductory text that gives context about what was happening when you wrote the article.</p>
@@ -217,11 +265,11 @@ This article has been adapted from a post I wrote at Medium, years ago. It was r
         <p>
           <img src="https://cdn-images-1.medium.com/max/2034/1*vb2J01WJlJWlOcVNZJZZ8A.png" />
         </p>
-        <p>It’s called 
+        <p>It’s called
         <a href="http://crawl.develz.org/wordpress/">Dungeon Crawl: Stone Soup,</a>and I’ve been a little obsessed. Why? In this game you can actually die. Just now, I played the game for 2 hours, took a misstep and my character died. And that was it. I couldn’t be regenerated. I couldn’t restart from a save point. I couldn’t even play again and be faced with the same maps and enemies again armed with my newly acquired knowledge of what to find where, because the levels in this game are randomly generated each time you play. This very likely sounds awful but it’s not. As far as I can tell, there are two reasons for this being awesome instead of horrible.</p>
         <p>First, this kind of “permadeath” really ratchets up the intensity of the game. When you’re staring down a giant ogre with a spiked club he looks like something my cat could draw on the screen. But when he has the power to wipe out hours of effort in a single turn he becomes incredibly scary in your mind’s eye. And if you’re otherwise doing well you’ll do anything in your power to survive. In my recent game, I felt this kind of thrilling moment over and over again. I stumbled upon a very powerful weapon called a Dark Maul. This thing was several times more powerful than any normal weapon in the game, but had the disadvantage of being extremely slow. I could take out almost any enemy in a single hefty hit of this beast of a hammer, but then I’d be left at the mercy of any other enemies as I worked to lift it over my head to attack again. Despite the disadvantage I was doing well, carefully luring enemies into hallways where I could take them on one by one, acting as a one man Spartain Army in my personal Pass of Thermopylae. If things got to be too much, I could run up stairs, kill off any close enemies that followed and head back down to the waiting horde. If I got into a bind, I could use a scroll of teleportation to wisk myself away to a random location in the dungeon. Of course, this is what ended up doing me in. I teleported away from some enemies while at deaths door into a gauntlet of still more enemies and before I could move I was hit by a fireball from an otherwise weak and typically harmless orcish wizard. The moments leading up to that death were some of the most thrilling I’ve experienced in a game.</p>
         <p>
-        <em>My Final Moments</em>: 
+        <em>My Final Moments</em>:
         <img src="https://cdn-images-1.medium.com/max/3664/1*6hEdaggcmFDCg0wKjV_Y-g.png" alt="My Final Moments" /></p>
         <p>And this leads me to the second reason I really like this particular game. I could have done better. I could have used an ability called “Berserk” to send my character into an inferno of adrenaline fueled rage that maybe, just maybe would have given me enough speed and energy to get away to a more defensible position. DCSS is just one in a long line of “Roguelikes” games that share it’s randomly generated dungeons and permanent death. The thing for me that sets it apart from other Roguelikes I’ve played is every time I die, I feel like I could have done better. I feel like if I’d just thought about my last move a little bit longer, or used a better strategy to avoid getting in such a tight spot, but I didn’t. My death was my fault, not due to just an unfortunate roll of the dice. Other rogue likes seem to spring surprises on you that with your limited resources are simply too weak to deal with. In classics of the genere like Nethack or the original rogue, people spend sometimes years between wins, waiting for that perfect game to come along.</p>
         <p>DCSS keeps driving me to play again and again. It has a small enough complexity to be easy enough to wrap my mind around, yet a large enough variety to keep me coming back and trying new things. Big polished AAA games have their appeal and I certainly returned to them over the lifetime of the PS4. But then I'd find myself drawn back into the lofi dungeon to see if this time I might survive just a little while longer this time...</p>
@@ -257,7 +305,7 @@ This article originally appeared on Blog Spot and was published here on 2020-11-
 * Rather than giving a cookbook or gadget, invite your recipient over to cook something with you or clip a few of your own favorite recipes.
 </code>
 </pre>
-        <p>Sure, there are many out there who like getting stuff for christmas. I know when I was younger and had a severe shortage of stuff, I would have been disappointed if my christmas consisted of things from the above list. Also, many times a physical gift really is best. If you are endowed with amazing talent at creating or finding unique gifts, keep it up. A place can always be found for something truly heartfelt or amazing. But if your christmas shopping typically consists of a visit to the mall, best buy, or a web superstore, and you can't figure out what to give to your Wookie friend when he already owns too many combs (see 
+        <p>Sure, there are many out there who like getting stuff for christmas. I know when I was younger and had a severe shortage of stuff, I would have been disappointed if my christmas consisted of things from the above list. Also, many times a physical gift really is best. If you are endowed with amazing talent at creating or finding unique gifts, keep it up. A place can always be found for something truly heartfelt or amazing. But if your christmas shopping typically consists of a visit to the mall, best buy, or a web superstore, and you can't figure out what to give to your Wookie friend when he already owns too many combs (see
         <a href="https://www.youtube.com/watch?v=OSWCQ7ALEms">this video</a>) , give the above list a shot.</p>
       </content>
     </item>
