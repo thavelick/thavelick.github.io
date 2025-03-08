@@ -154,7 +154,7 @@ def process_entries(root_dir, conn):
                 title = extract_title(content)
                 article_content = extract_article_content(content)
                 markdown_content = (
-                    convert_to_markdown(article_content) if article_content else ""
+                    convert_to_markdown(article_content, heading_style='atx') if article_content else ""
                 )
                 pub_date = publish_dates.get(rel_path, None)
                 slug = slugify(rel_path)
