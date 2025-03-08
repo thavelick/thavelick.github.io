@@ -1,0 +1,9 @@
+[project]
+name = "hello-world"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+dependencies = []
+
+[tool.uv]
+# uv configuration options can be added here.
