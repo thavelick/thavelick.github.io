@@ -62,6 +62,7 @@ def extract_article_content(html_content):
         for tag in div.find_all(["h1", "small"]):
             tag.decompose()
         for a in div.find_all("a", href="/blog"):
+            print(f"Removing link with text: {a.get_text(strip=True)}")
             a.decompose()
         for tag in div.find_all(["article", "div"]):
             if tag != div:
