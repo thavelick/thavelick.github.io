@@ -21,6 +21,7 @@ def check_data(db_path, columns):
             exit(1)
 
     query = "SELECT " + ", ".join(columns) + " FROM blog_entries"
+    c = conn.cursor()
     c.execute(query)
     rows = c.fetchall()
     if rows:
