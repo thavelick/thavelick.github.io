@@ -34,12 +34,17 @@ def extract_article_content(html_content):
 def process_entries(root_dir, conn):
     c = conn.cursor()
     count = 0
+    exclusions = [
+        os.path.abspath(os.path.join(root_dir, "index.html")),
+        os.path.abspath(os.path.join(root_dir, "404.html")),
+        os.path.abspath(os.path.join(root_dir, "404", "index.html"))
+    ]
     for dirpath, dirnames, filenames in os.walk(root_dir):
         for filename in filenames:
             if not filename.endswith('.html'):
                 continue
             file_path = os.path.join(dirpath, filename)
-            if filename == "404.html" or os.path.abspath(file_path) == os.path.abspath(os.path.join(root_dir, "index.html")):
+            if os.path.abspath(file_path) in exclusions:
                 continue
             try:
                 with open(file_path, 'r', encoding='utf-8') as f:
