@@ -61,6 +61,8 @@ def extract_article_content(html_content):
     if div:
         for tag in div.find_all(["h1", "small"]):
             tag.decompose()
+        for a in div.find_all("a", href="/blog"):
+            a.decompose()
         for tag in div.find_all(["article", "div"]):
             if tag != div:
                 tag.unwrap()    
