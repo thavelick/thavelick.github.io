@@ -59,6 +59,8 @@ def extract_article_content(html_content):
     soup = BeautifulSoup(html_content, 'html.parser')
     div = soup.find('div', class_='content')
     if div:
+        for tag in div.find_all(["h1", "small"]):
+            tag.decompose()
         return div.decode_contents().strip()
     return ""
 
