@@ -23,7 +23,7 @@ def create_database(db_path):
                     title TEXT,
                     content TEXT NOT NULL,
                     article_content TEXT,
-                    publish_date TEXT
+                    publish_date DATETIME
                 );''')
     conn.commit()
     return conn
