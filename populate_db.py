@@ -65,6 +65,14 @@ def get_publish_dates(rss_path):
                 publish_dates[norm_path] = convert_pub_date(pub_date)
     except Exception as e:
         print(f"Error parsing RSS file {rss_path}: {e}")
+    # Add hard-coded dates for entries that are missing publication dates
+    hardcoded_dates = {
+        "/how-to-verify-on-mastodon/index.html": "2022-11-06 00:00:00",
+        "/readable-list/index.html": "2023-05-16 00:00:00"
+    }
+    for path, date in hardcoded_dates.items():
+        if path not in publish_dates:
+            publish_dates[path] = date
     return publish_dates
 
 def process_entries(root_dir, conn):
