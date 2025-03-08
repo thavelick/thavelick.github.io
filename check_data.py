@@ -3,12 +3,15 @@ import sqlite3
 import argparse
 import os
 
+def get_valid_columns(conn, table="blog_entries"):
+    c = conn.cursor()
+    c.execute(f"PRAGMA table_info({table})")
+    columns_info = c.fetchall()
+    return [col_info[1] for col_info in columns_info]
+
 def check_data(db_path, columns):
     conn = sqlite3.connect(db_path)
-    c = conn.cursor()
-    c.execute("PRAGMA table_info(blog_entries)")
-    columns_info = c.fetchall()
-    valid_columns = [col_info[1] for col_info in columns_info]
+    valid_columns = get_valid_columns(conn)
     if not valid_columns:
         print("No valid columns found in blog_entries table.")
         exit(1)
@@ -43,13 +46,10 @@ def main():
     if os.path.exists(default_db):
         try:
             conn = sqlite3.connect(default_db)
-            c = conn.cursor()
-            c.execute("PRAGMA table_info(blog_entries)")
-            columns_info = c.fetchall()
-            valid_columns = [col_info[1] for col_info in columns_info]
+            valid_columns = get_valid_columns(conn)
             valid_columns_str = ", ".join(valid_columns) if valid_columns else "(no columns found)"
         except Exception as e:
-            valid_columns_str = "(Could not retrieve valid columns)"
+            valid_columns_str = f"(Could not retrieve valid columns: {e})"
     else:
         valid_columns_str = "(Database not found: blog.db)"
     parser.add_argument("columns", nargs="*", default=["id", "path", "title", "article_content"],
