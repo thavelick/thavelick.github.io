@@ -5,6 +5,14 @@ import re
 import sys
 import urllib.parse
 from bs4 import BeautifulSoup
+import email.utils
+
+def convert_pub_date(date_str):
+    try:
+        dt = email.utils.parsedate_to_datetime(date_str)
+        return dt.strftime('%Y-%m-%d %H:%M:%S')
+    except Exception as e:
+        return date_str
 
 def create_database(db_path):
     conn = sqlite3.connect(db_path)
@@ -54,7 +62,7 @@ def get_publish_dates(rss_path):
                     norm_path = path + "index.html"
                 else:
                     norm_path = path
-                publish_dates[norm_path] = pub_date
+                publish_dates[norm_path] = convert_pub_date(pub_date)
     except Exception as e:
         print(f"Error parsing RSS file {rss_path}: {e}")
     return publish_dates
