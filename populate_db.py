@@ -72,7 +72,7 @@ def process_entries(root_dir, conn):
     count = 0
     rss_path = os.path.join(root_dir, "rss.xml")
     publish_dates = get_publish_dates(rss_path)
-    exclusions = ['/index.html', '/404.html', '/404/index.html', '/template.html', '/games/index.html', '/archive/index.html', '/books/index.html', '/blog/index.html']
+    exclusions = ['/index.html', '/404.html', '/404/index.html', '/template.html', '/games/index.html', '/archive/index.html', '/books/index.html', '/blog/index.html', '/recipes/index.html']
     for dirpath, dirnames, filenames in os.walk(root_dir):
         for filename in filenames:
             if not filename.endswith('.html'):
