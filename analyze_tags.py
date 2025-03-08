@@ -28,7 +28,7 @@ def main():
                     details = ", ".join(f"{t}: {found[t]}" for t in sorted(found))
                     print(f"{slug}: {details}")
                 else:
-                    print(f"{slug}: (no matching tags found)")
+                    continue
             else:
                 # Using a set to ensure each tag appears only once per article
                 tags = {tag.name for tag in soup.find_all()}
