@@ -5,5 +5,6 @@ description = "Tristan's personal website"
 dependencies = [
     "beautifulsoup4>=4.13.3",
     "html-to-markdown>=1.2.0",
+    "lxml>=5.3.1",
 ]
 
