@@ -53,7 +53,7 @@ def main():
             valid_columns_str = f"(Could not retrieve valid columns: {e})"
     else:
         valid_columns_str = "(Database not found: blog.db)"
-    parser.add_argument("columns", nargs="*", default=["id", "path", "title", "article_content"],
+    parser.add_argument("columns", nargs="*", default=["id", "slug", "title", "article_content"],
                         help=f"Columns to display from the blog_entries table. Valid options: {valid_columns_str}")
     args = parser.parse_args()
     check_data(args.db, args.columns)

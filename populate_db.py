@@ -14,12 +14,20 @@ def convert_pub_date(date_str):
     except Exception as e:
         return date_str
 
+def slugify(rel_path):
+    slug = rel_path.lstrip("/")
+    if slug.endswith("/index.html"):
+        slug = slug[:-len("/index.html")]
+    elif slug.endswith(".html"):
+        slug = slug[:-len(".html")]
+    return slug
+
 def create_database(db_path):
     conn = sqlite3.connect(db_path)
     c = conn.cursor()
     c.execute('''CREATE TABLE IF NOT EXISTS blog_entries (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    path TEXT NOT NULL,
+                    slug TEXT NOT NULL,
                     title TEXT,
                     content TEXT NOT NULL,
                     article_content TEXT,
@@ -99,8 +107,9 @@ def process_entries(root_dir, conn):
                 title = extract_title(content)
                 article_content = extract_article_content(content)
                 pub_date = publish_dates.get(rel_path, None)
-                c.execute("INSERT INTO blog_entries (path, title, content, article_content, publish_date) VALUES (?, ?, ?, ?, ?)",
-                          (file_path, title, content, article_content, pub_date))
+                slug = slugify(rel_path)
+                c.execute("INSERT INTO blog_entries (slug, title, content, article_content, publish_date) VALUES (?, ?, ?, ?, ?)",
+                          (slug, title, content, article_content, pub_date))
                 print(f"Inserted: {file_path}")
                 count += 1
             except Exception as e:
