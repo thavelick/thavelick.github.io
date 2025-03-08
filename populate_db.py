@@ -34,7 +34,7 @@ def extract_article_content(html_content):
 def process_entries(root_dir, conn):
     c = conn.cursor()
     count = 0
-    exclusions = ['/index.html', '/404.html', '/404/index.html']
+    exclusions = ['/index.html', '/404.html', '/404/index.html', '/template.html']
     for dirpath, dirnames, filenames in os.walk(root_dir):
         for filename in filenames:
             if not filename.endswith('.html'):
