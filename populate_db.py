@@ -56,6 +56,9 @@ def main():
     root_dir = sys.argv[1] if len(sys.argv) > 1 else os.getcwd()
     db_path = "blog.db"
     conn = create_database(db_path)
+    c = conn.cursor()
+    c.execute("DELETE FROM blog_entries")
+    conn.commit()
     process_entries(root_dir, conn)
     conn.close()
 
