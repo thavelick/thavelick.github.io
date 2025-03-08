@@ -5,7 +5,12 @@ import argparse
 def check_data(db_path, columns):
     conn = sqlite3.connect(db_path)
     c = conn.cursor()
-    valid_columns = ["id", "path", "title", "content", "article_content"]
+    c.execute("PRAGMA table_info(blog_entries)")
+    columns_info = c.fetchall()
+    valid_columns = [col_info[1] for col_info in columns_info]
+    if not valid_columns:
+        print("No valid columns found in blog_entries table.")
+        exit(1)
     for col in columns:
         if col not in valid_columns:
             print(f"Invalid column: {col}. Valid columns: {', '.join(valid_columns)}")
