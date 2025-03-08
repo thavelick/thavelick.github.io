@@ -31,8 +31,7 @@ def create_database(db_path):
                     title TEXT,
                     content TEXT NOT NULL,
                     article_content TEXT,
-                    publish_date DATETIME,
-                    category_id INTEGER
+                    publish_date DATETIME
                 );''')
     c.execute('''CREATE TABLE IF NOT EXISTS categories (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -40,6 +39,13 @@ def create_database(db_path):
                 );''')
     c.execute("INSERT OR IGNORE INTO categories (id, name) VALUES (1, 'blog')")
     c.execute("INSERT OR IGNORE INTO categories (id, name) VALUES (2, 'recipe')")
+    c.execute('''CREATE TABLE IF NOT EXISTS post_categories (
+                    post_id INTEGER,
+                    category_id INTEGER,
+                    PRIMARY KEY (post_id, category_id),
+                    FOREIGN KEY (post_id) REFERENCES posts(id),
+                    FOREIGN KEY (category_id) REFERENCES categories(id)
+                );''')
     conn.commit()
     return conn
 
@@ -115,12 +121,14 @@ def process_entries(root_dir, conn):
                 article_content = extract_article_content(content)
                 pub_date = publish_dates.get(rel_path, None)
                 slug = slugify(rel_path)
+                c.execute("INSERT INTO posts (slug, title, content, article_content, publish_date) VALUES (?, ?, ?, ?, ?)",
+                          (slug, title, content, article_content, pub_date))
+                post_id = c.lastrowid
                 if slug.startswith("recipes"):
                     category_id = 2
                 else:
                     category_id = 1
-                c.execute("INSERT INTO posts (slug, title, content, article_content, publish_date, category_id) VALUES (?, ?, ?, ?, ?, ?)",
-                          (slug, title, content, article_content, pub_date, category_id))
+                c.execute("INSERT INTO post_categories (post_id, category_id) VALUES (?, ?)", (post_id, category_id))
                 print(f"Inserted: {file_path}")
                 count += 1
             except Exception as e:
@@ -141,6 +149,7 @@ def main():
             print("Removed existing database file.")
     conn = create_database(db_path)
     c = conn.cursor()
+    c.execute("DELETE FROM post_categories")
     c.execute("DELETE FROM posts")
     conn.commit()
     process_entries(args.root_dir, conn)
