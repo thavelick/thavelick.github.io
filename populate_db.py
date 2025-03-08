@@ -5,6 +5,7 @@ import re
 import sys
 import urllib.parse
 from bs4 import BeautifulSoup
+from html_to_markdown import convert_to_markdown
 import email.utils
 
 def convert_pub_date(date_str):
@@ -31,6 +32,7 @@ def create_database(db_path):
                     title TEXT,
                     content TEXT NOT NULL,
                     article_content TEXT,
+                    markdown_content TEXT,
                     publish_date DATETIME
                 );''')
     c.execute('''CREATE TABLE IF NOT EXISTS categories (
@@ -127,10 +129,11 @@ def process_entries(root_dir, conn):
                     content = f.read()
                 title = extract_title(content)
                 article_content = extract_article_content(content)
+                markdown_content = convert_to_markdown(article_content) if article_content else ""
                 pub_date = publish_dates.get(rel_path, None)
                 slug = slugify(rel_path)
-                c.execute("INSERT INTO posts (slug, title, content, article_content, publish_date) VALUES (?, ?, ?, ?, ?)",
-                          (slug, title, content, article_content, pub_date))
+                c.execute("INSERT INTO posts (slug, title, content, article_content, markdown_content, publish_date) VALUES (?, ?, ?, ?, ?, ?)",
+                          (slug, title, content, article_content, markdown_content, pub_date))
                 post_id = c.lastrowid
                 if slug.startswith("recipes"):
                     category_id = 2
