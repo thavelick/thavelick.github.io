@@ -68,7 +68,11 @@ def get_publish_dates(rss_path):
     # Add hard-coded dates for entries that are missing publication dates
     hardcoded_dates = {
         "/how-to-verify-on-mastodon/index.html": "2022-11-06 00:00:00",
-        "/readable-list/index.html": "2023-05-16 00:00:00"
+        "/readable-list/index.html": "2023-05-16 00:00:00",
+        "/recipes/cajun-sausage-and-beans/index.html": "2023-10-25 00:00:00",
+        "/recipes/chicken-tinga/index.html": "2023-10-15 00:00:00",
+        "/recipes/pizza-dough/index.html": "2023-10-15 00:00:00",
+        "/recipes/the-rice/index.html": "2023-10-15 00:00:00"
     }
     for path, date in hardcoded_dates.items():
         if path not in publish_dates:
