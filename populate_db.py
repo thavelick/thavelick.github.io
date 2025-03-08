@@ -3,6 +3,7 @@ import os
 import sqlite3
 import re
 import sys
+import urllib.parse
 from bs4 import BeautifulSoup
 
 def create_database(db_path):
@@ -13,7 +14,8 @@ def create_database(db_path):
                     path TEXT NOT NULL,
                     title TEXT,
                     content TEXT NOT NULL,
-                    article_content TEXT
+                    article_content TEXT,
+                    publish_date TEXT
                 );''')
     conn.commit()
     return conn
@@ -31,9 +33,37 @@ def extract_article_content(html_content):
         return div.decode_contents().strip()
     return ""
 
+def get_publish_dates(rss_path):
+    """
+    Parse the rss.xml file and return a dict mapping normalized relative paths to publish dates.
+    """
+    publish_dates = {}
+    try:
+        with open(rss_path, 'r', encoding='utf-8') as f:
+            rss_content = f.read()
+        soup = BeautifulSoup(rss_content, 'xml')
+        for item in soup.find_all('item'):
+            link_tag = item.find('link')
+            pub_date_tag = item.find('pubDate')
+            if link_tag and pub_date_tag:
+                link = link_tag.get_text().strip()
+                pub_date = pub_date_tag.get_text().strip()
+                parsed = urllib.parse.urlparse(link)
+                path = parsed.path
+                if path.endswith("/"):
+                    norm_path = path + "index.html"
+                else:
+                    norm_path = path
+                publish_dates[norm_path] = pub_date
+    except Exception as e:
+        print(f"Error parsing RSS file {rss_path}: {e}")
+    return publish_dates
+
 def process_entries(root_dir, conn):
     c = conn.cursor()
     count = 0
+    rss_path = os.path.join(root_dir, "rss.xml")
+    publish_dates = get_publish_dates(rss_path)
     exclusions = ['/index.html', '/404.html', '/404/index.html', '/template.html']
     for dirpath, dirnames, filenames in os.walk(root_dir):
         for filename in filenames:
@@ -48,8 +78,9 @@ def process_entries(root_dir, conn):
                     content = f.read()
                 title = extract_title(content)
                 article_content = extract_article_content(content)
-                c.execute("INSERT INTO blog_entries (path, title, content, article_content) VALUES (?, ?, ?, ?)",
-                          (file_path, title, content, article_content))
+                pub_date = publish_dates.get(rel_path, None)
+                c.execute("INSERT INTO blog_entries (path, title, content, article_content, publish_date) VALUES (?, ?, ?, ?, ?)",
+                          (file_path, title, content, article_content, pub_date))
                 print(f"Inserted: {file_path}")
                 count += 1
             except Exception as e:
