@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import sqlite3
 import argparse
+import os
 
 def check_data(db_path, columns):
     conn = sqlite3.connect(db_path)
@@ -36,9 +37,23 @@ def check_data(db_path, columns):
 
 def main():
     parser = argparse.ArgumentParser(description="Check blog entries in the SQLite database.")
-    parser.add_argument("--db", default="blog.db", help="Path to the SQLite database.")
+    default_db = "blog.db"
+    parser.add_argument("--db", default=default_db, help="Path to the SQLite database.")
+    # Dynamically generate help text for columns from the db
+    if os.path.exists(default_db):
+        try:
+            conn = sqlite3.connect(default_db)
+            c = conn.cursor()
+            c.execute("PRAGMA table_info(blog_entries)")
+            columns_info = c.fetchall()
+            valid_columns = [col_info[1] for col_info in columns_info]
+            valid_columns_str = ", ".join(valid_columns) if valid_columns else "(no columns found)"
+        except Exception as e:
+            valid_columns_str = "(Could not retrieve valid columns)"
+    else:
+        valid_columns_str = "(Database not found: blog.db)"
     parser.add_argument("columns", nargs="*", default=["id", "path", "title", "article_content"],
-                        help="Columns to display from the blog_entries table. Valid options: id, path, title, content, article_content, publish_date")
+                        help=f"Columns to display from the blog_entries table. Valid options: {valid_columns_str}")
     args = parser.parse_args()
     check_data(args.db, args.columns)
 
