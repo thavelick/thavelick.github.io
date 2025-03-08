@@ -1,9 +1,9 @@
 [project]
-name = "hello-world"
+name = "tristan-havelick-website"
 version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
-dependencies = []
+description = "Tristan's personal website"
+dependencies = [
+    "beautifulsoup4>=4.13.3",
+    "html-to-markdown>=1.2.0",
+]
 
-[tool.uv]
-# uv configuration options can be added here.
