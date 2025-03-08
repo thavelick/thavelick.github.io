@@ -118,14 +118,21 @@ def process_entries(root_dir, conn):
     print(f"Processed {count} entries.")
 
 def main():
-    # Use the first command line argument as the root directory, or default to the current directory.
-    root_dir = sys.argv[1] if len(sys.argv) > 1 else os.getcwd()
+    import argparse
+    parser = argparse.ArgumentParser(description="Populate the blog database with entries.")
+    parser.add_argument("root_dir", nargs="?", default=os.getcwd(), help="Root directory of the blog content.")
+    parser.add_argument("--rebuild-db", action="store_true", help="Drop and recreate the database structure before processing entries.")
+    args = parser.parse_args()
     db_path = "blog.db"
+    if args.rebuild_db:
+        if os.path.exists(db_path):
+            os.remove(db_path)
+            print("Removed existing database file.")
     conn = create_database(db_path)
     c = conn.cursor()
     c.execute("DELETE FROM blog_entries")
     conn.commit()
-    process_entries(root_dir, conn)
+    process_entries(args.root_dir, conn)
     conn.close()
 
 if __name__ == "__main__":
