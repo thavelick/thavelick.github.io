@@ -1,20 +1,15 @@
 #!/usr/bin/env python3
 import sqlite3
-import sys
+import argparse
 
-def check_data(db_path="blog.db"):
+def check_data(db_path, columns):
     conn = sqlite3.connect(db_path)
     c = conn.cursor()
     valid_columns = ["id", "path", "title", "content", "article_content"]
-    if len(sys.argv) > 1:
-        columns = sys.argv[1:]
-        for col in columns:
-            if col not in valid_columns:
-                print(f"Invalid column: {col}. Valid columns: {', '.join(valid_columns)}")
-                exit(1)
-    else:
-        # default columns to show if none specified
-        columns = ["id", "path", "title", "article_content"]
+    for col in columns:
+        if col not in valid_columns:
+            print(f"Invalid column: {col}. Valid columns: {', '.join(valid_columns)}")
+            exit(1)
 
     query = "SELECT " + ", ".join(columns) + " FROM blog_entries"
     c.execute(query)
@@ -34,5 +29,13 @@ def check_data(db_path="blog.db"):
         print("No entries found.")
     conn.close()
 
+def main():
+    parser = argparse.ArgumentParser(description="Check blog entries in the SQLite database.")
+    parser.add_argument("--db", default="blog.db", help="Path to the SQLite database.")
+    parser.add_argument("columns", nargs="*", default=["id", "path", "title", "article_content"],
+                        help="Columns to display from the blog_entries table. Valid options: id, path, title, content, article_content")
+    args = parser.parse_args()
+    check_data(args.db, args.columns)
+
 if __name__ == "__main__":
-    check_data()
+    main()
