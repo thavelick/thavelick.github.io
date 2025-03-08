@@ -38,7 +38,7 @@ def main():
     parser = argparse.ArgumentParser(description="Check blog entries in the SQLite database.")
     parser.add_argument("--db", default="blog.db", help="Path to the SQLite database.")
     parser.add_argument("columns", nargs="*", default=["id", "path", "title", "article_content"],
-                        help="Columns to display from the blog_entries table. Valid options: id, path, title, content, article_content")
+                        help="Columns to display from the blog_entries table. Valid options: id, path, title, content, article_content, publish_date")
     args = parser.parse_args()
     check_data(args.db, args.columns)
 
