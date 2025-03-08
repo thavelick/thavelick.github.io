@@ -35,8 +35,12 @@ def process_entries(root_dir, conn):
     c = conn.cursor()
     count = 0
     for dirpath, dirnames, filenames in os.walk(root_dir):
-        if "index.html" in filenames:
-            file_path = os.path.join(dirpath, "index.html")
+        for filename in filenames:
+            if not filename.endswith('.html'):
+                continue
+            file_path = os.path.join(dirpath, filename)
+            if filename == "404.html" or os.path.abspath(file_path) == os.path.abspath(os.path.join(root_dir, "index.html")):
+                continue
             try:
                 with open(file_path, 'r', encoding='utf-8') as f:
                     content = f.read()
