@@ -25,14 +25,21 @@ def slugify(rel_path):
 def create_database(db_path):
     conn = sqlite3.connect(db_path)
     c = conn.cursor()
-    c.execute('''CREATE TABLE IF NOT EXISTS blog_entries (
+    c.execute('''CREATE TABLE IF NOT EXISTS posts (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     slug TEXT NOT NULL,
                     title TEXT,
                     content TEXT NOT NULL,
                     article_content TEXT,
-                    publish_date DATETIME
+                    publish_date DATETIME,
+                    category_id INTEGER
                 );''')
+    c.execute('''CREATE TABLE IF NOT EXISTS categories (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    name TEXT NOT NULL UNIQUE
+                );''')
+    c.execute("INSERT OR IGNORE INTO categories (id, name) VALUES (1, 'blog')")
+    c.execute("INSERT OR IGNORE INTO categories (id, name) VALUES (2, 'recipe')")
     conn.commit()
     return conn
 
@@ -108,8 +115,12 @@ def process_entries(root_dir, conn):
                 article_content = extract_article_content(content)
                 pub_date = publish_dates.get(rel_path, None)
                 slug = slugify(rel_path)
-                c.execute("INSERT INTO blog_entries (slug, title, content, article_content, publish_date) VALUES (?, ?, ?, ?, ?)",
-                          (slug, title, content, article_content, pub_date))
+                if slug.startswith("recipes"):
+                    category_id = 2
+                else:
+                    category_id = 1
+                c.execute("INSERT INTO posts (slug, title, content, article_content, publish_date, category_id) VALUES (?, ?, ?, ?, ?, ?)",
+                          (slug, title, content, article_content, pub_date, category_id))
                 print(f"Inserted: {file_path}")
                 count += 1
             except Exception as e:
@@ -130,7 +141,7 @@ def main():
             print("Removed existing database file.")
     conn = create_database(db_path)
     c = conn.cursor()
-    c.execute("DELETE FROM blog_entries")
+    c.execute("DELETE FROM posts")
     conn.commit()
     process_entries(args.root_dir, conn)
     conn.close()

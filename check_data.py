@@ -3,7 +3,7 @@ import sqlite3
 import argparse
 import os
 
-def get_valid_columns(conn, table="blog_entries"):
+def get_valid_columns(conn, table="posts"):
     c = conn.cursor()
     c.execute(f"PRAGMA table_info({table})")
     columns_info = c.fetchall()
@@ -53,8 +53,8 @@ def main():
             valid_columns_str = f"(Could not retrieve valid columns: {e})"
     else:
         valid_columns_str = "(Database not found: blog.db)"
-    parser.add_argument("columns", nargs="*", default=["id", "slug", "title", "article_content"],
-                        help=f"Columns to display from the blog_entries table. Valid options: {valid_columns_str}")
+    parser.add_argument("columns", nargs="*", default=["id", "slug", "title", "article_content", "category_id"],
+                        help=f"Columns to display from the posts table. Valid options: {valid_columns_str}")
     args = parser.parse_args()
     check_data(args.db, args.columns)
 
