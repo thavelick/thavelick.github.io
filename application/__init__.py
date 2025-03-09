@@ -5,8 +5,7 @@ from flask import Flask, render_template, request, redirect
 from werkzeug.exceptions import NotFound
 
 from . import db
-from .models import Post
-from .models.category import Category
+from .models import Post, Category
 import markdown
 from datetime import datetime
 
