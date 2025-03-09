@@ -22,6 +22,10 @@ def create_app(test_config=None):
     def hello():
         return 'Hello, World!'
 
+    @app.route('/')
+    def index():
+        return app.send_static_file('index.html')
+
     from . import db
     db.init_app(app)
 
