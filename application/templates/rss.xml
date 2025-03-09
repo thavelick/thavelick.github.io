@@ -8,6 +8,9 @@
     <item>
       <title>{{ post.title }}</title>
       <link>https://tristanhavelick.com/{{ post.slug }}/</link>
+      {% for cat in post.categories %}
+      <category>{{ cat }}</category>
+      {% endfor %}
       <pubDate>{{ post.publish_date }}</pubDate>
       <content><![CDATA[
 {{ post.article_content | safe }}
