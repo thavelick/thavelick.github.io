@@ -13,7 +13,6 @@ from datetime import datetime
 def create_app(test_config=None):
     """Create and configure an instance of the Flask application."""
     app = Flask(__name__, instance_relative_config=True)
-    app.url_map.strict_slashes = False
     app.config.from_mapping(
         SECRET_KEY="dev",
         DATABASE=os.path.join(app.instance_path, "blog.db"),
@@ -34,31 +33,31 @@ def create_app(test_config=None):
         posts = Post.fetch_by_category("blog", 5)
         return render_template("index.html", title="Tristan Havelick", posts=posts)
 
-    @app.route("/blog")
+    @app.route("/blog/")
     def blog():
         posts = Post.fetch_by_category("blog")
         return render_template("blog.html", title="Tristan Havelick", posts=posts)
 
-    @app.route("/blogroll")
+    @app.route("/blogroll/")
     def blogroll():
         return render_template("blogroll.html", title="Tristan Havelick -- Blogroll")
 
-    @app.route("/recipes")
+    @app.route("/recipes/")
     def recipes():
         posts = Post.fetch_by_category("recipe")
         return render_template(
             "recipes.html", title="Tristan Havelick - Recipes", posts=posts
         )
 
-    @app.route("/books")
+    @app.route("/books/")
     def books():
         return render_template("books.html", title="Tristan Havelick -- Books")
 
-    @app.route("/archive")
+    @app.route("/archive/")
     def archive():
         return render_template("archive.html", title="Tristan Havelick -- Archive")
-    
-    @app.route("/games")
+
+    @app.route("/games/")
     def games():
         return render_template("games.html", title="Tristan Havelick -- Games")
 
@@ -88,10 +87,6 @@ def create_app(test_config=None):
 
     @app.route("/<path:path>")
     def catchall(path):
-        if not request.path.endswith("/"):
-            full_dir = os.path.join(app.static_folder, path)
-            if os.path.isdir(full_dir):
-                return redirect(request.path + "/", code=302)
         post = Post.fetch_by_slug(path)
         if post:
             post = dict(post)
