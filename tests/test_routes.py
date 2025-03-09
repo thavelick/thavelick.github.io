@@ -58,5 +58,26 @@ class RoutesTestCase(unittest.TestCase):
         self.assertTrue(b"Tristan Havelick - Recipes" in response.data)
         self.assertTrue(b"Test Recipe Title" in response.data)
 
+    def test_rss_route(self):
+        response = self.client.get("/rss.xml")
+        self.assertEqual(response.status_code, 200)
+        html = response.data.decode('utf-8')
+        # Check feed channel fields
+        self.assertIn("<title>TristanHavelick.com</title>", html)
+        self.assertIn("<description>Tristan Havelick's Blog</description>", html)
+        self.assertIn("<link>https://tristanhavelick.com</link>", html)
+        self.assertIn("<pubDate>", html)
+        # Check that at least one <item> exists
+        self.assertIn("<item>", html)
+        # Check blog post fields
+        self.assertIn("Test Post Title", html)
+        self.assertIn("https://tristanhavelick.com/test-post/", html)
+        # Check recipe post fields
+        self.assertIn("Test Recipe Title", html)
+        self.assertIn("https://tristanhavelick.com/test-recipe/", html)
+        # Check that the categories are included
+        self.assertIn("<category>blog</category>", html)
+        self.assertIn("<category>recipe</category>", html)
+
 if __name__ == '__main__':
     unittest.main()
