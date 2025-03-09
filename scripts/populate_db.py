@@ -66,10 +66,11 @@ def extract_title(html_content):
     match = re.search(r"<title>(.*?)</title>", html_content, re.IGNORECASE | re.DOTALL)
     if match:
         title = match.group(1).strip()
-        if title.startswith("Tristan Havelick --"):
-            title = title.replace("Tristan Havelick --", "", 1).strip()
-        elif title.startswith("Tristan Havelick :"):
-            title = title.replace("Tristan Havelick :", "", 1).strip()
+        prefixes = ["Tristan Havelick --", "Tristan Havelick :"]
+        for prefix in prefixes:
+            if title.startswith(prefix):
+                title = title[len(prefix):].strip()
+                break
         return title
     return None
 
