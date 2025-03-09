@@ -30,33 +30,33 @@ def create_app(test_config=None):
 
     @app.route("/")
     def index():
-        articles = Post.fetch_by_category("blog", 5)
+        posts = Post.fetch_by_category("blog", 5)
         return render_template(
-            "index.html", title="Tristan Havelick", articles=articles
+            "index.html", title="Tristan Havelick", posts=posts
         )
 
     @app.route("/blog")
     def blog():
-        articles = Post.fetch_by_category("blog")
-        return render_template("blog.html", title="Tristan Havelick", articles=articles)
+        posts = Post.fetch_by_category("blog")
+        return render_template("blog.html", title="Tristan Havelick", posts=posts)
 
     @app.route("/recipes")
     def recipes():
-        articles = Post.fetch_by_category("recipe")
+        posts = Post.fetch_by_category("recipe")
         return render_template(
-            "recipes.html", title="Tristan Havelick - Recipes", articles=articles
+            "recipes.html", title="Tristan Havelick - Recipes", posts=posts
         )
 
     @app.route("/rss.xml")
     def rss():
-        articles = Post.fetch_by_category("blog")
-        articles_list = []
-        for art in articles:
-            art_dict = dict(art)
-            if "markdown_content" in art_dict:
-                art_dict["article_content"] = markdown.markdown(art_dict["markdown_content"])
-            articles_list.append(art_dict)
-        return render_template("rss.xml", articles=articles_list), 200, {"Content-Type": "application/rss+xml"}
+        posts = Post.fetch_by_category("blog")
+        posts_list = []
+        for post in posts:
+            post_dict = dict(post)
+            if "markdown_content" in post_dict:
+                post_dict["article_content"] = markdown.markdown(post_dict["markdown_content"])
+            posts_list.append(post_dict)
+        return render_template("rss.xml", posts=posts_list), 200, {"Content-Type": "application/rss+xml"}
     
     @app.route("/<path:path>")
     def catchall(path):

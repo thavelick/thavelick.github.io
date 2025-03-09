@@ -7,8 +7,8 @@
 <h1>Recipes</h1>
 <p>A collection of recipes I make frequently.</p>
 <ul>
-  {% for article in articles %}
-  <li><a href="{{ article.slug }}">{{ article.title }}</a></li>
+  {% for post in posts %}
+  <li><a href="{{ post.slug }}">{{ post.title }}</a></li>
   {% endfor %}
 </ul>
 {% endblock %}
