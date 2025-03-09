@@ -3,7 +3,6 @@
 ## 1. Flask Application Setup
 - [ ] Create the `application/` directory structure:
   - [ ] Create `application/__init__.py` to initialize and configure the Flask app.
-  - [ ] Create `application/routes.py` (or use Blueprints) to define view functions for dynamic content.
   - [ ] Create `application/db.py` (if needed) for encapsulating database connection logic.
 - [ ] Set up the virtual environment and install dependencies (from `pyproject.toml`).
 
