@@ -33,6 +33,7 @@ class RoutesTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         # Check if the index page contains expected content such as "Newest Posts" or fallback text.
         self.assertTrue(b"Newest Posts" in response.data)
+        self.assertTrue(b"Test Post Title" in response.data)
 
 if __name__ == '__main__':
     unittest.main()
