@@ -62,6 +62,12 @@ def create_app(test_config=None):
         post = db_instance.execute("SELECT * FROM posts WHERE slug = ?", (path,)).fetchone()
         if post:
             post = dict(post)
+            from datetime import datetime
+            try:
+                dt = datetime.strptime(post["publish_date"], "%Y-%m-%d %H:%M:%S")
+                post["publish_date"] = dt
+            except Exception:
+                pass
             if "markdown_content" in post:
                 post["article_content"] = markdown.markdown(post["markdown_content"])
             return render_template("post.html", post=post)

@@ -9,7 +9,7 @@
     <div class="content">
       <a href="/">Tristan Havelick</a>
       <h1>{{ post.title }}</h1>
-      <small>Published on {{ post.publish_date[:10].replace('-', '/') }}</small>
+      <small>Published on {{ post.publish_date.strftime("%Y/%m/%d") }}</small>
       <div class="post-content">
         {{ post.article_content|safe }}
       </div>
