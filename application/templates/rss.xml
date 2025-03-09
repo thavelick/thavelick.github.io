@@ -1,0 +1,17 @@
+<rss version="2.0">
+  <channel>
+    <title>TristanHavelick.com</title>
+    <description>Tristan Havelick's Blog</description>
+    <link>https://tristanhavelick.com</link>
+    {% for article in articles %}
+    <item>
+      <title>{{ article.title }}</title>
+      <link>https://tristanhavelick.com/{{ article.slug }}/</link>
+      <pubDate>{{ article.publish_date }}</pubDate>
+      <content><![CDATA[
+{{ article.article_content | safe }}
+      ]]></content>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>
