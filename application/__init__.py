@@ -78,11 +78,8 @@ def create_app(test_config=None):
         post = Post.fetch_by_slug(path)
         if post:
             post = dict(post)
-            try:
-                dt = datetime.strptime(post["publish_date"], "%Y-%m-%d %H:%M:%S")
-                post["publish_date"] = dt
-            except Exception:
-                pass
+            dt = datetime.strptime(post["publish_date"], "%Y-%m-%d %H:%M:%S")
+            post["publish_date"] = dt
             if "markdown_content" in post:
                 post["article_content"] = markdown.markdown(post["markdown_content"])
             return render_template("post.html", post=post)
