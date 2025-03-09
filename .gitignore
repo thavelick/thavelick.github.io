@@ -1,5 +1,6 @@
 .env
 .aider*
 blog.db
+instance/
 context/
 **/__pycache__/
