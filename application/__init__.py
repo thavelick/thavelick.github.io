@@ -57,12 +57,12 @@ def create_app(test_config=None):
                 post_dict["article_content"] = markdown.markdown(
                     post_dict["markdown_content"]
                 )
-            cat_rows = db.get_db().execute(
+            category_rows = db.get_db().execute(
                 "SELECT c.name FROM post_categories pc JOIN categories c ON c.id = pc.category_id WHERE pc.post_id = ?",
                 (post_dict["id"],)
             ).fetchall()
-            if cat_rows:
-                post_dict["categories"] = [row["name"] for row in cat_rows]
+            if category_rows:
+                post_dict["categories"] = [row["name"] for row in category_rows]
             else:
                 post_dict["categories"] = []
             posts_list.append(post_dict)
