@@ -7,6 +7,7 @@ import click
 
 from . import db
 import markdown
+from datetime import datetime
 
 
 def create_app(test_config=None):
@@ -62,7 +63,6 @@ def create_app(test_config=None):
         post = db_instance.execute("SELECT * FROM posts WHERE slug = ?", (path,)).fetchone()
         if post:
             post = dict(post)
-            from datetime import datetime
             try:
                 dt = datetime.strptime(post["publish_date"], "%Y-%m-%d %H:%M:%S")
                 post["publish_date"] = dt
