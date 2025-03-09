@@ -47,4 +47,11 @@ uv run flask --app application run --debug
 
 Deployment happens automatically with GitHub Actions. Simply push your changes to the repository and the deployment pipeline will handle updates.
 
+### Running Tests
+
+To run the tests, execute:
+```bash
+uv run python -m unittest
+```
+
 Enjoy developing and testing your site locally!
