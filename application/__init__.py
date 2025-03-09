@@ -36,6 +36,7 @@ def create_app(test_config=None):
             return app.send_static_file(path)
         except NotFound as e:
             new_path = os.path.join(path, "index.html")
+            assert app.static_folder is not None, "static_folder must be set"
             full_path = os.path.join(app.static_folder, new_path)
             if os.path.exists(full_path):
                 return app.send_static_file(new_path)
