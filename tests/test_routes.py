@@ -24,7 +24,7 @@ class RoutesTestCase(unittest.TestCase):
             )
             post_row = con.execute("SELECT id FROM posts WHERE slug = ?", ("test-post",)).fetchone()
             post_id = post_row["id"]
-            con.execute("INSERT INTO post_categories (post_id, category_id) VALUES (?, ?)", (post_id, cat_id))
+            con.execute("INSERT INTO post_categories (post_id, category_id) VALUES (?, ?)", (post_id, category_id))
             con.commit()
         self.client = self.app.test_client()
 
