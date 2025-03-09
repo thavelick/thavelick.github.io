@@ -59,7 +59,7 @@ def create_app(test_config=None):
         return (
             render_template("rss.xml", posts=posts_list),
             200,
-            {"Content-Type": "application/rss+xml"},
+            {"Content-Type": "application/xml"},
         )
 
     @app.route("/<path:path>")
