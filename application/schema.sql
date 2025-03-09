@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS posts (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    id INTEGER PRIMARY KEY,
                     slug TEXT NOT NULL,
                     title TEXT,
                     content TEXT NOT NULL,
@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS posts (
                     publish_date DATETIME
                 );
 CREATE TABLE IF NOT EXISTS categories (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    id INTEGER PRIMARY KEY,
                     name TEXT NOT NULL UNIQUE
                 );
 CREATE TABLE IF NOT EXISTS post_categories (
