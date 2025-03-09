@@ -15,8 +15,8 @@ class RoutesTestCase(unittest.TestCase):
             con.execute("DELETE FROM categories")
             # Insert a test category 'blog'
             con.execute("INSERT INTO categories (name) VALUES (?)", ("blog",))
-            cat_row = con.execute("SELECT id FROM categories WHERE name = ?", ("blog",)).fetchone()
-            cat_id = cat_row["id"]
+            category_row = con.execute("SELECT id FROM categories WHERE name = ?", ("blog",)).fetchone()
+            category_id = category_row["id"]
             # Insert a test post with category 'blog'
             con.execute(
                 "INSERT INTO posts (slug, title, markdown_content, publish_date) VALUES (?, ?, ?, ?)",
