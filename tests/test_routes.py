@@ -25,6 +25,18 @@ class RoutesTestCase(unittest.TestCase):
             post_row = con.execute("SELECT id FROM posts WHERE slug = ?", ("test-post",)).fetchone()
             post_id = post_row["id"]
             con.execute("INSERT INTO post_categories (post_id, category_id) VALUES (?, ?)", (post_id, category_id))
+            # Insert a test category 'recipe'
+            con.execute("INSERT INTO categories (name) VALUES (?)", ("recipe",))
+            recipe_category_row = con.execute("SELECT id FROM categories WHERE name = ?", ("recipe",)).fetchone()
+            recipe_category_id = recipe_category_row["id"]
+            # Insert a test post with category 'recipe'
+            con.execute(
+                "INSERT INTO posts (slug, title, markdown_content, publish_date) VALUES (?, ?, ?, ?)",
+                ("test-recipe", "Test Recipe Title", "Recipe **content**", "2025-03-09 13:00:00")
+            )
+            recipe_post_row = con.execute("SELECT id FROM posts WHERE slug = ?", ("test-recipe",)).fetchone()
+            recipe_post_id = recipe_post_row["id"]
+            con.execute("INSERT INTO post_categories (post_id, category_id) VALUES (?, ?)", (recipe_post_id, recipe_category_id))
             con.commit()
         self.client = self.app.test_client()
 
