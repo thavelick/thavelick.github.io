@@ -57,7 +57,7 @@ def create_app(test_config=None):
         ).fetchall()
         return render_template("blog.html", title="Tristan Havelick", articles=articles)
 
-    @app.route("/recipes")
+    @app.route("/recipes/")
     def recipes():
         db_instance = db.get_db()
         articles = db_instance.execute(
