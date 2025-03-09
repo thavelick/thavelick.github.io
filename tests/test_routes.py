@@ -32,7 +32,7 @@ class RoutesTestCase(unittest.TestCase):
             # Insert a test post with category 'recipe'
             con.execute(
                 "INSERT INTO posts (slug, title, markdown_content, publish_date) VALUES (?, ?, ?, ?)",
-                ("recipes/test-recipe/", "Test Recipe Title", "Recipe **content**", "2025-03-09 13:00:00")
+                ("recipes/test-recipe", "Test Recipe Title", "Recipe **content**", "2025-03-09 13:00:00")
             )
             recipe_post_row = con.execute("SELECT id FROM posts WHERE slug = ?", ("recipes/test-recipe/",)).fetchone()
             recipe_post_id = recipe_post_row["id"]
