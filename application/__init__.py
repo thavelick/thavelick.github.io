@@ -37,7 +37,11 @@ def create_app(test_config=None):
     def blog():
         posts = Post.fetch_by_category("blog")
         return render_template("blog.html", title="Tristan Havelick", posts=posts)
-
+    
+    @app.route("/blogroll")
+    def blogroll():
+        return render_template("blogroll.html", title="Tristan Havelick -- Blogroll")
+    
     @app.route("/recipes")
     def recipes():
         posts = Post.fetch_by_category("recipe")
