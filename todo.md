@@ -20,9 +20,9 @@
   - [x] Route `/blog/<slug>` to display blog posts (query `posts` table).
   - [x] Route `/recipes/<slug>` to display recipes (query `posts` table).
   - [x] Homepage route `/` to combine dynamic and semi-static content.
-- [ ] Integrate error handling for missing content (e.g., return 404 for non-existent posts) and log errors appropriately.
-- [ ] dry up duplicate queries
-- [ ] Make the RSS feed dynamic
+- [x] Integrate error handling for missing content (e.g., return 404 for non-existent posts) and log errors appropriately.
+- [x] dry up duplicate queries
+ [ ] Make the RSS feed dynamic
 
 ## 4. Legacy & Archive Content
 - [x] Plan for handling legacy static content:

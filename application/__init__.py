@@ -3,7 +3,6 @@
 import os
 from flask import Flask, render_template, request, redirect
 from werkzeug.exceptions import NotFound
-import click
 
 from . import db
 from .models import Post
@@ -32,7 +31,9 @@ def create_app(test_config=None):
     @app.route("/")
     def index():
         articles = Post.fetch_by_category("blog", 5)
-        return render_template("index.html", title="Tristan Havelick", articles=articles)
+        return render_template(
+            "index.html", title="Tristan Havelick", articles=articles
+        )
 
     @app.route("/blog")
     def blog():
@@ -42,7 +43,9 @@ def create_app(test_config=None):
     @app.route("/recipes")
     def recipes():
         articles = Post.fetch_by_category("recipe")
-        return render_template("recipes.html", title="Tristan Havelick - Recipes", articles=articles)
+        return render_template(
+            "recipes.html", title="Tristan Havelick - Recipes", articles=articles
+        )
 
     @app.route("/<path:path>")
     def static_proxy(path):
