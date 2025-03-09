@@ -89,5 +89,10 @@ class RoutesTestCase(unittest.TestCase):
         self.assertEqual(item1.find('link').text, "https://tristanhavelick.com/test-post/")
         self.assertEqual([cat.text for cat in item1.find_all('category')], ["blog"])
 
+    def test_catchall_route(self):
+        response = self.client.get("/test-post")
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(b"Test Post Title" in response.data)
+
 if __name__ == '__main__':
     unittest.main()
