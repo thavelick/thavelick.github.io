@@ -1,4 +1,4 @@
-# Tristan Havelick Blog
+# Tristan Havelick's Blog
 
 This project is a Flask web application. The repository is hosted at [https://github.com/thavelick/thavelick.github.io/tree/main](https://github.com/thavelick/thavelick.github.io/tree/main).
 
@@ -29,7 +29,7 @@ To create an empty database, run:
 uv run flask --app application init-db
 ```
 
-To populate (or rebuild) the database with your entries, run:
+To populate (or rebuild) the database from html in public_html run:
 
 ```bash
 uv run scripts/populate_db.py --rebuild-db

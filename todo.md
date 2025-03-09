@@ -22,7 +22,7 @@
   - [x] Homepage route `/` to combine dynamic and semi-static content.
 - [x] Integrate error handling for missing content (e.g., return 404 for non-existent posts) and log errors appropriately.
 - [x] dry up duplicate queries
- [ ] Make the RSS feed dynamic
+ [x] Make the RSS feed dynamic
 
 ## 4. Legacy & Archive Content
 - [x] Plan for handling legacy static content:
@@ -38,15 +38,14 @@
   - [ ] Error handling paths.
 
 ## 6. Deployment & Documentation
-- [ ] Update project deployment scripts/configuration to run the Flask app rather than serving static files.
 - [ ] Update documentation:
-  - [ ] README.md with instructions for local development and deployment.
+  - [x] README.md with instructions for local development and deployment.
   - [ ] spec.md with the latest architecture and migration plan.
 - [ ] Confirm consistent URL structure and SEO considerations across the new dynamic and static contents.
 
 ## 7. Miscellaneous Tasks
 - [x] Verify that the html-to-markdown conversion (with ATX heading style) works as expected.
-- [ ] Review any custom logic in `scripts/populate_db.py` for compatibility with the new structure.
-  - [ ] Remove extraneous html columns
+- [x] Review any custom logic in `scripts/populate_db.py` for compatibility with the new structure.
+  - [x] Remove extraneous html columns
 - [ ] Conduct a final code review
 - [ ] Write a blog post about this process
