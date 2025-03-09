@@ -200,7 +200,7 @@ def main():
         help="Drop and recreate the database structure before processing entries.",
     )
     args = parser.parse_args()
-    db_path = "application/instance/blog.db"
+    db_path = "instance/blog.db"
     if args.rebuild_db:
         if os.path.exists(db_path):
             os.remove(db_path)
