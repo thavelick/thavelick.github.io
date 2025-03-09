@@ -2,8 +2,6 @@ CREATE TABLE IF NOT EXISTS posts (
                     id INTEGER PRIMARY KEY,
                     slug TEXT NOT NULL,
                     title TEXT,
-                    content TEXT NOT NULL,
-                    article_content TEXT,
                     markdown_content TEXT,
                     publish_date DATETIME
                 );

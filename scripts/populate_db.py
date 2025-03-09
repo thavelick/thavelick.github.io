@@ -168,8 +168,8 @@ def process_entries(root_dir, conn):
                 pub_date = publish_dates.get(rel_path, None)
                 slug = slugify(rel_path)
                 c.execute(
-                    "INSERT INTO posts (slug, title, content, article_content, markdown_content, publish_date) VALUES (?, ?, ?, ?, ?, ?)",
-                    (slug, title, content, article_content, markdown_content, pub_date),
+                    "INSERT INTO posts (slug, title, markdown_content, publish_date) VALUES (?, ?, ?, ?)",
+                    (slug, title, markdown_content, pub_date),
                 )
                 post_id = c.lastrowid
                 if slug.startswith("recipes"):
