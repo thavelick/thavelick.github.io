@@ -58,8 +58,12 @@ def create_app(test_config=None):
                     post_dict["markdown_content"]
                 )
             posts_list.append(post_dict)
+        if posts_list:
+            feed_pub_date = posts_list[0]["publish_date"]
+        else:
+            feed_pub_date = ""
         return (
-            render_template("rss.xml", posts=posts_list),
+            render_template("rss.xml", posts=posts_list, feed_pub_date=feed_pub_date),
             200,
             {"Content-Type": "application/xml"},
         )

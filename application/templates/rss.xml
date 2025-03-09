@@ -3,6 +3,7 @@
     <title>TristanHavelick.com</title>
     <description>Tristan Havelick's Blog</description>
     <link>https://tristanhavelick.com</link>
+    <pubDate>{{ feed_pub_date }}</pubDate>
     {% for post in posts %}
     <item>
       <title>{{ post.title }}</title>
