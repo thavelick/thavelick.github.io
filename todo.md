@@ -2,9 +2,9 @@
 
 ## 1. Flask Application Setup
 - [ ] Create the `application/` directory structure:
-  - [ ] Create `application/__init__.py` to initialize and configure the Flask app.
+  - [x] Create `application/__init__.py` to initialize and configure the Flask app.
   - [ ] Create `application/db.py` (if needed) for encapsulating database connection logic.
-- [ ] Set up the virtual environment and install dependencies (from `pyproject.toml`).
+- [x] Set up the virtual environment and install dependencies (from `pyproject.toml`).
 
 ## 2. Template & Static Asset Migration
 - [ ] Convert static HTML files into Jinja2 templates:
