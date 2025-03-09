@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Tristan Havelick - Recipes</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="content">
+      <a href="/">Tristan Havelick</a>
+      <h1>Recipes</h1>
+      <p>A collection of recipes I make frequently.</p>
+      <ul>
+        {% for article in articles %}
+        <li><a href="{{ article.slug }}">{{ article.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>

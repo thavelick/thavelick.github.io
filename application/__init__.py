@@ -71,7 +71,7 @@ def create_app(test_config=None):
             ("recipe",),
         ).fetchall()
         return render_template(
-            "blog.html", title="Tristan Havelick - Recipes", articles=articles
+            "recipes.html", title="Tristan Havelick - Recipes", articles=articles
         )
 
     @app.route("/<path:path>")
