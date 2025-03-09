@@ -191,7 +191,7 @@ def main():
     parser.add_argument(
         "root_dir",
         nargs="?",
-        default=os.getcwd(),
+        default="public_html",
         help="Root directory of the blog content.",
     )
     parser.add_argument(
