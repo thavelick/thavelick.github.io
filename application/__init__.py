@@ -69,7 +69,7 @@ def create_app(test_config=None):
             "ORDER BY p.publish_date DESC",
             ("recipe",)
         ).fetchall()
-        return render_template("blog.html", title="Tristan Havelick - Recipe", articles=articles)
+        return render_template("blog.html", title="Tristan Havelick - Recipes", articles=articles)
 
     @app.route("/<path:path>")
     def static_proxy(path):
