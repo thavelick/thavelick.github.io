@@ -1,7 +1,10 @@
+"""Application package."""
 import os
 from flask import Flask
+from werkzeug.exceptions import NotFound
 
 def create_app(test_config=None):
+    """Create and configure an instance of the Flask application."""
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev',
@@ -25,17 +28,16 @@ def create_app(test_config=None):
     @app.route('/', defaults={'path': 'index.html'})
     @app.route('/<path:path>')
     def static_proxy(path):
-        from werkzeug.exceptions import NotFound
-        import os
         try:
             return app.send_static_file(path)
-        except NotFound:
+        except NotFound as e:
             new_path = os.path.join(path, 'index.html')
             full_path = os.path.join(app.static_folder, new_path)
             if os.path.exists(full_path):
                 return app.send_static_file(new_path)
-            raise NotFound()
+            raise NotFound() from e
 
+    # pylint: disable=import-outside-toplevel
     from . import db
     db.init_app(app)
 
