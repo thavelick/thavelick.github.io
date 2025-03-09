@@ -104,6 +104,10 @@ def create_app(test_config=None):
                 return app.send_static_file(new_path)
             raise NotFound() from e
 
+    @app.errorhandler(404)
+    def page_not_found(e):
+        return render_template("404.html"), 404
+
     db.init_app(app)
 
     return app
