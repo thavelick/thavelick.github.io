@@ -50,7 +50,13 @@ def create_app(test_config=None):
     @app.route("/rss.xml")
     def rss():
         articles = Post.fetch_by_category("blog")
-        return render_template("rss.xml", articles=articles), 200, {"Content-Type": "application/rss+xml"}
+        articles_list = []
+        for art in articles:
+            art_dict = dict(art)
+            if "markdown_content" in art_dict:
+                art_dict["article_content"] = markdown.markdown(art_dict["markdown_content"])
+            articles_list.append(art_dict)
+        return render_template("rss.xml", articles=articles_list), 200, {"Content-Type": "application/rss+xml"}
     
     @app.route("/<path:path>")
     def catchall(path):
