@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/styles.css">
-    <title>{{ post.title }}</title>
-  </head>
-  <body>
-    <div class="content">
-      <a href="/">Tristan Havelick</a>
-      <h1>{{ post.title }}</h1>
-      <small>Published on {{ post.publish_date.strftime("%Y/%m/%d") }}</small>
-      <div class="post-content">
-        {{ post.article_content|safe }}
-      </div>
-    </div>
-  </body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<a href="/">Tristan Havelick</a>
+<h1>{{ post.title }}</h1>
+<small>Published on {{ post.publish_date.strftime("%Y/%m/%d") }}</small>
+<div class="post-content">
+  {{ post.article_content|safe }}
+</div>
+{% endblock %}
