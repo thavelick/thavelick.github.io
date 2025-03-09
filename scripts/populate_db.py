@@ -212,7 +212,7 @@ def main():
     conn.commit()
     process_entries(args.root_dir, conn)
     conn.close()
-    subprocess.run(["sqlite3", "application/instance/blog.db", ".dump"], stdout=open("blog.sql", "w"))
+    subprocess.run(["sqlite3", db_path, ".dump"], stdout=open("blog.sql", "w"))
 
 
 if __name__ == "__main__":
