@@ -25,3 +25,8 @@ class Post:
         return db_instance.execute(
             "SELECT * FROM posts WHERE slug = ?", (slug,)
         ).fetchone()
+
+    @classmethod
+    def fetch_all(cls):
+        db_instance = db.get_db()
+        return db_instance.execute("SELECT * FROM posts ORDER BY publish_date DESC").fetchall()

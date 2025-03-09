@@ -47,7 +47,7 @@ def create_app(test_config=None):
 
     @app.route("/rss.xml")
     def rss():
-        posts = Post.fetch_by_category("blog")
+        posts = Post.fetch_all()
         posts_list = []
         for post in posts:
             post_dict = dict(post)
