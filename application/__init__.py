@@ -57,6 +57,10 @@ def create_app(test_config=None):
     @app.route("/archive")
     def archive():
         return render_template("archive.html", title="Tristan Havelick -- Archive")
+    
+    @app.route("/games")
+    def games():
+        return render_template("games.html", title="Tristan Havelick -- Games")
 
     @app.route("/rss.xml")
     def rss():
