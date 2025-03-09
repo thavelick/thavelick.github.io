@@ -49,9 +49,9 @@ This specification outlines the migration of a predominantly static website (ser
 
 ## Implementation Roadmap
 1. **Set Up the Flask Application:**
-   - Create the `app/` directory with subfolders for templates and static files.
-   - Initialize a basic Flask app in `app/__init__.py`.
-   - Define routing functions in `app/routes.py` to handle dynamic requests (e.g., blog posts, recipes).
+   - Create the `application/` directory with subfolders for templates and static files.
+   - Initialize a basic Flask app in `application/__init__.py`.
+   - Define routing functions in `application/routes.py` to handle dynamic requests (e.g., blog posts, recipes).
 
 2. **Migrate Static Files & Templates:**
    - Convert key static HTML pages (e.g., `public_html/index.html`, `public_html/blog/index.html`, `public_html/recipes/index.html`) into Jinja2 templates inside `app/templates/`.
