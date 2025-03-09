@@ -1,19 +1,19 @@
 # TODO Checklist for Flask Migration Project
 
 ## 1. Flask Application Setup
-- [ ] Create the `app/` directory structure:
-  - [ ] Create `app/__init__.py` to initialize and configure the Flask app.
-  - [ ] Create `app/routes.py` (or use Blueprints) to define view functions for dynamic content.
-  - [ ] Create `app/db.py` (if needed) for encapsulating database connection logic.
+- [ ] Create the `application/` directory structure:
+  - [ ] Create `application/__init__.py` to initialize and configure the Flask app.
+  - [ ] Create `application/routes.py` (or use Blueprints) to define view functions for dynamic content.
+  - [ ] Create `application/db.py` (if needed) for encapsulating database connection logic.
 - [ ] Set up the virtual environment and install dependencies (from `pyproject.toml`).
 
 ## 2. Template & Static Asset Migration
 - [ ] Convert static HTML files into Jinja2 templates:
-  - [ ] Migrate `public_html/index.html` into `app/templates/index.html` (integrate with a base layout).
-  - [ ] Migrate `public_html/blog/index.html` into `app/templates/blog/index.html`.
-  - [ ] Migrate `public_html/recipes/index.html` into `app/templates/recipes/index.html`.
-- [ ] Create a common base template (`app/templates/base.html`) for consistent header, footer, and navigation.
-- [ ] Move CSS, JavaScript, and image files from `public_html` into `app/static/`.
+  - [ ] Migrate `public_html/index.html` into `application/templates/index.html` (integrate with a base layout).
+  - [ ] Migrate `public_html/blog/index.html` into `application/templates/blog/index.html`.
+  - [ ] Migrate `public_html/recipes/index.html` into `application/templates/recipes/index.html`.
+- [ ] Create a common base template (`application/templates/base.html`) for consistent header, footer, and navigation.
+- [ ] Move CSS, JavaScript, and image files from `public_html` into `application/static/`.
 
 ## 3. Database Integration & Dynamic Content
 - [ ] Review and test `scripts/populate_db.py` to ensure `blog.db` is correctly populated.

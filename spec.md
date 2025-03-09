@@ -17,12 +17,12 @@ This specification outlines the migration of a predominantly static website (ser
 
 ## Architecture & Directory Structure
 - **Root Directory:** Contains key files such as `pyproject.toml`, `blog.db`, `spec.md`, and possibly legacy static content.
-- **Flask Application Folder (`app/`):**
-  - `app/__init__.py`: Initializes the Flask app and database connection.
-  - `app/routes.py` (or organized with Blueprints): Contains view functions for dynamic content.
-  - `app/db.py` (optional): Encapsulates database connection logic (using sqlite3 or Flask-SQLAlchemy).
-  - `app/templates/`: Jinja2 templates (including a common `base.html` layout).
-  - `app/static/`: Contains static assets (CSS, JavaScript, images).
+- **Flask Application Folder (`application/`):**
+  - `application/__init__.py`: Initializes the Flask app and database connection.
+  - `application/routes.py` (or organized with Blueprints): Contains view functions for dynamic content.
+  - `application/db.py` (optional): Encapsulates database connection logic (using sqlite3 or Flask-SQLAlchemy).
+  - `application/templates/`: Jinja2 templates (including a common `base.html` layout).
+  - `application/static/`: Contains static assets (CSS, JavaScript, images).
 - **Legacy Static Content:**
   - Files in `/archive` remain fully static and are served directly.
   - Other static files (if necessary) can be integrated or referenced in Flask templates.
