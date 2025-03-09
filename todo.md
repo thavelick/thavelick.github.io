@@ -32,7 +32,6 @@
 
 ## 4.5 Set up flask to static site generation
 ## 5. Error Handling, Logging & Testing
-- [ ] Implement Flask error handlers (e.g., 404 and 500) with user-friendly messages.
 - [ ] Write unit/integration tests for:
   - [ ] Database queries and data retrieval.
   - [ ] Template rendering and route responses.

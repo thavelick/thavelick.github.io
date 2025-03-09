@@ -31,9 +31,7 @@ def create_app(test_config=None):
     @app.route("/")
     def index():
         posts = Post.fetch_by_category("blog", 5)
-        return render_template(
-            "index.html", title="Tristan Havelick", posts=posts
-        )
+        return render_template("index.html", title="Tristan Havelick", posts=posts)
 
     @app.route("/blog")
     def blog():
@@ -54,10 +52,16 @@ def create_app(test_config=None):
         for post in posts:
             post_dict = dict(post)
             if "markdown_content" in post_dict:
-                post_dict["article_content"] = markdown.markdown(post_dict["markdown_content"])
+                post_dict["article_content"] = markdown.markdown(
+                    post_dict["markdown_content"]
+                )
             posts_list.append(post_dict)
-        return render_template("rss.xml", posts=posts_list), 200, {"Content-Type": "application/rss+xml"}
-    
+        return (
+            render_template("rss.xml", posts=posts_list),
+            200,
+            {"Content-Type": "application/rss+xml"},
+        )
+
     @app.route("/<path:path>")
     def catchall(path):
         if not request.path.endswith("/"):
