@@ -7,6 +7,7 @@ import urllib.parse
 from bs4 import BeautifulSoup
 from html_to_markdown import convert_to_markdown
 import email.utils
+import subprocess
 
 
 def convert_pub_date(date_str):
@@ -209,7 +210,8 @@ def main():
     conn.commit()
     process_entries(args.root_dir, conn)
     conn.close()
-
-
+    subprocess.run(["sqlite3", "blog.db", ".dump"], stdout=open("blog.sql", "w"))
+    
+    
 if __name__ == "__main__":
     main()
