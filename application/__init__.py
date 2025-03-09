@@ -1,7 +1,7 @@
 """Flask website for TristanHavelick.com."""
 
 import os
-from flask import Flask
+from flask import Flask, render_template
 from werkzeug.exceptions import NotFound
 import click
 
@@ -30,7 +30,10 @@ def create_app(test_config=None):
     def hello():
         return "Hello, World!"
 
-    @app.route("/", defaults={"path": "index.html"})
+    @app.route("/")
+    def index():
+        return render_template("index.html", title="Tristan Havelick")
+
     @app.route("/<path:path>")
     def static_proxy(path):
         try:
