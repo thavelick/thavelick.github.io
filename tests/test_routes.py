@@ -73,28 +73,21 @@ class RoutesTestCase(unittest.TestCase):
         self.assertEqual(channel.find('link').text, "https://tristanhavelick.com")
         self.assertIsNotNone(channel.find('pubDate'))
         
-        # Validate items
+        # Validate items in known order (ordered by publish_date descending)
         items = soup.find_all('item')
-        self.assertGreaterEqual(len(items), 2)
+        self.assertEqual(len(items), 2)
         
-        found_blog = False
-        found_recipe = False
+        # First item should be the recipe post (published at 13:00:00)
+        item0 = items[0]
+        self.assertEqual(item0.find('title').text, "Test Recipe Title")
+        self.assertEqual(item0.find('link').text, "https://tristanhavelick.com/test-recipe/")
+        self.assertEqual([cat.text for cat in item0.find_all('category')], ["recipe"])
         
-        for item in items:
-            link = item.find('link').text
-            title = item.find('title').text
-            categories = [cat.text for cat in item.find_all('category')]
-            if "test-post" in link:
-                found_blog = True
-                self.assertEqual(title, "Test Post Title")
-                self.assertIn("blog", categories)
-            elif "test-recipe" in link:
-                found_recipe = True
-                self.assertEqual(title, "Test Recipe Title")
-                self.assertIn("recipe", categories)
-        
-        self.assertTrue(found_blog)
-        self.assertTrue(found_recipe)
+        # Second item should be the blog post (published at 12:00:00)
+        item1 = items[1]
+        self.assertEqual(item1.find('title').text, "Test Post Title")
+        self.assertEqual(item1.find('link').text, "https://tristanhavelick.com/test-post/")
+        self.assertEqual([cat.text for cat in item1.find_all('category')], ["blog"])
 
 if __name__ == '__main__':
     unittest.main()
