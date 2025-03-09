@@ -32,7 +32,7 @@ class RoutesTestCase(unittest.TestCase):
             # Insert a test post with category 'recipe'
             con.execute(
                 "INSERT INTO posts (slug, title, markdown_content, publish_date) VALUES (?, ?, ?, ?)",
-                ("test-recipe", "Test Recipe Title", "Recipe **content**", "2025-03-09 13:00:00")
+                ("recipes/test-recipe/", "Test Recipe Title", "Recipe **content**", "2025-03-09 13:00:00")
             )
             recipe_post_row = con.execute("SELECT id FROM posts WHERE slug = ?", ("test-recipe",)).fetchone()
             recipe_post_id = recipe_post_row["id"]
@@ -80,7 +80,7 @@ class RoutesTestCase(unittest.TestCase):
         # First item should be the recipe post (published at 13:00:00)
         item0 = items[0]
         self.assertEqual(item0.find('title').text, "Test Recipe Title")
-        self.assertEqual(item0.find('link').text, "https://tristanhavelick.com/test-recipe/")
+        self.assertEqual(item0.find('link').text, "https://tristanhavelick.com/recipes/test-recipe/")
         self.assertEqual([cat.text for cat in item0.find_all('category')], ["recipe"])
         
         # Second item should be the blog post (published at 12:00:00)
