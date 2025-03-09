@@ -7,7 +7,6 @@ CREATE TABLE IF NOT EXISTS posts (
                     markdown_content TEXT,
                     publish_date DATETIME
                 );
-CREATE TABLE IF NOT EXISTS sqlite_sequence(name,seq);
 CREATE TABLE IF NOT EXISTS categories (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     name TEXT NOT NULL UNIQUE
