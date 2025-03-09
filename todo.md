@@ -31,11 +31,13 @@
 - [x] Ensure links between new dynamic routes and legacy static pages remain consistent.
 
 ## 4.5 Set up flask to static site generation
+- [ ] Use flask freeze to generate public_html
+
 ## 5. Error Handling, Logging & Testing
-- [ ] Write unit/integration tests for:
-  - [ ] Database queries and data retrieval.
-  - [ ] Template rendering and route responses.
-  - [ ] Error handling paths.
+- [x] Write unit/integration tests for:
+  - [x] Database queries and data retrieval.
+  - [x] Template rendering and route responses.
+  - [x] Error handling paths.
 
 ## 6. Deployment & Documentation
 - [ ] Update documentation:
