@@ -40,5 +40,10 @@ class RoutesTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTrue(b"Test Post Title" in response.data)
 
+    def test_recipes_route(self):
+        response = self.client.get("/recipes")
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(b"Tristan Havelick - Recipes" in response.data)
+
 if __name__ == '__main__':
     unittest.main()
