@@ -48,7 +48,7 @@ def create_app(test_config=None):
         )
 
     @app.route("/<path:path>")
-    def static_proxy(path):
+    def catchall(path):
         if not request.path.endswith("/"):
             full_dir = os.path.join(app.static_folder, path)
             if os.path.isdir(full_dir):
