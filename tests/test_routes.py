@@ -138,7 +138,9 @@ class RoutesTestCase(unittest.TestCase):
         self.assertIn(b"Games", response.data)
 
     def test_catchall_static_automatic_index(self):
-        # ai! fill in this test
+        response = self.client.get("/games/")
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b"Games", response.data)
 
     def test_catchall_nonexistent(self):
         response = self.client.get("/nonexistentpage")
