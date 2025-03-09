@@ -51,6 +51,8 @@ def create_app(test_config=None):
         posts_list = []
         for post in posts:
             post_dict = dict(post)
+            dt = datetime.strptime(post_dict["publish_date"], "%Y-%m-%d %H:%M:%S")
+            post_dict["publish_date"] = dt.strftime("%a, %d %b %Y %H:%M:%S")
             if "markdown_content" in post_dict:
                 post_dict["article_content"] = markdown.markdown(
                     post_dict["markdown_content"]
