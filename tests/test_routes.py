@@ -1,5 +1,6 @@
 import unittest
 from application import create_app
+from application import db
 
 
 class RoutesTestCase(unittest.TestCase):
@@ -14,18 +15,16 @@ class RoutesTestCase(unittest.TestCase):
             }
         )
         with self.app.app_context():
-            from application import db
 
             db.init_db()
             con = db.get_db()
-            with open("tests/data.sql", "r") as f:
+            with open("tests/data.sql", "r", encoding="utf-8") as f:
                 con.executescript(f.read())
         self.client = self.app.test_client()
 
     def test_index_route(self):
         response = self.client.get("/")
         self.assertEqual(response.status_code, 200)
-        # Check if the index page contains expected content such as "Newest Posts" or fallback text.
         self.assertTrue(b"Newest Posts" in response.data)
         self.assertTrue(b"Test Post Title" in response.data)
 
