@@ -1,3 +1,4 @@
 .env
 .aider*
 blog.db
+context/
