@@ -3,6 +3,7 @@
 import os
 from flask import Flask
 from werkzeug.exceptions import NotFound
+import click
 
 from . import db
 
@@ -43,5 +44,12 @@ def create_app(test_config=None):
             raise NotFound() from e
 
     db.init_app(app)
+
+    @app.cli.command("init-db")
+    def init_db_command():
+        """Clear the existing data and create new tables."""
+        from .db import init_db
+        init_db()
+        click.echo("Initialized the database.")
 
     return app
