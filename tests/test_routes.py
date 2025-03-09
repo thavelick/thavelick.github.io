@@ -94,5 +94,19 @@ class RoutesTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTrue(b"Test Post Title" in response.data)
 
+    def test_catchall_redirect(self):
+        response = self.client.get("/404")
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.location, "http://localhost/404/")
+
+    def test_catchall_static(self):
+        response = self.client.get("/404/index.html")
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b"404", response.data)
+
+    def test_catchall_nonexistent(self):
+        response = self.client.get("/nonexistentpage")
+        self.assertEqual(response.status_code, 404)
+
 if __name__ == '__main__':
     unittest.main()
