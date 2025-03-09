@@ -47,6 +47,11 @@ def create_app(test_config=None):
             "recipes.html", title="Tristan Havelick - Recipes", articles=articles
         )
 
+    @app.route("/rss.xml")
+    def rss():
+        articles = Post.fetch_by_category("blog")
+        return render_template("rss.xml", articles=articles), 200, {"Content-Type": "application/rss+xml"}
+    
     @app.route("/<path:path>")
     def catchall(path):
         if not request.path.endswith("/"):
