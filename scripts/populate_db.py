@@ -200,7 +200,7 @@ def main():
         help="Drop and recreate the database structure before processing entries.",
     )
     args = parser.parse_args()
-    db_path = "blog.db"
+    db_path = "application/instance/blog.db"
     if args.rebuild_db:
         if os.path.exists(db_path):
             os.remove(db_path)
@@ -212,7 +212,7 @@ def main():
     conn.commit()
     process_entries(args.root_dir, conn)
     conn.close()
-    subprocess.run(["sqlite3", "blog.db", ".dump"], stdout=open("blog.sql", "w"))
+    subprocess.run(["sqlite3", "application/instance/blog.db", ".dump"], stdout=open("blog.sql", "w"))
 
 
 if __name__ == "__main__":
