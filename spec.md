@@ -81,7 +81,7 @@ This specification outlines the migration of a predominantly static website (ser
 - **Deprecation of Legacy Code:**
   - Plan for phasing out unused static content from `public_html` that has been migrated to dynamic routes.
 - **Developer Workflow:**
-  - Provide clear instructions for setting up the development environment (e.g., creating virtual environments, running `uv run app`, etc.).
+  - Provide clear instructions for setting up the development environment (e.g., creating virtual environments, running `uv run application`, etc.).
 - **Future Enhancements:**
   - Consider adding Flask extensions for security, caching, and potentially an ORM (if not using raw SQLite).
   - Explore automated testing strategies for both the database interactions and dynamic page rendering.
