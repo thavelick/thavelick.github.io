@@ -1,4 +1,4 @@
-CREATE TABLE posts (
+CREATE TABLE IF NOT EXISTS posts (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     slug TEXT NOT NULL,
                     title TEXT,
@@ -7,12 +7,12 @@ CREATE TABLE posts (
                     markdown_content TEXT,
                     publish_date DATETIME
                 );
-CREATE TABLE sqlite_sequence(name,seq);
-CREATE TABLE categories (
+CREATE TABLE IF NOT EXISTS sqlite_sequence(name,seq);
+CREATE TABLE IF NOT EXISTS categories (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     name TEXT NOT NULL UNIQUE
                 );
-CREATE TABLE post_categories (
+CREATE TABLE IF NOT EXISTS post_categories (
                     post_id INTEGER,
                     category_id INTEGER,
                     PRIMARY KEY (post_id, category_id),
