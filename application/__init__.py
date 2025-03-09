@@ -28,7 +28,6 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-
     @app.route("/")
     def index():
         db_instance = db.get_db()
@@ -39,9 +38,11 @@ def create_app(test_config=None):
             "JOIN categories c ON c.id = pc.category_id "
             "WHERE c.name = ? "
             "ORDER BY p.publish_date DESC LIMIT 5",
-            ("blog",)
+            ("blog",),
         ).fetchall()
-        return render_template("index.html", title="Tristan Havelick", articles=articles)
+        return render_template(
+            "index.html", title="Tristan Havelick", articles=articles
+        )
 
     @app.route("/blog")
     def blog():
@@ -53,11 +54,11 @@ def create_app(test_config=None):
             "JOIN categories c ON c.id = pc.category_id "
             "WHERE c.name = ? "
             "ORDER BY p.publish_date DESC",
-            ("blog",)
+            ("blog",),
         ).fetchall()
         return render_template("blog.html", title="Tristan Havelick", articles=articles)
 
-    @app.route("/recipes/")
+    @app.route("/recipes")
     def recipes():
         db_instance = db.get_db()
         articles = db_instance.execute(
@@ -67,18 +68,22 @@ def create_app(test_config=None):
             "JOIN categories c ON c.id = pc.category_id "
             "WHERE c.name = ? "
             "ORDER BY p.publish_date DESC",
-            ("recipe",)
+            ("recipe",),
         ).fetchall()
-        return render_template("blog.html", title="Tristan Havelick - Recipes", articles=articles)
+        return render_template(
+            "blog.html", title="Tristan Havelick - Recipes", articles=articles
+        )
 
     @app.route("/<path:path>")
     def static_proxy(path):
-        if not request.path.endswith('/'):
+        if not request.path.endswith("/"):
             full_dir = os.path.join(app.static_folder, path)
             if os.path.isdir(full_dir):
-                return redirect(request.path + '/', code=302)
+                return redirect(request.path + "/", code=302)
         db_instance = db.get_db()
-        post = db_instance.execute("SELECT * FROM posts WHERE slug = ?", (path,)).fetchone()
+        post = db_instance.execute(
+            "SELECT * FROM posts WHERE slug = ?", (path,)
+        ).fetchone()
         if post:
             post = dict(post)
             try:
