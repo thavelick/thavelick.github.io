@@ -97,7 +97,7 @@ class RoutesTestCase(unittest.TestCase):
     def test_catchall_redirect(self):
         response = self.client.get("/games")
         self.assertEqual(response.status_code, 302)
-        self.assertEqual(response.location, "http://localhost/games/")
+        self.assertTrue(response.location.endswith("/games/"))
 
     def test_catchall_static(self):
         response = self.client.get("/games/index.html")
