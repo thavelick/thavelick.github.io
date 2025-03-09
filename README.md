@@ -43,10 +43,6 @@ Run the Flask application in debug mode using uvicorn:
 uv run flask --app application run --debug
 ```
 
-### Deployment
-
-Deployment happens automatically with GitHub Actions. Simply push your changes to the repository and the deployment pipeline will handle updates.
-
 ### Running Tests
 
 To run the tests, execute:
@@ -54,4 +50,8 @@ To run the tests, execute:
 uv run python -m unittest
 ```
 
-Enjoy developing and testing your site locally!
+### Deployment
+
+Deployment happens automatically with GitHub Actions. Simply push your changes to the repository and the deployment pipeline will handle updates.
+
+
