@@ -25,7 +25,16 @@ def create_app(test_config=None):
     @app.route('/', defaults={'path': 'index.html'})
     @app.route('/<path:path>')
     def static_proxy(path):
-        return app.send_static_file(path)
+        from werkzeug.exceptions import NotFound
+        import os
+        try:
+            return app.send_static_file(path)
+        except NotFound:
+            new_path = os.path.join(path, 'index.html')
+            full_path = os.path.join(app.static_folder, new_path)
+            if os.path.exists(full_path):
+                return app.send_static_file(new_path)
+            raise NotFound()
 
     from . import db
     db.init_app(app)
