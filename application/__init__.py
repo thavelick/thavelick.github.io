@@ -6,6 +6,7 @@ from werkzeug.exceptions import NotFound
 import click
 
 from . import db
+from .models import Post
 import markdown
 from datetime import datetime
 
