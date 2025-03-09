@@ -7,11 +7,12 @@ class RoutesTestCase(unittest.TestCase):
         self.app = create_app(
             {
                 "TESTING": True,
+                "DATABASE": "/tmp/test_blog.db",
             }
         )
         with self.app.app_context():
             from application import db
-
+            db.init_db()
             con = db.get_db()
             # Clean up tables in case they exist
             con.execute("DELETE FROM post_categories")
