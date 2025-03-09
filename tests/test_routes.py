@@ -4,10 +4,12 @@ from application import create_app
 
 class RoutesTestCase(unittest.TestCase):
     def setUp(self):
+        import tempfile
+        fd, db_path = tempfile.mkstemp()
         self.app = create_app(
             {
                 "TESTING": True,
-                "DATABASE": "/tmp/test_blog.db",
+                "DATABASE": db_path,
             }
         )
         with self.app.app_context():
