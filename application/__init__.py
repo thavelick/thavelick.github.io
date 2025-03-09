@@ -57,6 +57,10 @@ def create_app(test_config=None):
 
     @app.route("/<path:path>")
     def static_proxy(path):
+        db_instance = db.get_db()
+        post = db_instance.execute("SELECT * FROM posts WHERE slug = ?", (path,)).fetchone()
+        if post:
+            return render_template("post.html", post=post)
         try:
             return app.send_static_file(path)
         except NotFound as e:
