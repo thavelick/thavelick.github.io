@@ -62,22 +62,39 @@ class RoutesTestCase(unittest.TestCase):
         response = self.client.get("/rss.xml")
         self.assertEqual(response.status_code, 200)
         html = response.data.decode('utf-8')
-        # Check feed channel fields
-        self.assertIn("<title>TristanHavelick.com</title>", html)
-        self.assertIn("<description>Tristan Havelick's Blog</description>", html)
-        self.assertIn("<link>https://tristanhavelick.com</link>", html)
-        self.assertIn("<pubDate>", html)
-        # Check that at least one <item> exists
-        self.assertIn("<item>", html)
-        # Check blog post fields
-        self.assertIn("Test Post Title", html)
-        self.assertIn("https://tristanhavelick.com/test-post/", html)
-        # Check recipe post fields
-        self.assertIn("Test Recipe Title", html)
-        self.assertIn("https://tristanhavelick.com/test-recipe/", html)
-        # Check that the categories are included
-        self.assertIn("<category>blog</category>", html)
-        self.assertIn("<category>recipe</category>", html)
+        from bs4 import BeautifulSoup
+        soup = BeautifulSoup(html, 'xml')
+        
+        # Validate channel information
+        channel = soup.find('channel')
+        self.assertIsNotNone(channel)
+        self.assertEqual(channel.find('title').text, "TristanHavelick.com")
+        self.assertEqual(channel.find('description').text, "Tristan Havelick's Blog")
+        self.assertEqual(channel.find('link').text, "https://tristanhavelick.com")
+        self.assertIsNotNone(channel.find('pubDate'))
+        
+        # Validate items
+        items = soup.find_all('item')
+        self.assertGreaterEqual(len(items), 2)
+        
+        found_blog = False
+        found_recipe = False
+        
+        for item in items:
+            link = item.find('link').text
+            title = item.find('title').text
+            categories = [cat.text for cat in item.find_all('category')]
+            if "test-post" in link:
+                found_blog = True
+                self.assertEqual(title, "Test Post Title")
+                self.assertIn("blog", categories)
+            elif "test-recipe" in link:
+                found_recipe = True
+                self.assertEqual(title, "Test Recipe Title")
+                self.assertIn("recipe", categories)
+        
+        self.assertTrue(found_blog)
+        self.assertTrue(found_recipe)
 
 if __name__ == '__main__':
     unittest.main()
