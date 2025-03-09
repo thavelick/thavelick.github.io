@@ -35,8 +35,6 @@ def create_database(db_path):
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     slug TEXT NOT NULL,
                     title TEXT,
-                    content TEXT NOT NULL,
-                    article_content TEXT,
                     markdown_content TEXT,
                     publish_date DATETIME
                 );"""
