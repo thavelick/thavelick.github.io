@@ -26,14 +26,14 @@
 <p>See the blogs I <a href="/blogroll">follow</a></p>
 <h1>Recipes</h1>
 <p>A collection of things I frequently <a href="/recipes">cook</a></p>
-<h1>Newest Articles</h1>
+<h1>Newest Posts</h1>
 <ul>
-  {% for article in articles %}
+  {% for post in posts %}
   <li>
-    <a href="/{{ article['slug'] }}">{{ article['title'] }}</a>
+    <a href="/{{ post['slug'] }}">{{ post['title'] }}</a>
   </li>
   {% else %}
-  <li>No articles found.</li>
+  <li>No posts found.</li>
   {% endfor %}
 </ul>
 <ul style="list-style-type:none">
