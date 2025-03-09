@@ -53,6 +53,10 @@ def create_app(test_config=None):
     def books():
         return render_template("books.html", title="Tristan Havelick -- Books")
     
+    @app.route("/archive/")
+    def archive():
+        return render_template("archive.html", title="Tristan Havelick -- Archive")
+    
     @app.route("/rss.xml")
     def rss():
         posts = Post.fetch_all()
