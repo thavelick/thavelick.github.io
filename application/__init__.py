@@ -67,9 +67,9 @@ def create_app(test_config=None):
             "JOIN categories c ON c.id = pc.category_id "
             "WHERE c.name = ? "
             "ORDER BY p.publish_date DESC",
-            ("recipes",)
+            ("recipe",)
         ).fetchall()
-        return render_template("blog.html", title="Tristan Havelick - Recipes", articles=articles)
+        return render_template("blog.html", title="Tristan Havelick - Recipe", articles=articles)
 
     @app.route("/<path:path>")
     def static_proxy(path):
