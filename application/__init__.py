@@ -32,7 +32,17 @@ def create_app(test_config=None):
 
     @app.route("/")
     def index():
-        return render_template("index.html", title="Tristan Havelick")
+        db_instance = db.get_db()
+        articles = db_instance.execute(
+            "SELECT p.id, p.slug, p.title "
+            "FROM posts p "
+            "JOIN post_categories pc ON p.id = pc.post_id "
+            "JOIN categories c ON c.id = pc.category_id "
+            "WHERE c.name = ? "
+            "ORDER BY p.publish_date DESC LIMIT 5",
+            ("blog",)
+        ).fetchall()
+        return render_template("index.html", title="Tristan Havelick", articles=articles)
 
     @app.route("/<path:path>")
     def static_proxy(path):

@@ -30,29 +30,13 @@
           <p>A collection of things I frequently <a href="/recipes/">cook</a></p>
           <h1>Newest Articles</h1>
           <ul>
+            {% for article in articles %}
             <li>
-              <a href="/nexus">Thoughts On Yuval Harari's Nexus</a>
+              <a href="/{{ article['slug'] }}">{{ article['title'] }}</a>
             </li>
-            <li>
-              <a href="/how-to-verify-on-mastodon">How to Verify Yourself on Mastodon</a>
-            </li>
-            <li>
-              <a href="/readable-list">
-                An Idea - A Library for Making List Webpages "Readable"
-              </a>
-            </li>
-            <li>
-              <a href="/burnout">Slowing down to combat burnout</a>
-            </li>
-            <li>
-              <a href="/already-blogging">Thinking of starting a blog? You likely already have</a>
-            </li>
-            <li>
-              <a href="/welcome">An Obligatory Yet Useless Introduction</a>
-            </li>
-            <li>
-              <a href="/ps4">Why I haven’t been playing with my new amazing PS4</a>
-            </li>
+            {% else %}
+            <li>No articles found.</li>
+            {% endfor %}
           </ul>
           <ul style="list-style-type:none">
             <li>
