@@ -5,7 +5,8 @@ from application import create_app
 class RoutesTestCase(unittest.TestCase):
     def setUp(self):
         import tempfile
-        fd, db_path = tempfile.mkstemp()
+
+        _, db_path = tempfile.mkstemp()
         self.app = create_app(
             {
                 "TESTING": True,
@@ -14,6 +15,7 @@ class RoutesTestCase(unittest.TestCase):
         )
         with self.app.app_context():
             from application import db
+
             db.init_db()
             con = db.get_db()
             # Clean up tables in case they exist
