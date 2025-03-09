@@ -37,7 +37,7 @@ uv run scripts/populate_db.py --rebuild-db
 
 ### Running the Application
 
-Run the Flask application in debug mode using uvicorn:
+Run the Flask application locally:
 
 ```bash
 uv run flask --app application run --debug
