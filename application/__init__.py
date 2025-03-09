@@ -53,10 +53,7 @@ def create_app(test_config=None):
             full_dir = os.path.join(app.static_folder, path)
             if os.path.isdir(full_dir):
                 return redirect(request.path + "/", code=302)
-        db_instance = db.get_db()
-        post = db_instance.execute(
-            "SELECT * FROM posts WHERE slug = ?", (path,)
-        ).fetchone()
+        post = Post.fetch_by_slug(path)
         if post:
             post = dict(post)
             try:

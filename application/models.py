@@ -17,3 +17,8 @@ class Post:
             query += " LIMIT ?"
             params.append(limit)
         return db_instance.execute(query, tuple(params)).fetchall()
+
+    @classmethod
+    def fetch_by_slug(cls, slug):
+        db_instance = db.get_db()
+        return db_instance.execute("SELECT * FROM posts WHERE slug = ?", (slug,)).fetchone()
