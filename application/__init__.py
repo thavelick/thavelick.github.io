@@ -1,7 +1,7 @@
 """Flask website for TristanHavelick.com."""
 
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 from werkzeug.exceptions import NotFound
 import click
 
@@ -59,6 +59,10 @@ def create_app(test_config=None):
 
     @app.route("/<path:path>")
     def static_proxy(path):
+        if not request.path.endswith('/'):
+            full_dir = os.path.join(app.static_folder, path)
+            if os.path.isdir(full_dir):
+                return redirect(request.path + '/', code=302)
         db_instance = db.get_db()
         post = db_instance.execute("SELECT * FROM posts WHERE slug = ?", (path,)).fetchone()
         if post:
