@@ -35,5 +35,10 @@ class RoutesTestCase(unittest.TestCase):
         self.assertTrue(b"Newest Posts" in response.data)
         self.assertTrue(b"Test Post Title" in response.data)
 
+    def test_blog_route(self):
+        response = self.client.get("/blog")
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(b"Test Post Title" in response.data)
+
 if __name__ == '__main__':
     unittest.main()
