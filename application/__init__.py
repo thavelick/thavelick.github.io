@@ -6,6 +6,7 @@ from werkzeug.exceptions import NotFound
 import click
 
 from . import db
+import markdown
 
 
 def create_app(test_config=None):
@@ -60,6 +61,9 @@ def create_app(test_config=None):
         db_instance = db.get_db()
         post = db_instance.execute("SELECT * FROM posts WHERE slug = ?", (path,)).fetchone()
         if post:
+            post = dict(post)
+            if "markdown_content" in post:
+                post["article_content"] = markdown.markdown(post["markdown_content"])
             return render_template("post.html", post=post)
         try:
             return app.send_static_file(path)
