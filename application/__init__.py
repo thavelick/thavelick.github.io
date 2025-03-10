@@ -13,6 +13,7 @@ from datetime import datetime
 def create_app(test_config=None):
     """Create and configure an instance of the Flask application."""
     app = Flask(__name__, instance_relative_config=True)
+    app.config['FREEZER_DESTINATION'] = 'public_html_frozen'
     app.config.from_mapping(
         SECRET_KEY="dev",
         DATABASE=os.path.join(app.instance_path, "blog.db"),
