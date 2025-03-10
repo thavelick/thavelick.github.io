@@ -4,3 +4,4 @@ blog.db
 instance/
 context/
 **/__pycache__/
+public_html_frozen/

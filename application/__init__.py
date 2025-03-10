@@ -1,7 +1,7 @@
 """Flask website for TristanHavelick.com."""
 
 import os
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template
 from werkzeug.exceptions import NotFound
 
 from . import db
@@ -13,7 +13,7 @@ from datetime import datetime
 def create_app(test_config=None):
     """Create and configure an instance of the Flask application."""
     app = Flask(__name__, instance_relative_config=True)
-    app.config['FREEZER_DESTINATION'] = 'public_html_frozen'
+    app.config["FREEZER_DESTINATION"] = "../public_html_frozen"
     app.config.from_mapping(
         SECRET_KEY="dev",
         DATABASE=os.path.join(app.instance_path, "blog.db"),
@@ -83,7 +83,7 @@ def create_app(test_config=None):
         return (
             render_template("rss.xml", posts=posts_list, feed_pub_date=feed_pub_date),
             200,
-            {"Content-Type": "application/xml"},
+            {"Content-Type": "text/xml"},
         )
 
     @app.route("/<path:path>")
