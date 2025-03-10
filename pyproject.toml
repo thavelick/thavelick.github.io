@@ -5,6 +5,7 @@ description = "Tristan's personal website"
 dependencies = [
     "beautifulsoup4>=4.13.3",
     "flask>=3.1.0",
+    "frozen-flask>=1.0.2",
     "html-to-markdown>=1.2.0",
     "lxml>=5.3.1",
     "markdown>=3.7",
