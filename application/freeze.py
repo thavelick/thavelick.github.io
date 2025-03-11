@@ -20,7 +20,9 @@ def catchall():
             )
             yield {"path": relative_path}
 
-    # ai! add a new for loop for some misc static files: CNAME, favicon.ico, styles.css
+    misc_files = ["CNAME", "favicon.ico", "styles.css"]
+    for f in misc_files:
+        yield {"path": f}
 
 
 if __name__ == "__main__":
