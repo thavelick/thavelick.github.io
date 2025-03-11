@@ -21,9 +21,8 @@ def catchall():
             yield {"path": relative_path}
 
     misc_files = ["CNAME", "favicon.ico", "styles.css"]
-    # ai! better var name than f
-    for f in misc_files:
-        yield {"path": f}
+    for misc_file in misc_files:
+        yield {"path": misc_file}
 
 
 if __name__ == "__main__":
