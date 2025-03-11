@@ -88,8 +88,8 @@ def create_app(test_config=None):
 
     @app.route("/<path:path>")
     def catchall(path):
-        path_without_trailing_slash = # ai! fill this in. Keep in mind, the path might not have a trailing slash to begin with. Then pass the to fetch_by_slug. The rest of this function should still use path unmodified
-        post = Post.fetch_by_slug(path)
+        path_without_trailing_slash = path.rstrip('/')
+        post = Post.fetch_by_slug(path_without_trailing_slash)
         if post:
             post = dict(post)
             dt = datetime.strptime(post["publish_date"], "%Y-%m-%d %H:%M:%S")
