@@ -20,6 +20,8 @@ def catchall():
             )
             yield {"path": relative_path}
 
+    # ai! add a new for loop for some misc static files: CNAME, favicon.ico, styles.css
+
 
 if __name__ == "__main__":
     freezer.freeze()
