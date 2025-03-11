@@ -1,343 +1,765 @@
 <rss version="2.0">
   <channel>
-    <title>
-TristanHavelick.com
-    </title>
-    <description>
-Tristan Havelick's Blog
-    </description>
+    <title>TristanHavelick.com</title>
+    <description>Tristan Havelick's Blog</description>
     <link>https://tristanhavelick.com</link>
-    <pubDate>Sat, 05 Dec 2020 17:00:00 MST</pubDate>
+    <pubDate>Sun, 01 Dec 2024 12:31:00</pubDate>
+    
     <item>
-      <title>Thoughts on Yuval Noah Harari's "Nexus"</title>
+      <title>On Nexus</title>
       <link>https://tristanhavelick.com/nexus/</link>
-      <pubDate>Sun, 01 Dec 2024 12:31:00 MST</pubDate>
-      <content>
-        <![CDATA[
-    <p>
-    Sapiens by Yuval Harari is probably the last non-fiction book I read that had a big effect
-    on how I view the world.
-    After years of buying into the new atheism and the skeptics movement, the book really helped
-    me soften to religious and spiritual people again and that there is value in believing things
-    that aren't true actually can have value.
-    So when I saw <i>Nexus</i> had been written and focused on Information Networks and how AI
-    might effect society moving forward I was pretty excited as AI has always been a big interest
-    of mine and has already been making big changes in my corner of the world. Although it wasn't
-    as earth shattering to my worldview, it did change my perspective on some things.
-    </p>
-    <p>
-    One, was explaining the difference between autocracy and totalitarianism.
-    Autocracy refers to societies with a single powerful leader with no checks on their power.
-    However, an autocratic leader, historically would be limited by the scope of their view. Sure,
-    a Roman Emperor could monitor and exact revenge on those he didn't like close to home, but
-    managing every aspect of people's lives in a city thousands of miles away was impossible.
-    In the 20th century, with technology like the telegraph, totalitarianism came about.
-    Stalin, for instance, could plant spies and get reports from across the entirety of the U.S.S.R
-    and control things at a greater distance with greater ease.
-    In fact, getting too much information was often a more difficult problem than not having enough.
-    One of the things Harari argues is that AI technology will make it easy for totalitarians to
-    micromanage across vast areas even more effectively because it can collect and filter through
-    large sets of data about people to identify potential bad actors. China's social reputation
-    scoring system might be an example of this that already exists.
-    </p>
-    <p>
-    But, he brings up the point that AI, on the other hand, could be used to fight against such total
-    control.
-    If dissidents against a totalitarian power can make bots that share anti government ideas
-    online without being traceable back to the original author, perhaps AI can help those fighting
-    gain their own reach.
-    </p>
-
-    <p>
-    Beyond giving me some ideas on how to think about how AI might affect the world, the book really
-    drove home for me that History can be an interesting lens to look at current and future events
-    through.
-    I haven't generally read a lot of history, but maybe that should change.
-    </p>
-    ]]></content>
+      
+      <category>blog</category>
+      
+      <pubDate>Sun, 01 Dec 2024 12:31:00</pubDate>
+      <content><![CDATA[
+<p>Sapiens by Yuval Harari is probably the last non-fiction book I read that had a big effect
+ on how I view the world.
+ After years of buying into the new atheism and the skeptics movement, the book really helped
+ me soften to religious and spiritual people again and that there is value in believing things
+ that aren't true actually can have value.
+ So when I saw <em>Nexus</em> had been written and focused on Information Networks and how AI
+ might effect society moving forward I was pretty excited as AI has always been a big interest
+ of mine and has already been making big changes in my corner of the world. Although it wasn't
+ as earth shattering to my worldview, it did change my perspective on some things.</p>
+<p>One, was explaining the difference between autocracy and totalitarianism.
+ Autocracy refers to societies with a single powerful leader with no checks on their power.
+ However, an autocratic leader, historically would be limited by the scope of their view. Sure,
+ a Roman Emperor could monitor and exact revenge on those he didn't like close to home, but
+ managing every aspect of people's lives in a city thousands of miles away was impossible.
+ In the 20th century, with technology like the telegraph, totalitarianism came about.
+ Stalin, for instance, could plant spies and get reports from across the entirety of the U.S.S.R
+ and control things at a greater distance with greater ease.
+ In fact, getting too much information was often a more difficult problem than not having enough.
+ One of the things Harari argues is that AI technology will make it easy for totalitarians to
+ micromanage across vast areas even more effectively because it can collect and filter through
+ large sets of data about people to identify potential bad actors. China's social reputation
+ scoring system might be an example of this that already exists.</p>
+<p>But, he brings up the point that AI, on the other hand, could be used to fight against such total
+ control.
+ If dissidents against a totalitarian power can make bots that share anti government ideas
+ online without being traceable back to the original author, perhaps AI can help those fighting
+ gain their own reach.</p>
+<p>Beyond giving me some ideas on how to think about how AI might affect the world, the book really
+ drove home for me that History can be an interesting lens to look at current and future events
+ through.
+ I haven't generally read a lot of history, but maybe that should change.</p>
+      ]]></content>
     </item>
+    
     <item>
-      <title>Tristan Havelick</title>
-      <link>https://tristanhavelick.com/index.html</link>
-      <pubDate>Sun, 06 Nov 2022 21:04:40 </pubDate>
-      <content>
-	<![CDATA[
-      <h1>How to Verify Yourself on Mastodon</h1>
-      <small>Posted 2022/11/06</small>
-      <p>
-        With the most recent influx of users from Twitter to Mastodon, I've noticed several new
-        accounts that appear to be famous people. Because these folks are new to Mastodon, most I've
-        seen are unverified. Verification works really differently on Mastodon than it does on Twitter
-        and is a little technical, so this post serves as a step by step guid for anyone who is at
-        risk of being impersonated on Mastodon.
-      </p>
-      <h2>Differences from Twitter</h2>
-      <p>
-        On Twitter, verification is a process that is handled by Twitter staff. They verify that
-        you are who you say you are by asking you to provide a photo of your ID. Once you've
-        provided that, they verify you and you get a blue checkmark next to your name. Up to now
-        Twitter did this at their own discretion, but they recently announced that they may start
-        making this a paid feature.
-      </p>
-      <p>
-        On Mastodon, there's no centralized authority that can verify folks in the same way as
-        Twitter. Instead you can verify yourself by putting a link to your website in your bio,
-        then linking back to your Mastodon account from your website in a special way.
-      </p>
-      <h2>Linking to your site From Mastodon</h2>
-      <p>Note: <strong> I'm assuming in these instructions that you're using a PC and are interacting with
-          your Mastodon account with a web browser.</strong> Certain features are different or missing from
-        the mobile website and from the mobile apps, so if you're on your phone things might be a
-        little different.
-      </p>
-      <p>
-        The first step in verifying yourself is linking from your Mastodon profile to your website.
-        This should be your public website that people trust is run by you or your organization.
-        To do this, follow these steps:
-      <ol>
-        <li>
-          Go to your profile page on Mastodon. Click on "Edit Profile" under your username on the left.
-
-
-        </li>
-        <li>
-          Scroll down to the "Metadata" section, towards the bottom of the page. In the first row,
-          type "Website" in the box on the left and the full URL of your website in the box on the
-          right. Your website URL should start with <code>https://</code>. For example, for my site
-          I put <code>https://tristanhavelick.com</code>.
-        </li>
-        <li>
-          Click "Save Changes" at the bottom of the page.
-        </li>
-      </ol>
-
-      This will add a link to your website in your profile. However this isn't enough to verify
-      you.
-      </p>
-      <h2>Linking back to your Mastodon account from your website</h2>
-      <p>
-        Now, you need to add a link to your Mastodon account from your website. The easiest way to
-        do this is to steal the bit of HTML code that Mastodon generates for you. To do this, just
-        hit the copy button to the right of where you added your website on your Mastodon profile
-        page, under "Verification". The HTML code will look something like this:
-      <pre><code>&lt;a href="https://your-mastodon.site/@YourMastodonUser" rel="me"&gt;Mastodon&lt;/a&gt;</code></pre>
-      </p>
-      <p>
-        The important bit here is the <code>rel="me"</code> part. This says "this link is to a page that I control and
-        represents me".
-      </p>
-      <p>
-        Then, you just add that code somewhere on the home page of your site. (If you don't maintain
-        the code on your website contact whoever does and send them the link to this article along
-        with the link to this to your Mastodon, they should be able to help from there.
-      </p>
-      <p>
-        Once you've done that, you should be verified on Mastodon. You can check by going to your
-        profile page on Mastodon and looking for the little checkmark next to your username.
-      </p>
-      <h2>This solution isn't perfect</h2>
-      <p>
-        Even with this solution, it's still possible that someone could impersonate you on Mastodon.
-        This verification is only as reliable as the websites that you link to. If someone were to
-        create a website that looks like yours, they could link to their cloned Mastodon account from
-        that. But it's better than nothing, and Twitter verification has it's flaws as well.
-        Have you seen how many verified Elon Musks there are on Twitter these days?
-      </p>
-	]]></content></item>
-	<item>
-      <title>
-Slowing down to combat burnout
-      </title>
-      <description>
-Last week, a co-worker asked me if I had any resources that he could point his employees to that could help dealing with burn-out. I couldn…
-      </description>
+      <title>Cajun Sausage and Beans</title>
+      <link>https://tristanhavelick.com/recipes/cajun-sausage-and-beans/</link>
+      
+      <category>recipe</category>
+      
+      <pubDate>Wed, 25 Oct 2023 00:00:00</pubDate>
+      <content><![CDATA[
+<h2>Ingredients</h2>
+<ul>
+<li>1 lb. Turkey, Smoked or, Andouille Sausage, sliced into 1/2 inch slices</li>
+<li>1-2 cups cooked, left over <a href="/recipes/the-rice">THE Rice</a></li>
+<li>1 can (15 oz.) red kidney beans, rinsed and drained</li>
+<li>1 can (15 oz.) diced tomatoes</li>
+<li>2 celery stalks, chopped</li>
+<li>1 green bell pepper, chopped</li>
+<li>1 onion, chopped in the food processor</li>
+<li>1/2 teaspoon of salt</li>
+<li>About 2 teaspoons of Cajun Seasoning</li>
+<li>2 tablespoons of jarred minced garlic</li>
+<li>1-2 tablespoons of olive oil</li>
+<li>1/2 cup (4 fl. oz) of water</li>
+<li>salt and pepper to taste</li>
+</ul>
+<h2>Instructions</h2>
+<ol>
+<li>Heat the olive oil in a large skillet over medium heat.
+ Add the sausage and cook until browned.
+ Set aside.</li>
+<li>Add more olive oil to the skillet if needed.
+ Add the green peppers, onion, and celery to the skillet along with the salt.
+ Toss in half the Cajun seasoning.
+ Cook until tender.</li>
+<li>Add the garlic and cook for about 30 seconds.</li>
+<li>Add the beans, tomatoes, water, rice, along with the rest of the Cajun seasoning.
+ Simmer for about 10 minutes.</li>
+<li>Stir back in the sausage.
+ Let it warm if needed.</li>
+<li>Sprinkle some salt and pepper to your taste.</li>
+</ol>
+      ]]></content>
+    </item>
+    
+    <item>
+      <title>Sustainable Cooks&#39; Garlic Butter Rice</title>
+      <link>https://tristanhavelick.com/recipes/the-rice/</link>
+      
+      <category>recipe</category>
+      
+      <pubDate>Sun, 15 Oct 2023 00:00:00</pubDate>
+      <content><![CDATA[
+<p>I often make this ahead on the weekend for use in various meals through the week.</p>
+<h2>Ingredients</h2>
+<ul>
+<li>3 tablespoons butter</li>
+<li>1 cup uncooked white rice</li>
+<li>1/3 cup uncooked brown rice</li>
+<li>2 cups water</li>
+<li>2 teaspoons of veggie Better Than Bouillon</li>
+<li>2 tablespoons of jarred minced garlic</li>
+<li>3/4 teaspoons parsley</li>
+<li>2 tablespoons grated Parmesan cheese (optional)</li>
+</ul>
+<h2>Instructions</h2>
+<ol>
+<li>Set Instant Pot to "saute" to melt the butter (it will take about 1-2 minutes). Once melted, turn the Instant
+ Pot to "off/keep warm".</li>
+<li>Add the rice, broth, garlic, and dried parsley. Stir.</li>
+<li>Lock the lid into place and set the steam release handle (valve on top) to “Sealing”. Press the "rice" button.</li>
+<li>When the cooking time is up, flip the vent to venting and perform a quick release.</li>
+<li>Carefully open the lid and add the parmesan and stir.</li>
+</ol>
+<h2>Notes</h2>
+<ul>
+<li>The original recipe sets pressure to high for 6 minutes. The rice button sets the time to 12 minutes but it
+ still turns out great. I'm not really sure what the rice button does, but it works</li>
+<li>Typically, I omit the original recipe's use of parmesan cheese so it fits with a wider variety of cuisines.</li>
+<li>The rice will stick to the side of the pot less if you rinse it first.</li>
+<li>Sustainable Cooks calls for just white rice, but I found adding some brown rice adds some extra flavor and
+ nutrition.</li>
+</ul>
+<h2>Original Recipe</h2>
+<p><a href="https://www.sustainablecooks.com/parmesan-rice/">Sustainable Cook's Garlic Butter Rice</a></p>
+      ]]></content>
+    </item>
+    
+    <item>
+      <title>Adam Ragusea&#39;s Pizza Dough</title>
+      <link>https://tristanhavelick.com/recipes/pizza-dough/</link>
+      
+      <category>recipe</category>
+      
+      <pubDate>Sun, 15 Oct 2023 00:00:00</pubDate>
+      <content><![CDATA[
+<h2>Ingredients</h2>
+<ul>
+<li>2 1/4 cups (530 ml) warm water</li>
+<li>1 tbsp sugar (12g) sugar</li>
+<li>1 tbsp (9g) active dry yeast</li>
+<li>2 tbsp (30 ml) olive oil</li>
+<li>1 tbsp (18 g) kosher salt</li>
+<li>5 cups (600g) bread flour, plus more for working the dough</li>
+<li>additional oil for greasing the dough</li>
+<li>cornmeal, semolina flour, or coarse-ground whole wheat flour for dusting</li>
+</ul>
+<h2>Instructions</h2>
+<ol>
+<li>Start the dough by combining the water, sugar and yeast in a large bowl and let sit for a few minutes.</li>
+<li>If the yeast goes foamy, it's alive and you're good to proceed (if it doesn't, it's dead and you
+ need new yeast). Add the olive oil and salt and 5 cups (600g) of bread flour. Mix until just
+ combined, then start kneading. Add just enough additional flour to keep the dough workable
+ (i.e. not too sticky) and kneed until you can stretch some of the dough into a thin sheet
+ without it tearing. (NOTE: You will probably need to add a lot more flour. The quantity I give
+ here is just a base line to get your started.)</li>
+<li>Divide the dough into four equal balls and put them in four containers (ideally glass) and
+ lightly coat the balls and the interior of their containers with olive oil. Cover, and either rise at room
+ temperature for two hours, or put them in the refrigerator and let them rise for 1-7 days. (I prefer the long,
+ cold
+ rise.)</li>
+</ol>
+<h2>Notes</h2>
+<ul>
+<li>Sometimes I choose the easy way and get pizza dough premade from the grocery store and that's totally okay</li>
+</ul>
+<h2>Original</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=SDpCzJw2xm4">New York-style pizza at home, v2.0</a></li>
+</ul>
+      ]]></content>
+    </item>
+    
+    <item>
+      <title>Internet Shaquille&#39;s Chicken Tinga</title>
+      <link>https://tristanhavelick.com/recipes/chicken-tinga/</link>
+      
+      <category>recipe</category>
+      
+      <pubDate>Sun, 15 Oct 2023 00:00:00</pubDate>
+      <content><![CDATA[
+<h2>Ingredients</h2>
+<ul>
+<li>2 lbs skinless chicken thighs</li>
+<li>2-5 canned chipotle peppers</li>
+<li>1-14.5-ounce can of fire-roasted tomatoes</li>
+<li>3 tablespoons of jarred minced garlic</li>
+<li>1 onion</li>
+<li>Olive oil</li>
+<li>3 teaspoon kosher salt</li>
+<li>black pepper</li>
+<li>1 teaspoon cumin</li>
+<li>1 teaspoon oregano</li>
+<li>chili powder (optional)</li>
+<li>a whole bay leaf (optional)</li>
+<li>smoked paprika (optional)</li>
+</ul>
+<h2>Instructions</h2>
+<ol>
+<li>Chop the onion in the food processor.</li>
+<li>Set the instant pot to "Saute" add the oil and let it get hot.</li>
+<li>Add the onion and let it cook.</li>
+<li>Toss in the chicken and brown it a bit
+ (or if feeling lazy, drop it in frozen and don't worry about browning).</li>
+<li>Plop in the rest of the ingredients.</li>
+<li>Set the instant pot to "Pressure Cook" for 15 minutes. Quick release the pressure when it's done.</li>
+<li>Take the the chicken out to cool.</li>
+<li>Set the instant pot to "Saute". Use an immersion blender to turn the braising liquid into a smooth sauce.</li>
+<li>Shred it by tearing it apart with your fingers.</li>
+<li>Return the chicken to the bubbling sauce.</li>
+<li>Serve chicken as part of nachos, tacos, tostadas, quesadillas, or enchiladas</li>
+</ol>
+<h2>Notes</h2>
+<ul>
+<li>Shaquille uses a crockpot for this but I find the Instant Pot easier and faster.</li>
+<li>He is a chef so he chops his onion with a knife. So fancy!</li>
+<li>This is probably better if you mince garlic like Shaq, but I'm lazy so I used the jarred stuff.</li>
+<li>We'll often make this for meals through the week. If the chicken gets low, we'll heat it up with some canned
+ beans and corn to pad it out a bit.</li>
+</ul>
+<h2>Original Recipe</h2>
+<p><a href="https://www.youtube.com/watch?v=DqTsb9N3cqY">Internet Shaquille's Chicken Tinga</a></p>
+      ]]></content>
+    </item>
+    
+    <item>
+      <title>A Library for Making List Webpages &#34;Readable&#34;</title>
+      <link>https://tristanhavelick.com/readable-list/</link>
+      
+      <category>blog</category>
+      
+      <pubDate>Tue, 16 May 2023 00:00:00</pubDate>
+      <content><![CDATA[
+<p>This started as a README for a potential open source project. I
+decided to make a blog post to maybe get some feedback or suggestions.</p>
+<h2>Status</h2>
+<p>Just an idea at this point.</p>
+<h2>Description</h2>
+<p>There are "readability" libraries such as:</p>
+<ul>
+<li><a href="https://github.com/mozilla/readability">https://github.com/mozilla/readability</a></li>
+<li><a href="https://github.com/buriy/python-readability">https://github.com/buriy/python-readability</a></li>
+</ul>
+<p>These take a webpage containing an article and strip out all the
+navigation and ads. Most of these work great for pages that are
+articles and some, like Mozilla's do a pretty good job of
+identifying when a page is NOT an article. However, there isn't
+much these libraries can currently do with pages that are lists of
+articles like:</p>
+<ul>
+<li><a href="https://coloradosun.com/category/news/housing/">https://coloradosun.com/category/news/housing/</a></li>
+<li><a href="https://drewdevault.com/">https://drewdevault.com/</a></li>
+<li><a href="https://www.npr.org/sections/culture/">https://www.npr.org/sections/culture/</a></li>
+<li><a href="https://www.cnn.com/health">https://www.cnn.com/health</a></li>
+</ul>
+<p>Here, I'm considering making a library that strips out
+extraneous side navigation/ads/other junk from web pages like
+these, and either returning a list of article URLs or a very simple
+page with article links in a bulleted list.</p>
+<p>By combining this with a standard readability algorithm/library,
+one could create a simple and/or text-only view of a website than
+what is typically rendered by text browsers like w3m and lynx.</p>
+<p>A browser built using this could sit in a missing place in the
+continuum of browser complexity:</p>
+<p>```
+Offpunk &lt; THIS THING &lt; w3m/lynx/elinks &lt; visurf/netsurf/surf &lt; qutebrowser/chrome/firefox</p>
+<p>```</p>
+<h2>Possible Algorithm</h2>
+<ol>
+<li>Start with a given HTTP/S URL</li>
+<li>retrieve that page</li>
+<li>Parse the page and get a list of all the links on that
+page</li>
+<li>Remove any links that are to domains other than the one from
+the original link</li>
+<li>Retrieve a few, say 10,maybe random links from the remaining of
+the list</li>
+<li>Get a similar list of links for each of those pages</li>
+<li>Get a list of the links that are common across all of the
+retrieved pages. It is a reasonable assumption that these would we
+be navigational links.</li>
+<li>Finally, we'd return to the list of links from the original
+page, and remove the links we've determined are navigational</li>
+<li>At this point, we're left with links only to unique content
+pages!</li>
+</ol>
+<h3>Flaws</h3>
+<ul>
+<li>If a website makes heavy use of cross linking in articles,
+those articles may be unfairly excluded from the final list of
+articles</li>
+<li>For some sites, this would be redundant with RSS/Atom feeds a
+be of lower quality</li>
+<li>This probably wouldn't work (out of the box) for sites that
+rely on client-side JavaScript to render content.</li>
+</ul>
+      ]]></content>
+    </item>
+    
+    <item>
+      <title>How to Verify on Mastodon</title>
+      <link>https://tristanhavelick.com/how-to-verify-on-mastodon/</link>
+      
+      <category>blog</category>
+      
+      <pubDate>Sun, 06 Nov 2022 00:00:00</pubDate>
+      <content><![CDATA[
+<p>With the most recent influx of users from Twitter to Mastodon, I've noticed several new
+ accounts that appear to be famous people. Because these folks are new to Mastodon, most I've
+ seen are unverified. Verification works really differently on Mastodon than it does on Twitter
+ and is a little technical, so this post serves as a step by step guid for anyone who is at
+ risk of being impersonated on Mastodon.</p>
+<h2>Differences from Twitter</h2>
+<p>On Twitter, verification is a process that is handled by Twitter staff. They verify that
+ you are who you say you are by asking you to provide a photo of your ID. Once you've
+ provided that, they verify you and you get a blue checkmark next to your name. Up to now
+ Twitter did this at their own discretion, but they recently announced that they may start
+ making this a paid feature.</p>
+<p>On Mastodon, there's no centralized authority that can verify folks in the same way as
+ Twitter. Instead you can verify yourself by putting a link to your website in your bio,
+ then linking back to your Mastodon account from your website in a special way.</p>
+<h2>Linking to your site From Mastodon</h2>
+<p>Note:  <strong>I'm assuming in these instructions that you're using a PC and are interacting with
+ your Mastodon account with a web browser.</strong> Certain features are different or missing from
+ the mobile website and from the mobile apps, so if you're on your phone things might be a
+ little different.</p>
+<p>The first step in verifying yourself is linking from your Mastodon profile to your website.
+ This should be your public website that people trust is run by you or your organization.
+ To do this, follow these steps:</p>
+<ol>
+<li>Go to your profile page on Mastodon. Click on "Edit Profile" under your username on the left.</li>
+<li>Scroll down to the "Metadata" section, towards the bottom of the page. In the first row,
+ type "Website" in the box on the left and the full URL of your website in the box on the
+ right. Your website URL should start with <code>https://</code>. For example, for my site
+ I put <code>https://tristanhavelick.com</code>.</li>
+<li>Click "Save Changes" at the bottom of the page.</li>
+</ol>
+<p>This will add a link to your website in your profile. However this isn't enough to verify
+ you.</p>
+<h2>Linking back to your Mastodon account from your website</h2>
+<p>Now, you need to add a link to your Mastodon account from your website. The easiest way to
+ do this is to steal the bit of HTML code that Mastodon generates for you. To do this, just
+ hit the copy button to the right of where you added your website on your Mastodon profile
+ page, under "Verification". The HTML code will look something like this:</p>
+<p><code>&lt;a href="https://your-mastodon.site/@YourMastodonUser" rel="me"&gt;Mastodon&lt;/a&gt;</code></p>
+<p>The important bit here is the <code>rel="me"</code> part. This says "this link is to a page that I control and
+ represents me".</p>
+<p>Then, you just add that code somewhere on the home page of your site. (If you don't maintain
+ the code on your website contact whoever does and send them the link to this article along
+ with the link to this to your Mastodon, they should be able to help from there.</p>
+<p>Once you've done that, you should be verified on Mastodon. You can check by going to your
+ profile page on Mastodon and looking for the little checkmark next to your username.</p>
+<h2>This solution isn't perfect</h2>
+<p>Even with this solution, it's still possible that someone could impersonate you on Mastodon.
+ This verification is only as reliable as the websites that you link to. If someone were to
+ create a website that looks like yours, they could link to their cloned Mastodon account from
+ that. But it's better than nothing, and Twitter verification has it's flaws as well.
+ Have you seen how many verified Elon Musks there are on Twitter these days?</p>
+      ]]></content>
+    </item>
+    
+    <item>
+      <title>Slowing down to combat burnout</title>
       <link>https://tristanhavelick.com/burnout/</link>
-      <guid isPermaLink="false">https://tristanhavelick.com/burnout/</guid>
-      <pubDate>Sat, 05 Dec 2020 17:00:00 MST</pubDate>
-      <content>
-        <p>Last week, a co-worker asked me if I had any resources that he could point his employees to that could help dealing with burn-out. I couldn't really think of any, but went through my list of usual strategies including:</p>
-        <ul>
-          <li>Taking a break for a few days</li>
-          <li>Writing down a list of things I've done as I complete them, as opposed to keeping a to-do list</li>
-          <li>Re-evaluating my goals and making sure my current actions align with those goals</li>
-          <li>Being on the look out for any stress in my personal life that may be affecting my desire to work</li>
-          <li>Working on something different. Variety can powerful</li>
-          <li>Collaborating through difficult work</li>
-        </ul>
-        <p>But the list felt flat. I wasn't sure if anything I'd come up with would really be helpful. A few days later, I reread
-        <a href="https://sive.rs/tilt">a story from Derek Sivers</a>about slowing down on a difficult drive and explicitly ignoring those people who it might annoy, thus making the drive much more enjoyable. He reminds us to adjust adjust our environment to what we need even if it's inconvenient to others.</p>
-        <p>The story reminded me a burnout combatting strategy I'd used in the past:
-        <strong>Slow down and focus on craftsmanship</strong>. Often burnout comes when you feel stress always be getting something done, always moving on to the next thing that's needed. Instead of getting things done as quickly as possibly, it can help to take the slow route. Zoom in on the little details. Take a lot more time to make what you're working on as perfect as you can. In a software development context, is each variable name as good as it could be? Could any lines of code be removed? Could we make it perform faster? If what you're working on feels repetitive, could you make the computer do the work for you? Could the code be rewritten to be more readable?</p>
-        <p>When it works, this strategy helps me find the beauty in my work again. Sometimes I go a bit overboard and end up with an over-engineered mess I have to throw away. But when I do, the quick solution and simple solution I started with ends up feeling much better as now I've seen the flaws in the alternative. And of course, burnout can be caused by the reverse too. Sometimes, if I've been to in the weeds of the details and too focused on making things perfect it can help to step back and come up with a quick and un-elegant solution instead.</p>
-        <p>The feeling of burnout is your brain's way of telling you that something needs to change. So, the next time that feeling settles upon you consider that perhaps the solution is as simple as changing the pace and focus of your work.</p>
-      </content>
+      
+      <category>blog</category>
+      
+      <pubDate>Sat, 05 Dec 2020 17:00:00</pubDate>
+      <content><![CDATA[
+<p>Last week, a co-worker asked me if I had any resources that he could point his employees
+ to that could help dealing with burn-out. I couldn't really think of any, but went through
+ my list of usual strategies including:</p>
+<ul>
+<li>Taking a break for a few days</li>
+<li>Writing down a list of things I've done as I complete them, as opposed to keeping a
+ to-do list</li>
+<li>Re-evaluating my goals and making sure my current actions align with those goals</li>
+<li>Being on the look out for any stress in my personal life that may be affecting my
+ desire to work</li>
+<li>Working on something different. Variety can powerful</li>
+<li>Collaborating through difficult work</li>
+</ul>
+<p>But the list felt flat. I wasn't sure if anything I'd come up with would really be
+ helpful. A few days later, I reread <a href="https://sive.rs/tilt">a story from Derek
+ Sivers</a> about slowing down on a difficult drive and explicitly ignoring those people who
+ it might annoy, thus making the drive much more enjoyable. He reminds us to adjust adjust
+ our environment to what we need even if it's inconvenient to others.</p>
+<p>The story reminded me a burnout combatting strategy I'd used in the past: <strong>Slow
+ down and focus on craftsmanship</strong>. Often burnout comes when you feel stress always
+ be getting something done, always moving on to the next thing that's needed. Instead of
+ getting things done as quickly as possibly, it can help to take the slow route. Zoom in on
+ the little details. Take a lot more time to make what you're working on as perfect as you
+ can. In a software development context, is each variable name as good as it could be? Could
+ any lines of code be removed? Could we make it perform faster? If what you're working on
+ feels repetitive, could you make the computer do the work for you? Could the code be
+ rewritten to be more readable?</p>
+<p>When it works, this strategy helps me find the beauty in my work again. Sometimes I go a
+ bit overboard and end up with an over-engineered mess I have to throw away. But when I do,
+ the quick solution and simple solution I started with ends up feeling much better as now
+ I've seen the flaws in the alternative. And of course, burnout can be caused by the reverse
+ too. Sometimes, if I've been to in the weeds of the details and too focused on making
+ things perfect it can help to step back and come up with a quick and un-elegant solution
+ instead.</p>
+<p>The feeling of burnout is your brain's way of telling you that something needs to
+ change. So, the next time that feeling settles upon you consider that perhaps the solution
+ is as simple as changing the pace and focus of your work.</p>
+      ]]></content>
     </item>
+    
     <item>
-      <title>
-Thinking of starting a blog? You likely already have
-      </title>
-      <description>
-My recent return to updating my website and finally getting around to starting a blog on my own site was inspired in large part by Alexey…
-      </description>
+      <title>Already Blogging</title>
       <link>https://tristanhavelick.com/already-blogging/</link>
-      <guid isPermaLink="false">https://tristanhavelick.com/already-blogging/</guid>
-      <pubDate>Mon, 23 Nov 2020 17:00:00 MST</pubDate>
-      <content>
-        <p>My recent return to updating my website and finally getting around to starting a blog on my own site was inspired in large part by Alexey Guzey's article on
-        <a href="https://guzey.com/personal/why-have-a-blog/">Why you should start a blog right now</a>. In it, he helped me overcome my biggest objections to starting. First, he convinced me that it doesn't matter if I don't come up with anything original to say:</p>
-        <blockquote>
-          <p>Consider a university professor teaching a course. Does she say anything original? Do you think she should cancel her course because somebody else discovered the things she wants to teach? Or does she have to cancel her course simply because there is a similar course at some other university?</p>
-          <p>Or consider yourself. Do you avoid having conversations with your friends when you think you have nothing original to say? Do you share things with them? Do you give advice? Do you help to understand things?</p>
-        </blockquote>
-        <p>Second, the article gave me a lot of ideas on where to find something to write about including:</p>
-        <ul>
-          <li>Scouring old IM logs and emails for things you said that seemed useful to others.</li>
-          <li>Looking at comments you've made on other peoples posts.</li>
-          <li>Thinking about advice you repeatedly give to friends.</li>
-          <li>Look through notes taken when researching different topics.</li>
-        </ul>
-        <p>This got me thinking about other sources I could use for article ideas and it hit me: I'd already written a lot of article-like content but it was spread scattershot over the web. I then collected a few of these, made some minor edits and they became the first few articles on this site. The oldest of which I adapted from a StackOverflow post I wrote all the way back in 2008! If you're starting a blog, you should look around the web to find things you've already written and consider adding them as back dated posts on the new site.</p>
-        <h2>Where to find articles you've already written to add to your blog</h2>
-        <p>There are a lot of places you can probably find content you've written that you can adapt to blog articles. Some you can likely import directly into your blog and others you might need to edit and or flesh out a little.</p>
-        <ul>
-          <li>Posts you've written on third party blogging platforms like Medium, Blogger or BlogSpot.</li>
-          <li>Questions you've asked or answered on Q&amp;A websites like Quora, StackOverflow or StackExchange. In these cases you might need to edit them a bit so they make sense in a more narrative form, but doing so is probably quicker and easier than you anticipated.</li>
-          <li>Forum posts.</li>
-          <li>Entries from your personal journal (it's probably a good idea to heavily edit these and obviously not post everything en masse).</li>
-          <li>Articles or documentation you've written for work that might be useful for a wider audience. Check with your boss before adapting any of this work, but chances are they'll approve so long as you aren't revealing anything proprietary or that could be a security risk.</li>
-          <li>If you're a programmer, README's from open source tools you've developed.</li>
-          <li>Notes you've taken when learning something new.</li>
-          <li>Content you've written on old, now defunct websites accessed through the
-          <a href="https://archive.org/web/web.php">Wayback Machine</a>.</li>
-          <li>Content that has been removed by changing moderation standards. When I wrote the original post behind my article on getting
-          <a href="/breaking-into-coding">my first software development job</a>on
-          <a href="http://stackoverflow.com">StackOverflow</a>they allowed open ended questions. When the site decided to focus on questions with more definitive answers, my answer was removed by moderators even though many people found it useful. Adding it to my blog makes this long missing advice public again.</li>
-          <li>Long posts from Facebook or Twitter threads that others outside your friend circle might find useful.</li>
-        </ul>
-        <h2>Why you shouldn't worry about duplicating content</h2>
-        <p>Collecting all of your writing in your blog can allow people that would otherwise only find one or two fragments of your writing to read all you've had to say if they are so inclined.</p>
-        <p>Also, it's a great motivational exercise. It makes writing seem like a less daunting and new task. Once doing it, you'll realize you've actually been writing for years, and now have something to show for it. That should make future writing easier.</p>
-        <p>SEO experts sometimes rail against duplicate content. This might make you think I'm crazy for advocating using it. However, generally
-        <a href="https://searchengineland.com/myth-duplicate-content-penalty-259657">duplicate content won't penalize your rankings</a>, it just won't count positively toward your rankings so content from the original site might rank more highly that the one on your new blog. If you're really worried about this you can add a
-        <code>noindex</code>meta tag to the page to make search engines ignore it. That way at least people who come to your blog through other articles can still get value out of it.</p>
-        <h2>It doesn't matter that your old writing wasn't that great</h2>
-        <p>Think about one of your favorite blogs. One you've read for years perhaps. Go there, and click into the author's archives and read their first few posts. Chances are they will suck compared to what they're posting today. It's natural for writing to improve over time and for your thinking on a topic to change. Make minor (or even major) edits if you feel the need. Write some introductory text that gives context about what was happening when you wrote the article.</p>
-        <h2>Don't stop with the old stuff</h2>
-        <p>Of course, the idea here is not to just collect a bunch of old personal writing artifacts, but to give your blog (and your brain) a bit of a jump start. Once you've added a few older articles, spend some time to write some new ones. If your thoughts on a topic have changed, write a follow up post. Or write something entirely different.</p>
-      </content>
+      
+      <category>blog</category>
+      
+      <pubDate>Mon, 23 Nov 2020 17:00:00</pubDate>
+      <content><![CDATA[
+<p>My recent return to updating my website and finally getting
+ around to starting a blog on my own site was inspired in large part
+ by Alexey Guzey's article on <a href="https://guzey.com/personal/why-have-a-blog/">Why you should start
+ a blog right now</a>. In it, he helped me overcome my biggest
+ objections to starting. First, he convinced me that it doesn't
+ matter if I don't come up with anything original to say:</p>
+<blockquote>
+<p>Consider a university professor teaching a course. Does she say
+ anything original? Do you think she should cancel her course
+ because somebody else discovered the things she wants to teach? Or
+ does she have to cancel her course simply because there is a
+ similar course at some other university?</p>
+<p>Or consider yourself. Do you avoid having conversations with
+ your friends when you think you have nothing original to say? Do
+ you share things with them? Do you give advice? Do you help to
+ understand things?</p>
+</blockquote>
+<p>Second, the article gave me a lot of ideas on where to find
+ something to write about including:</p>
+<ul>
+<li>Scouring old IM logs and emails for things you said that seemed
+ useful to others.</li>
+<li>Looking at comments you've made on other peoples posts.</li>
+<li>Thinking about advice you repeatedly give to friends.</li>
+<li>Look through notes taken when researching different
+ topics.</li>
+</ul>
+<p>This got me thinking about other sources I could use for article
+ ideas and it hit me: I'd already written a lot of article-like
+ content but it was spread scattershot over the web. I then
+ collected a few of these, made some minor edits and they became the
+ first few articles on this site. The oldest of which I adapted from
+ a StackOverflow post I wrote all the way back in 2008! If you're
+ starting a blog, you should look around the web to find things
+ you've already written and consider adding them as back dated posts
+ on the new site.</p>
+<h2>Where to find articles you've already written to add to your</h2>
+<p>blog</p>
+<p>There are a lot of places you can probably find content you've
+ written that you can adapt to blog articles. Some you can likely
+ import directly into your blog and others you might need to edit
+ and or flesh out a little.</p>
+<ul>
+<li>Posts you've written on third party blogging platforms like
+ Medium, Blogger or BlogSpot.</li>
+<li>Questions you've asked or answered on Q\&amp;A websites like
+ Quora, StackOverflow or StackExchange. In these cases you might
+ need to edit them a bit so they make sense in a more narrative
+ form, but doing so is probably quicker and easier than you
+ anticipated.</li>
+<li>Forum posts.</li>
+<li>Entries from your personal journal (it's probably a good idea
+ to heavily edit these and obviously not post everything en
+ masse).</li>
+<li>Articles or documentation you've written for work that might be
+ useful for a wider audience. Check with your boss before adapting
+ any of this work, but chances are they'll approve so long as you
+ aren't revealing anything proprietary or that could be a security
+ risk.</li>
+<li>If you're a programmer, README's from open source tools you've
+ developed.</li>
+<li>Notes you've taken when learning something new.</li>
+<li>Content you've written on old, now defunct websites accessed
+ through the <a href="https://archive.org/web/web.php">Wayback
+ Machine</a>.</li>
+<li>Content that has been removed by changing moderation standards.
+ When I wrote the original post behind my article on getting
+ <a href="/breaking-into-coding">my first software development
+ job</a> on <a href="http://stackoverflow.com">StackOverflow</a>
+ they allowed open ended questions. When the site decided to focus
+ on questions with more definitive answers, my answer was removed by
+ moderators even though many people found it useful. Adding it to my
+ blog makes this long missing advice public again.</li>
+<li>Long posts from Facebook or Twitter threads that others outside
+ your friend circle might find useful.</li>
+</ul>
+<h2>Why you shouldn't worry about duplicating content</h2>
+<p>Collecting all of your writing in your blog can allow people
+ that would otherwise only find one or two fragments of your writing
+ to read all you've had to say if they are so inclined.</p>
+<p>Also, it's a great motivational exercise. It makes writing seem
+ like a less daunting and new task. Once doing it, you'll realize
+ you've actually been writing for years, and now have something to
+ show for it. That should make future writing easier.</p>
+<p>SEO experts sometimes rail against duplicate content. This might
+ make you think I'm crazy for advocating using it. However,
+ generally <a href="https://searchengineland.com/myth-duplicate-content-penalty-259657">duplicate content won't penalize your rankings</a>, it just won't
+ count positively toward your rankings so content from the original
+ site might rank more highly that the one on your new blog. If
+ you're really worried about this you can add a <code>noindex</code>
+ meta tag to the page to make search engines ignore it. That way at
+ least people who come to your blog through other articles can still
+ get value out of it.</p>
+<h2>It doesn't matter that your old writing wasn't that great</h2>
+<p>Think about one of your favorite blogs. One you've read for
+ years perhaps. Go there, and click into the author's archives and
+ read their first few posts. Chances are they will suck compared to
+ what they're posting today. It's natural for writing to improve
+ over time and for your thinking on a topic to change. Make minor
+ (or even major) edits if you feel the need. Write some introductory
+ text that gives context about what was happening when you wrote the
+ article.</p>
+<h2>Don't stop with the old stuff</h2>
+<p>Of course, the idea here is not to just collect a bunch of old
+ personal writing artifacts, but to give your blog (and your brain)
+ a bit of a jump start. Once you've added a few older articles,
+ spend some time to write some new ones. If your thoughts on a topic
+ have changed, write a follow up post. Or write something entirely
+ different.</p>
+      ]]></content>
     </item>
+    
     <item>
-      <title>
-An Obligatory Yet Useless Introduction
-      </title>
-      <description>
-I wrote this a couple years back in draft form and never got around to publishing it. I'm a little less enthusiastic about the "IndieWeb…
-      </description>
+      <title>Welcome</title>
       <link>https://tristanhavelick.com/welcome/</link>
-      <guid isPermaLink="false">https://tristanhavelick.com/welcome/</guid>
-      <pubDate>Mon, 21 May 2018 18:00:00 MDT</pubDate>
-      <content>
-        <p>
-          <em>[I wrote this a couple years back in draft form and never got around to publishing it. I'm a little less enthusiastic about the "IndieWeb" revolution now, but it does serve introduce the blog reasonably well]</em>
-        </p>
-        <p>I'm joining the IndieWeb revolution by creating my own personal website again for the first time in years! A lot of the structure comes from the venerable Derek Sivers, Is built with GatsbyJS and is hosted on GitHub Pages. Soon I'll be porting all of my old facebook, twitter and medium posts over here, along with hopefully adding some new content.</p>
-      </content>
+      
+      <category>blog</category>
+      
+      <pubDate>Mon, 21 May 2018 18:00:00</pubDate>
+      <content><![CDATA[
+<p><em>[I wrote this a couple years back in draft form and never
+ got around to publishing it. I'm a little less enthusiastic about
+ the "IndieWeb" revolution now, but it does serve introduce the blog
+ reasonably well]</em></p>
+<p>I'm joining the IndieWeb revolution by creating my own personal
+ website again for the first time in years! A lot of the structure
+ comes from the venerable Derek Sivers, Is built with GatsbyJS and
+ is hosted on GitHub Pages. Soon I'll be porting all of my old
+ facebook, twitter and medium posts over here, along with hopefully
+ adding some new content.</p>
+      ]]></content>
     </item>
+    
     <item>
-      <title>
-Why I haven’t been playing with my new amazing PS4
-      </title>
-      <description>
-This article has been adapted from a post I wrote at Medium, years ago. It was revised and published here on 2020-11-21 cover image  For…
-      </description>
+      <title>PS4</title>
       <link>https://tristanhavelick.com/ps4/</link>
-      <guid isPermaLink="false">https://tristanhavelick.com/ps4/</guid>
-      <pubDate>Sat, 02 Jan 2016 17:00:00 MST</pubDate>
-      <content>
-        <p>
-          <em>[This article has been adapted from a post I wrote at Medium, years ago. It was revised and published here on 2020-11-21]</em>
-        </p>
-        <p>
-          <img src="https://cdn-images-1.medium.com/max/2000/1*pYOJ7QeG4cAoI1t9TjPTyA.jpeg" alt="cover image" />
-        </p>
-        <p>For Christmas 2015 I got a new PlayStation 4, which was pretty damn awesome. It has amazing graphics, and with it came this really sweet open world game, Fallout 4, where you play as a survivor in this post-apocalyptic world that people probably spent years painstakingly creating detail after detail. Its pretty fun and impressive. But I barely played it in the weeks following recieving it.</p>
-        <p>Instead, I spent most of my time playing this Free/Open Source game first released 20 years ago (in some form). The game’s graphics (at their best) look like this:</p>
-        <p>
-          <img src="https://cdn-images-1.medium.com/max/2034/1*vb2J01WJlJWlOcVNZJZZ8A.png" />
-        </p>
-        <p>It’s called
-        <a href="http://crawl.develz.org/wordpress/">Dungeon Crawl: Stone Soup,</a>and I’ve been a little obsessed. Why? In this game you can actually die. Just now, I played the game for 2 hours, took a misstep and my character died. And that was it. I couldn’t be regenerated. I couldn’t restart from a save point. I couldn’t even play again and be faced with the same maps and enemies again armed with my newly acquired knowledge of what to find where, because the levels in this game are randomly generated each time you play. This very likely sounds awful but it’s not. As far as I can tell, there are two reasons for this being awesome instead of horrible.</p>
-        <p>First, this kind of “permadeath” really ratchets up the intensity of the game. When you’re staring down a giant ogre with a spiked club he looks like something my cat could draw on the screen. But when he has the power to wipe out hours of effort in a single turn he becomes incredibly scary in your mind’s eye. And if you’re otherwise doing well you’ll do anything in your power to survive. In my recent game, I felt this kind of thrilling moment over and over again. I stumbled upon a very powerful weapon called a Dark Maul. This thing was several times more powerful than any normal weapon in the game, but had the disadvantage of being extremely slow. I could take out almost any enemy in a single hefty hit of this beast of a hammer, but then I’d be left at the mercy of any other enemies as I worked to lift it over my head to attack again. Despite the disadvantage I was doing well, carefully luring enemies into hallways where I could take them on one by one, acting as a one man Spartain Army in my personal Pass of Thermopylae. If things got to be too much, I could run up stairs, kill off any close enemies that followed and head back down to the waiting horde. If I got into a bind, I could use a scroll of teleportation to wisk myself away to a random location in the dungeon. Of course, this is what ended up doing me in. I teleported away from some enemies while at deaths door into a gauntlet of still more enemies and before I could move I was hit by a fireball from an otherwise weak and typically harmless orcish wizard. The moments leading up to that death were some of the most thrilling I’ve experienced in a game.</p>
-        <p>
-        <em>My Final Moments</em>:
-        <img src="https://cdn-images-1.medium.com/max/3664/1*6hEdaggcmFDCg0wKjV_Y-g.png" alt="My Final Moments" /></p>
-        <p>And this leads me to the second reason I really like this particular game. I could have done better. I could have used an ability called “Berserk” to send my character into an inferno of adrenaline fueled rage that maybe, just maybe would have given me enough speed and energy to get away to a more defensible position. DCSS is just one in a long line of “Roguelikes” games that share it’s randomly generated dungeons and permanent death. The thing for me that sets it apart from other Roguelikes I’ve played is every time I die, I feel like I could have done better. I feel like if I’d just thought about my last move a little bit longer, or used a better strategy to avoid getting in such a tight spot, but I didn’t. My death was my fault, not due to just an unfortunate roll of the dice. Other rogue likes seem to spring surprises on you that with your limited resources are simply too weak to deal with. In classics of the genere like Nethack or the original rogue, people spend sometimes years between wins, waiting for that perfect game to come along.</p>
-        <p>DCSS keeps driving me to play again and again. It has a small enough complexity to be easy enough to wrap my mind around, yet a large enough variety to keep me coming back and trying new things. Big polished AAA games have their appeal and I certainly returned to them over the lifetime of the PS4. But then I'd find myself drawn back into the lofi dungeon to see if this time I might survive just a little while longer this time...</p>
-      </content>
+      
+      <category>blog</category>
+      
+      <pubDate>Sat, 02 Jan 2016 17:00:00</pubDate>
+      <content><![CDATA[
+<p><em>[This article has been adapted from a post I wrote at
+ Medium, years ago. It was revised and published here on
+ 2020-11-21]</em></p>
+<p><img alt="cover image" src="https://cdn-images-1.medium.com/max/2000/1*pYOJ7QeG4cAoI1t9TjPTyA.jpeg" /></p>
+<p>For Christmas 2015 I got a new PlayStation 4, which was pretty
+ damn awesome. It has amazing graphics, and with it came this really
+ sweet open world game, Fallout 4, where you play as a survivor in
+ this post-apocalyptic world that people probably spent years
+ painstakingly creating detail after detail. Its pretty fun and
+ impressive. But I barely played it in the weeks following recieving
+ it.</p>
+<p>Instead, I spent most of my time playing this Free/Open Source
+ game first released 20 years ago (in some form). The game’s
+ graphics (at their best) look like this:</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/2034/1*vb2J01WJlJWlOcVNZJZZ8A.png" /></p>
+<p>It’s called <a href="http://crawl.develz.org/wordpress/">Dungeon
+ Crawl: Stone Soup,</a> and I’ve been a little obsessed. Why? In
+ this game you can actually die. Just now, I played the game for 2
+ hours, took a misstep and my character died. And that was it. I
+ couldn’t be regenerated. I couldn’t restart from a save point. I
+ couldn’t even play again and be faced with the same maps and
+ enemies again armed with my newly acquired knowledge of what to
+ find where, because the levels in this game are randomly generated
+ each time you play. This very likely sounds awful but it’s not. As
+ far as I can tell, there are two reasons for this being awesome
+ instead of horrible.</p>
+<p>First, this kind of “permadeath” really ratchets up the
+ intensity of the game. When you’re staring down a giant ogre with a
+ spiked club he looks like something my cat could draw on the
+ screen. But when he has the power to wipe out hours of effort in a
+ single turn he becomes incredibly scary in your mind’s eye. And if
+ you’re otherwise doing well you’ll do anything in your power to
+ survive. In my recent game, I felt this kind of thrilling moment
+ over and over again. I stumbled upon a very powerful weapon called
+ a Dark Maul. This thing was several times more powerful than any
+ normal weapon in the game, but had the disadvantage of being
+ extremely slow. I could take out almost any enemy in a single hefty
+ hit of this beast of a hammer, but then I’d be left at the mercy of
+ any other enemies as I worked to lift it over my head to attack
+ again. Despite the disadvantage I was doing well, carefully luring
+ enemies into hallways where I could take them on one by one, acting
+ as a one man Spartain Army in my personal Pass of Thermopylae. If
+ things got to be too much, I could run up stairs, kill off any
+ close enemies that followed and head back down to the waiting
+ horde. If I got into a bind, I could use a scroll of teleportation
+ to wisk myself away to a random location in the dungeon. Of course,
+ this is what ended up doing me in. I teleported away from some
+ enemies while at deaths door into a gauntlet of still more enemies
+ and before I could move I was hit by a fireball from an otherwise
+ weak and typically harmless orcish wizard. The moments leading up
+ to that death were some of the most thrilling I’ve experienced in a
+ game.</p>
+<p><em>My Final Moments</em>: <img alt="My Final Moments" src="https://cdn-images-1.medium.com/max/3664/1*6hEdaggcmFDCg0wKjV_Y-g.png" /></p>
+<p>And this leads me to the second reason I really like this
+ particular game. I could have done better. I could have used an
+ ability called “Berserk” to send my character into an inferno of
+ adrenaline fueled rage that maybe, just maybe would have given me
+ enough speed and energy to get away to a more defensible position.
+ DCSS is just one in a long line of “Roguelikes” games that share
+ it’s randomly generated dungeons and permanent death. The thing for
+ me that sets it apart from other Roguelikes I’ve played is every
+ time I die, I feel like I could have done better. I feel like if
+ I’d just thought about my last move a little bit longer, or used a
+ better strategy to avoid getting in such a tight spot, but I
+ didn’t. My death was my fault, not due to just an unfortunate roll
+ of the dice. Other rogue likes seem to spring surprises on you that
+ with your limited resources are simply too weak to deal with. In
+ classics of the genere like Nethack or the original rogue, people
+ spend sometimes years between wins, waiting for that perfect game
+ to come along.</p>
+<p>DCSS keeps driving me to play again and again. It has a small
+ enough complexity to be easy enough to wrap my mind around, yet a
+ large enough variety to keep me coming back and trying new things.
+ Big polished AAA games have their appeal and I certainly returned
+ to them over the lifetime of the PS4. But then I'd find myself
+ drawn back into the lofi dungeon to see if this time I might
+ survive just a little while longer this time...</p>
+      ]]></content>
     </item>
+    
     <item>
-      <title>
-Thoughts on consumer goods and christmas 2010
-      </title>
-      <description>
-This article originally appeared on Blog Spot and was published here on 2020-11-22 In recent months I've come to realization that I can buy…
-      </description>
+      <title>Thoughts on consumer goods and christmas 2010</title>
       <link>https://tristanhavelick.com/consumerism/</link>
-      <guid isPermaLink="false">https://tristanhavelick.com/consumerism/</guid>
-      <pubDate>Tue, 30 Nov 2010 17:00:00 MST</pubDate>
-      <content>
-        <p>
-          <em>[This article originally appeared on Blog Spot and was published here on 2020-11-22]</em>
-        </p>
-        <p>In recent months I've come to realization that I can buy pretty much any consumer good I really want. True, I can't go down to cherry creek mall and buy the most expensive watch they have, but I've never had much of a taste for luxury anyhow. I can however, head down to the music store and buy any CD I want. Had I the inclination, I could visit Best Buy and purchase any DVD I wanted. The same can be said about a visit to Tattered Cover, my local bookshop and obtain a copy of anything I desired to read. In any case, I could probably get away with doing these things quite often.</p>
-        <p>The preceding paragraph was not written out of a desire to brag. The fact is, with very little determination and the ability to bend (okay break) a little copyright law, or dare I say, visit your local library you too can have similar ability even when living hand to mouth.</p>
-        <p>Strange as it may seem, given the ability to own all this media and physical goods, I have recently come to procure less and less of it. In most cases if I want to watch a movie, I'll Tivo it, or watch it on Netflix. If I want to listen to music, more often than not in the pas t few months, I'll visit Pandora. Truth be told, prior to my reunion with Pandora I'd pirated a lot of music, but that activity has greatly slowed recently. Whenever I do want to listen to specific music, I'll acquire it digitally, or at the very least get a CD and immediately rip it to digital format, with the CD itself rarely to be seen again. I also very rarely buy physical books these days. Unless I'm reading something obscure, I almost always read on my Kindle.</p>
-        <p>Yet, as I look around my apartment I see shelf after shelf of movies I like, but rarely watch. I see bookshelves filled so much that books are stacked in front of other books. The phenomenon continues as I look to my kitchen, filled with gadgets rarely used, and cookbooks rarely opened.</p>
-        <p>Julia (my wife) and I spent a lot of time today clearing things out and getting rid of a lot of junk we've acquired over the years, and although we have a lot to go, it finally feels more than just clean-- Itt has some semblance of being organized. And yet, a sense of foreboding comes over me as the day after christmas approaches.</p>
-        <p>Despite my being an atheist, christmas is by far my favorite holiday. I love spending time with family, eating, drinking and talking. I love the spirit of giving and honest camaraderie. I love to see the expressions on everyone's faces when they get something they really wanted. I even really love the feeling I get when I myself open a really creative and unique gift I hadn't even thought of buying myself, or that one thing I was really hoping for.</p>
-        <p>That said, I have in some ways come to dread the day after christmas. When I come home, much of the revelry has passed and I have got a brand new batch of stuff to layer atop my existing possessions. Its not that I don't like them, its that I really hate storing them. I live in a small condo and really don't want to "upgrade"my housing just to accommodate more stuff.</p>
-        <p>At the same time, I've come to realize of late that I get much more enjoyment out of doing things than having things. I really enjoyed the last couple books I read, but I enjoy discussing such books with people almost more than reading. I enjoy listening to music, but I most enjoy hearing new music a friend recommended, or going to a concert (either classical or rock). Overall, I've found that more happiness comes from gaining memories rather than possessions. I've even seen a lot of research to back up that proposition. On that note, I have the following suggestions to gift givers out there:</p>
-        <pre>
-<code>* If you're going to give some kind of media give the digital kind, if the recipient is like me and is so inclined.
-* Instead of giving someone an art book, offer to visit your favorite museum with them, or buy them a membership.
-* Instead of giving someone a DVD, buy them some movie tickets and offer to join them.
-* In lieu of a CD, offer to take someone to a concert, play, musical, or symphony.
-* Rather than giving a cookbook or gadget, invite your recipient over to cook something with you or clip a few of your own favorite recipes.
-</code>
-</pre>
-        <p>Sure, there are many out there who like getting stuff for christmas. I know when I was younger and had a severe shortage of stuff, I would have been disappointed if my christmas consisted of things from the above list. Also, many times a physical gift really is best. If you are endowed with amazing talent at creating or finding unique gifts, keep it up. A place can always be found for something truly heartfelt or amazing. But if your christmas shopping typically consists of a visit to the mall, best buy, or a web superstore, and you can't figure out what to give to your Wookie friend when he already owns too many combs (see
-        <a href="https://www.youtube.com/watch?v=OSWCQ7ALEms">this video</a>) , give the above list a shot.</p>
-      </content>
+      
+      <category>blog</category>
+      
+      <pubDate>Tue, 30 Nov 2010 17:00:00</pubDate>
+      <content><![CDATA[
+<p><em>[This article originally appeared on Blog Spot and was
+published here on 2020-11-22]</em></p>
+<p>In recent months I've come to realization that I can buy pretty
+much any consumer good I really want. True, I can't go down to
+cherry creek mall and buy the most expensive watch they have, but
+I've never had much of a taste for luxury anyhow. I can however,
+head down to the music store and buy any CD I want. Had I the
+inclination, I could visit Best Buy and purchase any DVD I wanted.
+The same can be said about a visit to Tattered Cover, my local
+bookshop and obtain a copy of anything I desired to read. In any
+case, I could probably get away with doing these things quite
+often.</p>
+<p>The preceding paragraph was not written out of a desire to brag.
+The fact is, with very little determination and the ability to bend
+(okay break) a little copyright law, or dare I say, visit your
+local library you too can have similar ability even when living
+hand to mouth.</p>
+<p>Strange as it may seem, given the ability to own all this media
+and physical goods, I have recently come to procure less and less
+of it. In most cases if I want to watch a movie, I'll Tivo it, or
+watch it on Netflix. If I want to listen to music, more often than
+not in the pas t few months, I'll visit Pandora. Truth be told,
+prior to my reunion with Pandora I'd pirated a lot of music, but
+that activity has greatly slowed recently. Whenever I do want to
+listen to specific music, I'll acquire it digitally, or at the very
+least get a CD and immediately rip it to digital format, with the
+CD itself rarely to be seen again. I also very rarely buy physical
+books these days. Unless I'm reading something obscure, I almost
+always read on my Kindle.</p>
+<p>Yet, as I look around my apartment I see shelf after shelf of
+movies I like, but rarely watch. I see bookshelves filled so much
+that books are stacked in front of other books. The phenomenon
+continues as I look to my kitchen, filled with gadgets rarely used,
+and cookbooks rarely opened.</p>
+<p>Julia (my wife) and I spent a lot of time today clearing things
+out and getting rid of a lot of junk we've acquired over the years,
+and although we have a lot to go, it finally feels more than just
+clean-- It has some semblance of being organized. And yet, a sense
+of foreboding comes over me as the day after Christmas
+approaches.</p>
+<p>Despite my being an atheist, Christmas is by far my favorite
+holiday. I love spending time with family, eating, drinking and
+talking. I love the spirit of giving and honest camaraderie. I love
+to see the expressions on everyone's faces when they get something
+they really wanted. I even really love the feeling I get when I
+myself open a really creative and unique gift I hadn't even thought
+of buying myself, or that one thing I was really hoping for.</p>
+<p>That said, I have in some ways come to dread the day after
+christmas. When I come home, much of the revelry has passed and I
+have got a brand new batch of stuff to layer atop my existing
+possessions. Its not that I don't like them, its that I really hate
+storing them. I live in a small condo and really don't want to
+"upgrade"my housing just to accommodate more stuff.</p>
+<p>At the same time, I've come to realize of late that I get much
+more enjoyment out of doing things than having things. I really
+enjoyed the last couple books I read, but I enjoy discussing such
+books with people almost more than reading. I enjoy listening to
+music, but I most enjoy hearing new music a friend recommended, or
+going to a concert (either classical or rock). Overall, I've found
+that more happiness comes from gaining memories rather than
+possessions. I've even seen a lot of research to back up that
+proposition. On that note, I have the following suggestions to gift
+givers out there:</p>
+<ul>
+<li>If you're going to give some kind of media give the digital kind, if the recipient is like me and is so inclined.</li>
+<li>Instead of giving someone an art book, offer to visit your favorite museum with them, or buy them a membership.</li>
+<li>Instead of giving someone a DVD, buy them some movie tickets and offer to join them.</li>
+<li>In lieu of a CD, offer to take someone to a concert, play, musical, or symphony.</li>
+<li>Rather than giving a cookbook or gadget, invite your recipient over to cook something with you or clip a few of your own favorite recipes.</li>
+</ul>
+<p>Sure, there are many out there who like getting stuff for
+Christmas. I know when I was younger and had a severe shortage of
+stuff, I would have been disappointed if my Christmas consisted of
+things from the above list. Also, many times a physical gift really
+is best. If you are endowed with amazing talent at creating or
+finding unique gifts, keep it up. A place can always be found for
+something truly heartfelt or amazing. But if your Christmas
+shopping typically consists of a visit to the mall, best buy, or a
+web superstore, and you can't figure out what to give to your
+Wookie friend when he already owns too many combs (see <a href="https://www.youtube.com/watch?v=OSWCQ7ALEms">this video</a>) ,
+give the above list a shot.</p>
+      ]]></content>
     </item>
+    
     <item>
-      <title>
-How I Got My First Programming Job
-      </title>
-      <description>
-This article is based on a stack overflow answer that was deleted after the site mvoed away from more open ended questions. I published it…
-      </description>
+      <title>How I Got My First Programming Job</title>
       <link>https://tristanhavelick.com/breaking-into-coding/</link>
-      <guid isPermaLink="false">https://tristanhavelick.com/breaking-into-coding/</guid>
-      <pubDate>Thu, 04 Dec 2008 17:00:00 MST</pubDate>
-      <content>
-        <p>
-          <em>[This article is based on a stack overflow answer that was deleted after the site mvoed away from more open ended questions. I published it here on 11/21/2020]</em>
-        </p>
-        <p>When I was in high school, one of my teachers told us a story of when he was in college. A friend of his wanted a job as a DJ for the university's radio station so he bought a huge rock and roll encyclopedia, and carried it around everywhere he went. A few months later when a position opened, he was offered the DJ job. Everyone saw him with that book, and assumed he was an expert in subject. The thing was, he never actually read a word of the book.</p>
-        <p>Now, you won't get a job coding simply by carrying around a PHP and not reading it. However my teacher's story inspired me to continuously learn new technologies and to do so conspicuously, letting everyone know in both subtle and non-subtle ways what you are learning.</p>
-        <p>Months after hearing this story, I was a a freshman at University, and I was very anxious to start coding professionally. I'd been coding in Atari Basic, and then (now) old versions of Visual Basic since I was 8 years old, and didn't want to wait until I graduated four years later to start making money with it. I was teaching myself HTML and (Classic) ASP on the side, and really came to like web development.</p>
-        <p>I wasn't very confident in my abilities at that point, and I just wanted to get some kind of a job working with computers at a company that had a development department. In that vein, I applied for a job at a local Internet Service Provider who was hiring folks to support their Dial-Up Internet service. I got the job, and I'm fairly certain it was due to the fact that I was carrying around O'reily's TCP/IP Networking book when I went to the interview and this impressed the interviewer.</p>
-        <p>After getting my foot in the door, instead of spending my lunch hours eating with people in the support department or alone, I'd walk up to the web development department and bug the folks there. I'd show them what I was working on for little side projects, and they'd show me what they were working on. I would hang out behind them, watching them code (they didn't seem to mind) and soon I was making suggestions when they got stuck. A while later, I'd come up and volunteer to help code things (on my own) in the evenings when they were close to a deadline (for free).</p>
-        <p>After a few months of this, they offered me a job in the department, when one of the other developers left.</p>
-        <p>So in summary:</p>
-        <ol>
-          <li>Always be learning new things, and make sure people know you are learning them. Don't just fake it like my teacher's friend.</li>
-          <li>Work on your own development projects. This is the most important thing. You need to be able to show people your can actually get stuff done.</li>
-          <li>Don't be afraid to get a non-coding job to get your foot in the door.</li>
-          <li>If you do (3), spend as much free time as possible working with the people in the company who actually do programming, but make sure you are providing value.</li>
-        </ol>
-        <p>Of course, this strategy wouldn't work for everyone, and wouldn't work at every company, but it can work.</p>
-      </content>
+      
+      <category>blog</category>
+      
+      <pubDate>Thu, 04 Dec 2008 17:00:00</pubDate>
+      <content><![CDATA[
+<p><em>[This article is based on a stack overflow answer that was deleted after the site moved away from more open ended questions. I published it here on 11/21/2020]</em></p>
+<p>When I was in high school, one of my teachers told us a story of when he was in college. A friend of his wanted a job as a DJ for the university's radio station so he bought a huge rock and roll encyclopedia, and carried it around everywhere he went. A few months later when a position opened, he was offered the DJ job. Everyone saw him with that book, and assumed he was an expert in subject. The thing was, he never actually read a word of the book.</p>
+<p>Now, you won't get a job coding simply by carrying around a PHP and not reading it. However my teacher's story inspired me to continuously learn new technologies and to do so conspicuously, letting everyone know in both subtle and non-subtle ways what I was are learning.</p>
+<p>Months after hearing this story, I was a a freshman at University, and I was very anxious to start coding professionally. I'd been coding in Atari Basic, and then (now) old versions of Visual Basic since I was 8 years old, and didn't want to wait until I graduated four years later to start making money with it. I was teaching myself HTML and (Classic) ASP on the side, and really came to like web development.</p>
+<p>I wasn't very confident in my abilities at that point, and I just wanted to get some kind of a job working with computers at a company that had a development department. In that vein, I applied for a job at a local Internet Service Provider who was hiring folks to support their Dial-Up Internet service. I got the job, and I'm fairly certain it was due to the fact that I was carrying around O'reily's TCP/IP Networking book when I went to the interview and this impressed the interviewer.</p>
+<p>After getting my foot in the door, instead of spending my lunch hours eating with people in the support department or alone, I'd walk up to the web development department and bug the folks there. I'd show them what I was working on for little side projects, and they'd show me what they were working on. I would hang out behind them, watching them code (they didn't seem to mind) and soon I was making suggestions when they got stuck. A while later, I'd come up and volunteer to help code things (on my own) in the evenings when they were close to a deadline (for free).</p>
+<p>After a few months of this, they offered me a job in the department, when one of the other developers left.</p>
+<p>So in summary:</p>
+<ol>
+<li>Always be learning new things, and make sure people know you are learning them. Don't just fake it like my teacher's friend.</li>
+<li>Work on your own development projects. This is the most important thing. You need to be able to show people your can actually get stuff done.</li>
+<li>Don't be afraid to get a non-coding job to get your foot in the door.</li>
+<li>If you do (3), spend as much free time as possible working with the people in the company who actually do programming, but make sure you are providing value.</li>
+</ol>
+<p>Of course, this strategy wouldn't work for everyone, and wouldn't work at every company, but it can work.</p>
+      ]]></content>
     </item>
+    
   </channel>
 </rss>

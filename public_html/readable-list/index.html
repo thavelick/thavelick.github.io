@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Tristan Havelick : A Library for Making List Webpages "Readable"</title>
-  <link href="/styles.css" rel="stylesheet">
-  <link href="/rss.xml" rel="alternate" title="TristanHavelick.com" type="application/rss+xml">
-</head>
-<body>
-<div class="content">
-<a href="/blog">Articles</a>
-<h1>A Library for Making List Webpages "Readable"</h1>
-<small>Posted 2023-05-16</small>
-<p>This started as a README for a potential open source project. I
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/styles.css">
+    
+    <title>A Library for Making List Webpages &#34;Readable&#34;</title>
+  </head>
+  <body>
+    
+    <div class="content">
+      
+<a href="/">Tristan Havelick</a>
+<h1>A Library for Making List Webpages &#34;Readable&#34;</h1>
+<small>Published on 2023/05/16</small>
+<div class="post-content">
+  <p>This started as a README for a potential open source project. I
 decided to make a blog post to maybe get some feedback or suggestions.</p>
 <h2>Status</h2>
 <p>Just an idea at this point.</p>
 <h2>Description</h2>
 <p>There are "readability" libraries such as:</p>
 <ul>
-<li><a href=
-"https://github.com/mozilla/readability">https://github.com/mozilla/readability</a></li>
-<li><a href=
-"https://github.com/buriy/python-readability">https://github.com/buriy/python-readability</a></li>
+<li><a href="https://github.com/mozilla/readability">https://github.com/mozilla/readability</a></li>
+<li><a href="https://github.com/buriy/python-readability">https://github.com/buriy/python-readability</a></li>
 </ul>
 <p>These take a webpage containing an article and strip out all the
 navigation and ads. Most of these work great for pages that are
@@ -29,14 +31,10 @@ identifying when a page is NOT an article. However, there isn't
 much these libraries can currently do with pages that are lists of
 articles like:</p>
 <ul>
-<li><a href=
-"https://coloradosun.com/category/news/housing/">https://coloradosun.com/category/news/housing/</a></li>
-<li><a href=
-"https://drewdevault.com/">https://drewdevault.com/</a></li>
-<li><a href=
-"https://www.npr.org/sections/culture/">https://www.npr.org/sections/culture/</a></li>
-<li><a href=
-"https://www.cnn.com/health">https://www.cnn.com/health</a></li>
+<li><a href="https://coloradosun.com/category/news/housing/">https://coloradosun.com/category/news/housing/</a></li>
+<li><a href="https://drewdevault.com/">https://drewdevault.com/</a></li>
+<li><a href="https://www.npr.org/sections/culture/">https://www.npr.org/sections/culture/</a></li>
+<li><a href="https://www.cnn.com/health">https://www.cnn.com/health</a></li>
 </ul>
 <p>Here, I'm considering making a library that strips out
 extraneous side navigation/ads/other junk from web pages like
@@ -47,8 +45,9 @@ one could create a simple and/or text-only view of a website than
 what is typically rendered by text browsers like w3m and lynx.</p>
 <p>A browser built using this could sit in a missing place in the
 continuum of browser complexity:</p>
-<pre><code>Offpunk &lt; THIS THING &lt; w3m/lynx/elinks &lt; visurf/netsurf/surf &lt; qutebrowser/chrome/firefox
-</code></pre>
+<p>```
+Offpunk &lt; THIS THING &lt; w3m/lynx/elinks &lt; visurf/netsurf/surf &lt; qutebrowser/chrome/firefox</p>
+<p>```</p>
 <h2>Possible Algorithm</h2>
 <ol>
 <li>Start with a given HTTP/S URL</li>
@@ -79,5 +78,7 @@ be of lower quality</li>
 rely on client-side JavaScript to render content.</li>
 </ul>
 </div>
-</body>
+
+    </div>
+  </body>
 </html>

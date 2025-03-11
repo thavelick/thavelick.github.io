@@ -86,6 +86,10 @@ def create_app(test_config=None):
             {"Content-Type": "text/xml"},
         )
 
+    @app.route("/404.html")
+    def page_not_found_static():
+        return render_template("404.html")
+
     @app.route("/<path:path>")
     def catchall(path):
         path_without_trailing_slash = path.rstrip("/")
