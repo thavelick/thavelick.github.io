@@ -95,8 +95,7 @@ def create_app(test_config=None):
             post["publish_date"] = dt
             if "markdown_content" in post:
                 post["article_content"] = markdown.markdown(post["markdown_content"])
-            # ai! make this content type text/html
-            return render_template("post.html", post=post)
+            return render_template("post.html", post=post), 200, {"Content-Type": "text/html"}
         try:
             return app.send_static_file(path)
         except NotFound as e:
