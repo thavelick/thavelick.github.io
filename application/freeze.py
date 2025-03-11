@@ -10,9 +10,13 @@ freezer = Freezer(app)
 def catchall():
     for post in Post.fetch_all():
         yield {"path": post["slug"]}
-
-    # ai! Let's add a loop to iterate over the files in application/static/archive and yeild the relative paths
-
+    
+    import os
+    archive_dir = os.path.join("application", "static", "archive")
+    for root, dirs, files in os.walk(archive_dir):
+        for file in files:
+            relative_path = os.path.relpath(os.path.join(root, file), "application/static")
+            yield {"path": relative_path}
 
 if __name__ == "__main__":
     freezer.freeze()
