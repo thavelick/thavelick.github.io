@@ -31,7 +31,7 @@
 - [x] Ensure links between new dynamic routes and legacy static pages remain consistent.
 
 ## 4.5 Set up flask to static site generation
-- [ ] Use flask freeze to generate public_html
+- [x] Use flask freeze to generate public_html
 
 ## 5. Error Handling, Logging & Testing
 - [x] Write unit/integration tests for:
@@ -42,12 +42,12 @@
 ## 6. Deployment & Documentation
 - [ ] Update documentation:
   - [x] README.md with instructions for local development and deployment.
-  - [ ] spec.md with the latest architecture and migration plan.
+  - [x] spec.md with the latest architecture and migration plan.
 - [ ] Confirm consistent URL structure and SEO considerations across the new dynamic and static contents.
 
 ## 7. Miscellaneous Tasks
 - [x] Verify that the html-to-markdown conversion (with ATX heading style) works as expected.
 - [x] Review any custom logic in `scripts/populate_db.py` for compatibility with the new structure.
   - [x] Remove extraneous html columns
-- [ ] Conduct a final code review
+- [x] Conduct a final code review
 - [ ] Write a blog post about this process
