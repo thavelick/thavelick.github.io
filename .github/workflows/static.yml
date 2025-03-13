@@ -35,6 +35,8 @@ jobs:
       - name: Populate SQLite DB
         run: sqlite3 blog.db < blog.sql
       - name: Generate static files
+        env:
+          PYTHONPATH: .
         run: uv run python application/freeze.py
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
