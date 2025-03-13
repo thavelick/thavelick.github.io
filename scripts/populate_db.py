@@ -67,7 +67,7 @@ def extract_title(html_content):
         prefixes = ["Tristan Havelick --", "Tristan Havelick :"]
         for prefix in prefixes:
             if title.startswith(prefix):
-                title = title[len(prefix):].strip()
+                title = title[len(prefix) :].strip()
                 break
         return title
     return None
@@ -216,7 +216,7 @@ def main():
     conn.commit()
     process_entries(args.root_dir, conn)
     conn.close()
-    subprocess.run(["sqlite3", db_path, ".dump"], stdout=open("blog.sql", "w"))
+    subprocess.run("sqlite3 " + db_path + " .dump > blog.sql", shell=True)
 
 
 if __name__ == "__main__":
