@@ -216,7 +216,7 @@ def main():
     conn.commit()
     process_entries(args.root_dir, conn)
     conn.close()
-    subprocess.run(["sqlite3", db_path, ".dump"], stdout=open("blog.sql", "w"))
+    subprocess.run("sqlite3 " + db_path + " .dump | sed 's/CREATE TABLE /DROP TABLE IF EXISTS\\nCREATE TABLE /g' > blog.sql", shell=True)
 
 
 if __name__ == "__main__":
