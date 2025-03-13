@@ -33,7 +33,7 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v5
       - name: Populate SQLite DB
-        run: sqlite3 blog.db < blog.sql
+        run: sqlite3 instance/blog.db < blog.sql
       - name: Generate static files
         env:
           PYTHONPATH: .
