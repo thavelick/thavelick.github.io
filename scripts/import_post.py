@@ -34,6 +34,15 @@ def get_category_id(conn, category_name):
     return cur.lastrowid
 
 
+def normalize_publish_date(date_str):
+    import datetime
+    try:
+        dt = datetime.datetime.strptime(date_str, "%Y-%m-%d")
+    except ValueError:
+        raise ValueError("publish_date must be in YYYY-MM-DD format: " + date_str)
+    return dt.strftime("%Y-%m-%d 00:00:00")
+
+
 def import_post(post_path, db_path):
     metadata, markdown_content = parse_post(post_path)
     conn = sqlite3.connect(db_path)
@@ -49,7 +58,7 @@ def import_post(post_path, db_path):
             (
                 metadata.get("title"),
                 markdown_content,
-                metadata.get("publish_date"),
+                normalize_publish_date(metadata.get("publish_date")),
                 post_id,
             ),
         )
@@ -61,7 +70,7 @@ def import_post(post_path, db_path):
                 slug,
                 metadata.get("title"),
                 markdown_content,
-                metadata.get("publish_date"),
+                normalize_publish_date(metadata.get("publish_date")),
             ),
         )
         post_id = cur.lastrowid
