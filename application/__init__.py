@@ -108,7 +108,9 @@ def create_app(test_config=None):
         assert app.static_folder
         static_file_path = os.path.join(app.static_folder, path)
         if os.path.exists(static_file_path):
-            return app.send_static_file(path)
+            with open(static_file_path, "rb") as f:
+                content = f.read()
+            return content, 200, {"Content-Type": "text/html; charset=utf-8"}
         else:
             raise NotFound()
 
