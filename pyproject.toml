@@ -2,6 +2,7 @@
 name = "tristan-havelick-website"
 version = "0.1.0"
 description = "Tristan's personal website"
+requires-python = ">=3.12"
 dependencies = [
     "beautifulsoup4>=4.13.3",
     "flask>=3.1.0",
