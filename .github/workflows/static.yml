@@ -36,6 +36,8 @@ jobs:
         run: mkdir -p instance/
       - name: Populate SQLite DB
         run: sqlite3 instance/blog.db < blog.sql
+      - name: Run tests
+        run: uv run python -m unittest
       - name: Generate static files
         env:
           PYTHONPATH: .
