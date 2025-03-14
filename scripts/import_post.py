@@ -39,20 +39,22 @@ def import_post(post_path, db_path):
     conn = sqlite3.connect(db_path)
     cur = conn.cursor()
 
-    # Insert post
-    cur.execute(
-        """
-        INSERT INTO posts (slug, title, markdown_content, publish_date)
-        VALUES (?, ?, ?, ?)
-    """,
-        (
-            metadata.get("slug"),
-            metadata.get("title"),
-            markdown_content,
-            metadata.get("publish_date"),
-        ),
-    )
-    post_id = cur.lastrowid
+    slug = metadata.get("slug")
+    cur.execute("SELECT id FROM posts WHERE slug = ?", (slug,))
+    row = cur.fetchone()
+    if row:
+        post_id = row[0]
+        cur.execute(
+            "UPDATE posts SET title=?, markdown_content=?, publish_date=? WHERE id=?",
+            (metadata.get("title"), markdown_content, metadata.get("publish_date"), post_id)
+        )
+        cur.execute("DELETE FROM post_categories WHERE post_id = ?", (post_id,))
+    else:
+        cur.execute(
+            "INSERT INTO posts (slug, title, markdown_content, publish_date) VALUES (?, ?, ?, ?)",
+            (slug, metadata.get("title"), markdown_content, metadata.get("publish_date")),
+        )
+        post_id = cur.lastrowid
 
     # Process categories (assume comma-separated if multiple)
     categories = [
