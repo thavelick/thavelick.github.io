@@ -1,3 +1,9 @@
+--- 
+slug: /til/nosetests_only_recurses_subfolders_that_are_modules
+categories: til, blog
+title: nosetests Only Recurses Sub-folders That Are Modules
+publish_date: 2025-03-14
+---
 # nosetests Only Recurses Sub-folders That Are Modules
 
 In a project I work on, we organize tests under a `tests` folder.  Within that

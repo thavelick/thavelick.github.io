@@ -1,3 +1,9 @@
+--- 
+slug: /til/difference-between-docker-compose-exec-and-run
+categories: til, blog
+title: The Difference Between `docker compose exec` and `docker compose run`
+publish_date: 2025-03-14
+---
 # The Difference Between `docker compose exec` and `docker compose run`
 
 In the past, I've used the commands `docker compose exec [some container] bash` and

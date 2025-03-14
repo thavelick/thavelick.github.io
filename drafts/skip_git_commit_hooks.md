@@ -1,3 +1,9 @@
+--- 
+slug: /til/skip_git_commit_hooks
+categories: til, blog
+title: Skip git Commit Hooks
+publish_date: 2025-03-14
+---
 # Skip git Commit Hooks
 On my work laptop, I've got git hooks set up so git will complain if I forget 
 certain things that make my commits more professional, like:
