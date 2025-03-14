@@ -1,0 +1,16 @@
+# You aren't locked in
+In 1998 Netscape decided to rewrite their iconic web browser from scratch. They failed. By the time they released the rewritten version, it was so riddled with bugs that the team decided to scrap it. Joel Spolsky called this "The worst strategic mistake that any software company can make". As a new professional, his message was clear and haunted me for years to come.
+
+But a codebase without direction and planning can indeed really get out of hand. Much later in my career, a website I worked on with tons of ad-hoc PHP and spaghetti jQuery was getting incredibly hard to work with. Not having effective front end unit tests or clear logic separation made rollbacks and merge conflicts happen. More than one high impact initiative was cancelled due to missed deadlines. We knew the current path wasn't going to wok in the long run. But I knew that doing a rewrite from scratch could potentially end the company. So what to do?
+
+Tasked with finding a way out of this, I dove into researching and found it's not the rewrite that's dangerous. It's lack of feedback. The longer you work on a project without getting it into the hands of the people who'll use it, the worse off you'll be. That leaves two options:
+
+1. Do the it fast
+2. Do it slow, one piece at a time
+
+In the case of the PHP/jQuery migration we went with the second option. We took advantage of the Strangler Fig pattern. First, we started moving core back-end functionality to python flask API server. Then we moved bits of functionality, page by page, component by component over to a new Next.js/React system. We put a reverse proxy on from the old server to the new one that we could activate on a URL by URL basis. We started with a simple page as a proof of concept, but once we had that, we started moving our most changing and highest traffic routes over. Within less than a month we saw the benefits of faster page load times, easier collaboration and quicker implementation of split tests. Over time, more and more pages lived on the new system. All of it was turned on, in production, in front of customers from one. No development branch lived for more than a week or so without being merged in. And it worked. After a few years, we'd migrated 98% of the application to the new systems with no giant rollbacks, no crunch time and no regrets. The new system isn't perfect. It has some of the dependency hell kind of problems that plague a lot of React/Next projects. But it works well overall and is a far cry from where we used to be.
+
+You're not stuck choosing between a complete, existentially risky write and languishing in a buggy, hard-to-work with code base. You can escape to something better. And with LLM-based code completion like Github Copilot and Agentic development environments like Aider and Cursor, you can probably do such a migration a hell of a lot faster than we did. On a recent undertaking, I saw  this first hand when I moved my manually edited fully HTML, and admittedly much smaller, personal site to a database driven flask site using a similar process. This time the bulk of the work was done in less than 24 hours. More on that next time.
+
+Did you find this article valuable? Let me know on Mastodon!
+
