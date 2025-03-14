@@ -36,6 +36,7 @@ def get_category_id(conn, category_name):
 
 def normalize_publish_date(date_str):
     import datetime
+
     try:
         dt = datetime.datetime.strptime(date_str, "%Y-%m-%d")
     except ValueError:
