@@ -111,8 +111,7 @@ def create_app(test_config=None):
             with open(static_file_path, "rb") as f:
                 content = f.read()
             return content, 200, {"Content-Type": "text/html; charset=utf-8"}
-        else:
-            raise NotFound()
+        raise NotFound()
 
     @app.errorhandler(404)
     def page_not_found(e):
