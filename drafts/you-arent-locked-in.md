@@ -12,5 +12,5 @@ In the case of the PHP/jQuery migration we went with the second option. We took 
 
 You're not stuck choosing between a complete, existentially risky write and languishing in a buggy, hard-to-work with code base. You can escape to something better. And with LLM-based code completion like Github Copilot and Agentic development environments like Aider and Cursor, you can probably do such a migration a hell of a lot faster than we did. On a recent undertaking, I saw  this first hand when I moved my manually edited fully HTML, and admittedly much smaller, personal site to a database driven flask site using a similar process. This time the bulk of the work was done in less than 24 hours. More on that next time.
 
-Did you find this article valuable? Let me know on Mastodon!
+Did you find this article valuable? Let me know on [Mastodon](https://social.linux.pizza/@Natris1979)!
 
