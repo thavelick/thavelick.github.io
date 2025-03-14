@@ -14,10 +14,18 @@ dev: # Kick-off local dev environment & start coding! 💻
 	@echo "Starting dev environment.."
 	uv run flask --app application run --debug
 
-setup: # Setup local dev environment
+deps: # Install dependencies
 	@echo "Installing deps.."
 	uv sync
+	@echo "Done."
+
+init-db: # Initialize the database
+	@echo "Initializing database.."
 	uv run flask --app application init-db
+	@echo "Done."
+
+populate-db: # Populate the database
+	@echo "Populating database.."
 	uv run scripts/populate_db.py --rebuild-db
 	@echo "Done."
 test: # Run tests
@@ -25,16 +33,7 @@ test: # Run tests
 	uv run python -m unittest
 	@echo "Done."
 
-test-with-coverage: # Run tests with coverage
-	@echo "Running tests with coverage.."
-	coverage run -m pytest && coverage report && coverage html
 
-# This probably isn't adviable when first starting out, but once you have a lot of tests, this
-# should replace `make test`.
-test-dist: # Run tests accross cpus
-	@echo "Running tests with dist.."
-	pytest -n auto
-	@echo "Done."
 freeze: # Generate static files
 	@echo "Generating static files.."
 	uv run python application/freeze.py
