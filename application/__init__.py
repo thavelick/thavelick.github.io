@@ -105,6 +105,7 @@ def create_app(test_config=None):
                 200,
                 {"Content-Type": "text/html; charset=utf-8"},
             )
+        assert app.static_folder
         static_file_path = os.path.join(app.static_folder, path)
         if os.path.exists(static_file_path):
             return app.send_static_file(path)
