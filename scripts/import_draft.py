@@ -57,8 +57,12 @@ def dump_database(db_path):
     print(result)
 
 if __name__ == "__main__":
+    import sys
     script_dir = os.path.dirname(os.path.abspath(__file__))
     db_path = os.path.join(script_dir, "..", "instance", "blog.db")
-    draft_path = os.path.join(script_dir, "..", "drafts", "you-arent-locked-in.md")
+    if len(sys.argv) < 2:
+        print("Usage: {} path-to-draft".format(sys.argv[0]))
+        sys.exit(1)
+    draft_path = sys.argv[1]
     import_draft(draft_path, db_path)
     dump_database(db_path)
