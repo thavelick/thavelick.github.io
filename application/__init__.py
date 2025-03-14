@@ -7,6 +7,7 @@ from werkzeug.exceptions import NotFound
 from . import db
 from .models import Post, Category
 import markdown
+import mimetypes
 from datetime import datetime
 
 
@@ -110,7 +111,14 @@ def create_app(test_config=None):
         if os.path.exists(static_file_path):
             with open(static_file_path, "rb") as f:
                 content = f.read()
-            return content, 200, {"Content-Type": "text/html; charset=utf-8"}
+            content_type, _ = mimetypes.guess_type(static_file_path)
+            if content_type is None:
+                content_type = (
+                    "text/html; charset=utf-8"
+                    if path.endswith(".html") or path.endswith(".htm")
+                    else "application/octet-stream"
+                )
+            return content, 200, {"Content-Type": content_type}
         raise NotFound()
 
     @app.errorhandler(404)
