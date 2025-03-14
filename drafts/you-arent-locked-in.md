@@ -1,5 +1,7 @@
 title: You aren't locked in
+slug: you-arent-locked-in
 categories: blog
+publish_date: 2025-03-14
 ---
 In 1998, Netscape decided to rewrite the code behind their iconic web browser from scratch. They failed. By the time they released the rewritten version, it was so riddled with bugs that the team decided to scrap it. [Joel Spolsky](https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/) called this "The worst strategic mistake that any software company can make". As a new professional, his message was clear and haunted me for years to come.
 
