@@ -7,13 +7,20 @@ import subprocess
 def parse_post(filepath):
     with open(filepath, "r", encoding="utf-8") as f:
         lines = f.read().splitlines()
-    # Find the separator (first occurrence of '---')
-    try:
-        sep_index = lines.index("---")
-    except ValueError:
-        raise Exception("Draft file missing front matter separator '---'")
-    front_matter_lines = lines[:sep_index]
-    markdown_content = "\n".join(lines[sep_index + 1 :]).strip()
+    if lines and lines[0] == "---":
+        try:
+            sep_index = lines[1:].index("---") + 1
+        except ValueError:
+            raise Exception("Draft file missing closing front matter separator '---'")
+        front_matter_lines = lines[1:sep_index]
+        markdown_content = "\n".join(lines[sep_index + 1 :]).strip()
+    else:
+        try:
+            sep_index = lines.index("---")
+        except ValueError:
+            raise Exception("Draft file missing front matter separator '---'")
+        front_matter_lines = lines[:sep_index]
+        markdown_content = "\n".join(lines[sep_index + 1 :]).strip()
 
     metadata = {}
     for line in front_matter_lines:
