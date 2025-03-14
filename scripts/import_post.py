@@ -46,13 +46,23 @@ def import_post(post_path, db_path):
         post_id = row[0]
         cur.execute(
             "UPDATE posts SET title=?, markdown_content=?, publish_date=? WHERE id=?",
-            (metadata.get("title"), markdown_content, metadata.get("publish_date"), post_id)
+            (
+                metadata.get("title"),
+                markdown_content,
+                metadata.get("publish_date"),
+                post_id,
+            ),
         )
         cur.execute("DELETE FROM post_categories WHERE post_id = ?", (post_id,))
     else:
         cur.execute(
             "INSERT INTO posts (slug, title, markdown_content, publish_date) VALUES (?, ?, ?, ?)",
-            (slug, metadata.get("title"), markdown_content, metadata.get("publish_date")),
+            (
+                slug,
+                metadata.get("title"),
+                markdown_content,
+                metadata.get("publish_date"),
+            ),
         )
         post_id = cur.lastrowid
 
