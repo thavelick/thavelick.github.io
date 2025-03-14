@@ -12,16 +12,17 @@ MAKEFLAGS += --no-builtin-rules
 
 dev: # Kick-off local dev environment & start coding! 💻
 	@echo "Starting dev environment.."
-	flask --app application run --debug
+	uv run flask --app application run --debug
 
 setup: # Setup local dev environment
-	@echo "Installing.."
-	pip install -r requirements.txt
-	flask --app application init-db
+	@echo "Installing deps.."
+	uv sync
+	uv run flask --app application init-db
+	uv run scripts/populate_db.py --rebuild-db
 	@echo "Done."
 test: # Run tests
 	@echo "Running tests.."
-	pytest
+	uv run python -m unittest
 	@echo "Done."
 
 test-with-coverage: # Run tests with coverage
@@ -33,6 +34,10 @@ test-with-coverage: # Run tests with coverage
 test-dist: # Run tests accross cpus
 	@echo "Running tests with dist.."
 	pytest -n auto
+	@echo "Done."
+freeze: # Generate static files
+	@echo "Generating static files.."
+	uv run python application/freeze.py
 	@echo "Done."
 # -----------------------------------------------------------
 # CAUTION: If you have a file with the same name as make
