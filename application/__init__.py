@@ -105,8 +105,11 @@ def create_app(test_config=None):
                 200,
                 {"Content-Type": "text/html; charset=utf-8"},
             )
-        # ai! check if the file exists first
-        return app.send_static_file(path)
+        static_file_path = os.path.join(app.static_folder, path)
+        if os.path.exists(static_file_path):
+            return app.send_static_file(path)
+        else:
+            raise NotFound()
 
     @app.errorhandler(404)
     def page_not_found(e):
