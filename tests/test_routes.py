@@ -83,6 +83,7 @@ class RoutesTestCase(unittest.TestCase):
     def test_catchall_static(self):
         response = self.client.get("/archive/chaos-of-the-mind/index.htm")
         self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.headers.get("Content-Type"), "text/html")
         self.assertIn(b"Woohoo!", response.data)
 
     def test_catchall_static_automatic_index(self):
@@ -94,6 +95,11 @@ class RoutesTestCase(unittest.TestCase):
         response = self.client.get("/nonexistentpage")
         self.assertEqual(response.status_code, 404)
 
+
+    def test_styles_css(self):
+        response = self.client.get("/styles.css")
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.headers.get("Content-Type"), "text/css")
 
 if __name__ == "__main__":
     unittest.main()
