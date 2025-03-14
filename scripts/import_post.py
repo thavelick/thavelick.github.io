@@ -71,7 +71,8 @@ def import_post(post_path, db_path):
 
 def dump_database(db_path):
     result = subprocess.check_output(["sqlite3", db_path, ".dump"], text=True)
-    print(result)
+    with open("blog.sql", "w", encoding="utf-8") as f:
+        f.write(result)
 
 
 if __name__ == "__main__":
