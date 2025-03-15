@@ -80,7 +80,7 @@ def main():
          p.decompose()
     categories.add("blog")
     categories_list = ", ".join(sorted(categories))
-    front_matter = f"---\ntitle: \"{title}\"\ndate: {date_str}\ncategories: {categories_list}\nslug: \"{basename}\"\n---\n\n"
+    front_matter = f"---\ntitle: {title}\ndate: {date_str}\ncategories: {categories_list}\nslug: {basename}\n---\n\n"
     
     final_content = front_matter + str(main_content)
     with open(output_path, 'w', encoding='utf-8') as out_f:
