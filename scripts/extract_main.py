@@ -16,6 +16,10 @@ def extract_main_content(file_path):
     # Remove permalinks from main_content
     for a in main_content.find_all("a", class_="permalink"):
         a.decompose()
+    # Remove amazon links
+    for a in main_content.find_all("a", href=True):
+        if "amazon.com" in a["href"]:
+            a.replace_with(a.get_text())
     # (Removed meta paragraph removal to allow category extraction in main())
     # Remove feedback paragraphs from main_content
     for p in main_content.find_all("p", class_="feedback"):
