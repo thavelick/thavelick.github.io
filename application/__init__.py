@@ -38,7 +38,11 @@ def create_app(test_config=None):
     @app.route("/blog/")
     def blog():
         posts = Post.fetch_by_category("blog")
-        return render_template("blog.html", title="Tristan Havelick", posts=posts)
+        posts_by_year = {}
+        for post in posts:
+            year = post["publish_date"][:4]
+            posts_by_year.setdefault(year, []).append(post)
+        return render_template("blog.html", title="Tristan Havelick", posts_by_year=posts_by_year)
 
     @app.route("/blogroll/")
     def blogroll():

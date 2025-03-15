@@ -5,9 +5,12 @@
 {% block content %}
 <a href="/">Tristan Havelick</a>
 <h1>Posts</h1>
-<ul>
-  {% for post in posts %}
-  <li><a href="/{{ post.slug }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
+{% for year, posts in posts_by_year.items()|sort(reverse=True) %}
+  <h2>{{ year }}</h2>
+  <ul>
+    {% for post in posts %}
+      <li><a href="/{{ post.slug }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endfor %}
 {% endblock %}
