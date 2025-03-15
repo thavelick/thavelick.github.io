@@ -26,6 +26,8 @@ init-db: # Initialize the database
 
 restore-db: # Restore the database from blog.sql
 	@echo "Restoring database from blog.sql.."
+	@mkdir -p instance
+	@if [ -e instance/blog.db ]; then echo "Error: instance/blog.db already exists. Aborting restore-db." && exit 1; fi
 	sqlite3 instance/blog.db < blog.sql
 	@echo "Database restored."
 
