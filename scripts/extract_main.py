@@ -24,12 +24,9 @@ def extract_main_content(file_path):
         children = list(main_content.children)
         main_content.unwrap()
         main_content = BeautifulSoup("".join(str(child) for child in children), 'html.parser')
-    # Check for img tags that contain a filename in the src attribute; print a warning with the filename and alt text
+    # Remove img tags from main_content
     for img in main_content.find_all("img"):
-        src = img.get("src", "")
-        alt = img.get("alt", "")
-        filename = os.path.basename(src)
-        print(f"Warning: <img> tag with filename '{filename}' and alt '{alt}' found.")
+        img.decompose()
     return main_content
 
 def main():
