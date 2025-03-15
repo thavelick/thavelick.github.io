@@ -46,5 +46,5 @@ mappings.map("n", "<c-z>", "<Nop>", opts, "Editor", "disable_suspending", "Disab
 
 Commenting out the offending line fixed me up nicely.
 
-From: https://social.linux.pizza/web/@solene@bsd.network/108973783539676780
-and https://unix.stackexchange.com/questions/475310/how-to-bind-a-keyboard-shortcut-in-zsh-to-a-program-requiring-stdin
+From: [Social post](https://social.linux.pizza/web/@solene@bsd.network/108973783539676780)
+and [Unix.SE discussion](https://unix.stackexchange.com/questions/475310/how-to-bind-a-keyboard-shortcut-in-zsh-to-a-program-requiring-stdin)
