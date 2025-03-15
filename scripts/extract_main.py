@@ -15,9 +15,7 @@ def extract_main_content(file_path):
     # Remove permalinks from main_content
     for a in main_content.find_all("a", class_="permalink"):
         a.decompose()
-    # Remove meta paragraphs from main_content
-    for p in main_content.find_all("p", class_="meta"):
-        p.decompose()
+    # (Removed meta paragraph removal to allow category extraction in main())
     # Remove feedback paragraphs from main_content
     for p in main_content.find_all("p", class_="feedback"):
         p.decompose()
@@ -73,10 +71,13 @@ def main():
         date_tag.decompose()
     else:
         date_str = "1970-01-01"
-    category_tags = main_content.find_all('a', rel="category tag")
-    categories = {a.get_text(strip=True).lower() for a in category_tags}
-    for a in category_tags:
-         a.decompose()
+    meta_paras = main_content.find_all("p", class_="meta")
+    categories = set()
+    for p in meta_paras:
+         for a in p.find_all("a", rel="category tag"):
+             categories.add(a.get_text(strip=True).lower())
+    for p in meta_paras:
+         p.decompose()
     categories.add("blog")
     categories_list = ", ".join(sorted(categories))
     front_matter = f"---\ntitle: \"{title}\"\ndate: {date_str}\ncategories: [{categories_list}]\nslug: \"{basename}\"\n---\n\n"
