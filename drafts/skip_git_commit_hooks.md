@@ -22,4 +22,4 @@ git commit -n -m "my unprofessional commit message"
 ```
 
 ## Resources
-* https://stackoverflow.com/questions/7230820/skip-git-commit-hooks
+* [Stack Overflow: Skip Git Commit Hooks](https://stackoverflow.com/questions/7230820/skip-git-commit-hooks)
