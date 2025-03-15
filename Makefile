@@ -24,9 +24,14 @@ init-db: # Initialize the database
 	uv run flask --app application init-db
 	@echo "Done."
 
-test: # Run tests
-	@echo "Running tests.."
-	uv run python -m unittest
+test-unit: # Run unit tests
+	@echo "Running unit tests.."
+	uv run python -m unittest discover -s tests/unit
+	@echo "Done."
+
+test-integration: # Run integration tests
+	@echo "Running integration tests.."
+	uv run python -m unittest discover -s tests/integration
 	@echo "Done."
 
 freeze: # Generate static files
