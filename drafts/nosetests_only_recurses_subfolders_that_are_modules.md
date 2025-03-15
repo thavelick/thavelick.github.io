@@ -34,5 +34,5 @@ class TestEnsureAllTestFoldersAreModules(unittest.TestCase):
 ```
 
 ## Resources
-* https://stackoverflow.com/questions/19852548/run-nosetests-in-all-subdirectories
-* https://docs.python.org/3.11/library/os.html#os.walk
+* [How to Run nosetests in All Subdirectories (Stack Overflow)](https://stackoverflow.com/questions/19852548/run-nosetests-in-all-subdirectories)
+* [Python Docs: os.walk](https://docs.python.org/3.11/library/os.html#os.walk)
