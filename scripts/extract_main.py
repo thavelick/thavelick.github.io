@@ -42,8 +42,39 @@ def main():
         parent = os.path.basename(os.path.dirname(file_path))
         basename = f"{parent}.html"
     output_path = os.path.join(output_dir, basename)
+    
+    # Extract front matter information from main_content
+    title_tag = main_content.find('h2', class_='storytitle')
+    if title_tag:
+        title = title_tag.get_text(strip=True)
+        title_tag.decompose()
+    else:
+        title = "No Title"
+    date_tag = main_content.find('h1', class_='storydate')
+    if date_tag:
+        date_text = date_tag.get_text(strip=True)
+        parts = date_text.split('.')
+        if len(parts) == 3:
+            month, day, year = parts
+            if len(year) == 2:
+                year = "20" + year
+            date_str = f"{year}-{month.zfill(2)}-{day.zfill(2)}"
+        else:
+            date_str = "1970-01-01"
+        date_tag.decompose()
+    else:
+        date_str = "1970-01-01"
+    category_tags = main_content.find_all('a', rel="category tag")
+    categories = {a.get_text(strip=True).lower() for a in category_tags}
+    for a in category_tags:
+         a.decompose()
+    categories.add("blog")
+    categories_list = ", ".join(sorted(categories))
+    front_matter = f"---\ntitle: \"{title}\"\ndate: {date_str}\ncategories: [{categories_list}]\n---\n\n"
+    
+    final_content = front_matter + str(main_content)
     with open(output_path, 'w', encoding='utf-8') as out_f:
-        out_f.write(str(main_content))
+        out_f.write(final_content)
     print("Main content extracted to {}".format(output_path))
 
 if __name__ == '__main__':
