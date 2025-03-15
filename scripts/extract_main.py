@@ -27,6 +27,9 @@ def main():
     output_dir = 'drafts'
     os.makedirs(output_dir, exist_ok=True)
     basename = os.path.basename(file_path)
+    if basename == "index.html":
+        parent = os.path.basename(os.path.dirname(file_path))
+        basename = f"{parent}.html"
     output_path = os.path.join(output_dir, basename)
     with open(output_path, 'w', encoding='utf-8') as out_f:
         out_f.write(str(main_content))
