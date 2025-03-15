@@ -1,7 +1,7 @@
 ---
 slug: til/ctrl-z-bg-and-fg
 categories: til, blog
-title: Using ctrl-z to toggle between a program and the terminal
+title: TIL: Using ctrl-z to toggle between a program and the terminal
 publish_date: 2022-09-11
 ---
 In almost any terminal program you can hit `ctrl-z` to pause it, then run `fg`
