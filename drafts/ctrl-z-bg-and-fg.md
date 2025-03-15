@@ -11,7 +11,7 @@ the program too.
 First, I tried doing with this [Blog post](https://schulz.dk/2022/01/26/using-ctrl-z-to-toggle-process-in-fg-bg/)
 suggested:
 
-```zsh
+```
 # .zshrc
 # use ctrl-z to toggle in and out of bg
 if [[ $- == *i* ]]; then
@@ -22,7 +22,7 @@ fi
 
 But my system doesn't seem to support the `bind` command. Thus I ended up with:
 
-```zsh
+```
 # .zshrc
 foreground() {
     fg
@@ -40,7 +40,7 @@ Which worked, but it didn't work from nvim which is where I thought I'd find
 it most useful.  It turns out this is because I'm using Doom vim which disables
 `crtrl-z` in `lua/doom/extras/keybindings/core.lua`:
 
-```lua
+```
 mappings.map("n", "<c-z>", "<Nop>", opts, "Editor", "disable_suspending", "Disable suspending")
 ```
 
