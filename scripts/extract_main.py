@@ -85,7 +85,7 @@ def main():
     categories.add("blog")
     categories_list = ", ".join(sorted(categories))
     slug = os.path.splitext(basename)[0]
-    front_matter = f"---\ntitle: {title}\ndate: {date_str}\ncategories: {categories_list}\nslug: {slug}\n---\n\n"
+    front_matter = f"---\ntitle: {title}\npublish_date: {date_str}\ncategories: {categories_list}\nslug: {slug}\n---\n\n"
     
     markdown_content = convert_to_markdown(str(main_content), heading_style="atx")
     final_content = front_matter + markdown_content
