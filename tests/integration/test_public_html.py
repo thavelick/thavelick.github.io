@@ -3,7 +3,7 @@ import unittest
 
 class PublicHtmlTestCase(unittest.TestCase):
     def setUp(self):
-        self.base_path = os.path.join(os.path.dirname(__file__), '..', 'public_html')
+        self.base_path = os.path.join(os.getcwd(), 'public_html')
 
     def test_index_html_exists(self):
         index_file = os.path.join(self.base_path, 'index.html')
