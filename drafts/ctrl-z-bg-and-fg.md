@@ -8,7 +8,7 @@ In almost any terminal program you can hit `ctrl-z` to pause it, then run `fg`
 to bring it back. With some zsh configuration you can make `ctrl-z` bring back
 the program too.
 
-First, I tried doing with this [Blog post](https://schulz.dk/2022/01/26/using-ctrl-z-to-toggle-process-in-fg-bg/)
+First, I tried doing what this [Blog post](https://schulz.dk/2022/01/26/using-ctrl-z-to-toggle-process-in-fg-bg/)
 suggested:
 
 ```

@@ -6,7 +6,6 @@ from werkzeug.exceptions import NotFound
 
 from . import db
 from .models import Post, Category
-import markdown
 from .markdown_utils import render_markdown
 import mimetypes
 from datetime import datetime

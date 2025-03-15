@@ -1,7 +1,7 @@
---- 
+---
 slug: til/difference-between-docker-compose-exec-and-run
 categories: til, blog
-title: The Difference Between `docker compose exec` and `docker compose run`
+title: TIL: The Difference Between `docker compose exec` and `docker compose run`
 publish_date: 2022-09-25
 ---
 In the past, I've used the commands `docker compose exec [some container] bash` and
@@ -13,7 +13,7 @@ and to my surprise it was missing entirely! I suspected this `exec`/`run` busine
 so I tried using `exec` instead and sure enough the missing configuration file was there.
 
 As it turns out, `docker compose exec [some container] [command]` will run the given command in
-the docker container that is already running. On the other hand, 
+the docker container that is already running. On the other hand,
 `docker compose run [some container] [command]` spins up a fresh container.
 
 But how does that explain the missing configuration file? In our case we have a `Dockerfile` that's
