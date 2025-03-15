@@ -214,6 +214,7 @@ h1 {
 }
 h1,
 h2 {
+  margin-bottom: 10px;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
