@@ -34,8 +34,8 @@ jobs:
         uses: astral-sh/setup-uv@v5
       - name: Make an `instance` folder to hold the db
         run: mkdir -p instance/
-      - name: Populate SQLite DB
-        run: sqlite3 instance/blog.db < blog.sql
+      - name: Restore database using make command
+        run: make restore-db
       - name: Run unit tests
         run: make test-unit
       - name: Generate static files
