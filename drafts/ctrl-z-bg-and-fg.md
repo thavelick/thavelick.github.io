@@ -1,5 +1,5 @@
 ---
-slug: /til/ctrl-z-bg-and-fg
+slug: til/ctrl-z-bg-and-fg
 categories: til, blog
 title: Using ctrl-z to toggle between a program and the terminal
 publish_date: 2022-09-11

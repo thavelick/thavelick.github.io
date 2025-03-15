@@ -1,5 +1,5 @@
 --- 
-slug: /til/nosetests_only_recurses_subfolders_that_are_modules
+slug: til/nosetests_only_recurses_subfolders_that_are_modules
 categories: til, blog
 title: nosetests Only Recurses Sub-folders That Are Modules
 publish_date: 2022-09-25

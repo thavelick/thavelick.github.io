@@ -1,5 +1,5 @@
 --- 
-slug: /til/skip_git_commit_hooks
+slug: til/skip_git_commit_hooks
 categories: til, blog
 title: Skip git Commit Hooks
 publish_date: 2022-09-25
