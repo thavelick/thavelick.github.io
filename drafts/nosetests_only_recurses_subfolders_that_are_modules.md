@@ -4,8 +4,6 @@ categories: til, blog
 title: nosetests Only Recurses Sub-folders That Are Modules
 publish_date: 2022-09-25
 ---
-# nosetests Only Recurses Sub-folders That Are Modules
-
 In a project I work on, we organize tests under a `tests` folder.  Within that
 folder, of course, we have several levels of sub-folders. Recently I had a
 problem where some newer tests weren't being run with our build. It turns out
