@@ -34,7 +34,7 @@ jobs:
         uses: astral-sh/setup-uv@v5
       - name: Make an `instance` folder to hold the db
         run: mkdir -p instance/
-      - name: Restore database using make command
+      - name: Restore db
         run: make restore-db
       - name: Run unit tests
         run: make test-unit
