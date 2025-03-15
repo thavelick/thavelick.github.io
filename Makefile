@@ -24,6 +24,11 @@ init-db: # Initialize the database
 	uv run flask --app application init-db
 	@echo "Done."
 
+restore-db: # Restore the database from blog.sql
+	@echo "Restoring database from blog.sql.."
+	sqlite3 instance/blog.db < blog.sql
+	@echo "Database restored."
+
 test-unit: # Run unit tests
 	@echo "Running unit tests.."
 	uv run python -m unittest discover -s tests/unit
