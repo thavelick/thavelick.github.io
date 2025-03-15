@@ -15,9 +15,6 @@ def extract_main_content(file_path):
     # Remove permalinks from main_content
     for a in main_content.find_all("a", class_="permalink"):
         a.decompose()
-    # Remove feedback paragraphs from main_content
-    for p in main_content.find_all("p", class_="feedback"):
-        p.decompose()
     # Remove meta paragraphs from main_content
     for p in main_content.find_all("p", class_="meta"):
         p.decompose()
