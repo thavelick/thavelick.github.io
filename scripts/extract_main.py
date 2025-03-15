@@ -12,6 +12,14 @@ def extract_main_content(file_path):
     if main_content is None:
         # Fallback to extracting the entire main content div
         main_content = soup.find('div', id='content')
+    # Remove permalinks from main_content
+    for a in main_content.find_all("a", class_="permalink"):
+        a.decompose()
+    # If main_content is a <div> with class "post", unwrap it to remove the surrounding tag
+    if main_content.name == "div" and "post" in main_content.get("class", []):
+        children = list(main_content.children)
+        main_content.unwrap()
+        main_content = BeautifulSoup("".join(str(child) for child in children), 'html.parser')
     return main_content
 
 def main():
