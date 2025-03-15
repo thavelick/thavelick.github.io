@@ -7,6 +7,7 @@ from werkzeug.exceptions import NotFound
 from . import db
 from .models import Post, Category
 import markdown
+from .markdown_utils import render_markdown
 import mimetypes
 from datetime import datetime
 
@@ -72,7 +73,7 @@ def create_app(test_config=None):
             dt = datetime.strptime(post_dict["publish_date"], "%Y-%m-%d %H:%M:%S")
             post_dict["publish_date"] = dt.strftime("%a, %d %b %Y %H:%M:%S")
             if "markdown_content" in post_dict:
-                post_dict["article_content"] = markdown.markdown(
+                post_dict["article_content"] = render_markdown(
                     post_dict["markdown_content"]
                 )
             post_dict["categories"] = Category.fetch_by_post_id(post_dict["id"])
@@ -100,7 +101,7 @@ def create_app(test_config=None):
             dt = datetime.strptime(post["publish_date"], "%Y-%m-%d %H:%M:%S")
             post["publish_date"] = dt
             if "markdown_content" in post:
-                post["article_content"] = markdown.markdown(post["markdown_content"])
+                post["article_content"] = render_markdown(post["markdown_content"])
             return (
                 render_template("post.html", post=post),
                 200,
