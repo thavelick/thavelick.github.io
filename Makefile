@@ -24,15 +24,10 @@ init-db: # Initialize the database
 	uv run flask --app application init-db
 	@echo "Done."
 
-populate-db: # Populate the database
-	@echo "Populating database.."
-	uv run scripts/populate_db.py --rebuild-db
-	@echo "Done."
 test: # Run tests
 	@echo "Running tests.."
 	uv run python -m unittest
 	@echo "Done."
-
 
 freeze: # Generate static files
 	@echo "Generating static files.."
