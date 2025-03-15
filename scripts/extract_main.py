@@ -2,6 +2,7 @@
 import sys
 import os
 from bs4 import BeautifulSoup
+from html_to_markdown import convert_to_markdown
 
 def extract_main_content(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
@@ -44,7 +45,9 @@ def main():
     basename = os.path.basename(file_path)
     if basename == "index.html":
         parent = os.path.basename(os.path.dirname(file_path))
-        basename = f"{parent}.html"
+        basename = f"{parent}.md"
+    else:
+        basename = os.path.splitext(basename)[0] + ".md"
     output_path = os.path.join(output_dir, basename)
     
     # Extract front matter information from main_content
@@ -80,7 +83,8 @@ def main():
     slug = os.path.splitext(basename)[0]
     front_matter = f"---\ntitle: {title}\ndate: {date_str}\ncategories: {categories_list}\nslug: {slug}\n---\n\n"
     
-    final_content = front_matter + str(main_content)
+    markdown_content = convert_to_markdown(str(main_content), heading_style="atx")
+    final_content = front_matter + markdown_content
     with open(output_path, 'w', encoding='utf-8') as out_f:
         out_f.write(final_content)
     print("Main content extracted to {}".format(output_path))
