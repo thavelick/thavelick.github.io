@@ -4,8 +4,6 @@ categories: til, blog
 title: Using ctrl-z to toggle between a program and the terminal
 publish_date: 2022-09-11
 ---
-# Using ctrl-z to toggle between a program and the terminal
-
 In almost any terminal program you can hit `ctrl-z` to pause it, then run `fg`
 to bring it back. With some zsh configuration you can make `ctrl-z` bring back
 the program too.
