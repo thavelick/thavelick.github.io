@@ -37,9 +37,7 @@ jobs:
       - name: Run unit tests
         run: make test-unit
       - name: Generate static files
-        env:
-          PYTHONPATH: .
-        run: uv run python application/freeze.py
+        run: make freeze
       - name: Run integration tests
         run: make test-integration
       - name: Upload artifact
