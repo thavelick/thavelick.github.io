@@ -36,12 +36,14 @@ jobs:
         run: mkdir -p instance/
       - name: Populate SQLite DB
         run: sqlite3 instance/blog.db < blog.sql
-      - name: Run tests
-        run: make test
+      - name: Run unit tests
+        run: make test-unit
       - name: Generate static files
         env:
           PYTHONPATH: .
         run: uv run python application/freeze.py
+      - name: Run integration tests
+        run: make test-integration
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
