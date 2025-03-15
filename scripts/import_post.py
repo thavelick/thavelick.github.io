@@ -57,6 +57,8 @@ def import_post(post_path, db_path):
     cur = conn.cursor()
 
     slug = metadata.get("slug")
+    if slug.startswith("/"):
+        raise Exception("Slug must not start with a slash")
     cur.execute("SELECT id FROM posts WHERE slug = ?", (slug,))
     row = cur.fetchone()
     if row:
