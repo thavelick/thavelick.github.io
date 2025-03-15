@@ -397,6 +397,7 @@ pre tt:before {
 }
 ul {
   list-style-type: disc;
+  margin-top: 0;
 }
 
 .title-outer {
