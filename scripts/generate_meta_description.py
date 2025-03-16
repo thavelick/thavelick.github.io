@@ -44,18 +44,18 @@ def main():
         db = get_db()
         if args.force:
             posts = db.execute(
-                "SELECT id, title, markdown_content, meta_description FROM posts"
+                "SELECT id, slug, title, markdown_content, meta_description FROM posts"
             ).fetchall()
         else:
             posts = db.execute(
-                "SELECT id, title, markdown_content, meta_description FROM posts WHERE meta_description IS NULL OR meta_description = ''"
+                "SELECT id, slug, title, markdown_content, meta_description FROM posts WHERE meta_description IS NULL OR meta_description = ''"
             ).fetchall()
         for post in posts:
             meta = generate_meta_description(post["title"], post["markdown_content"])
             db.execute(
                 "UPDATE posts SET meta_description = ? WHERE id = ?", (meta, post["id"])
             )
-            print(f"Updated post {post['id']} with meta description.")
+            print(f"Updated post {post['slug']} with meta description: {meta}")
         db.commit()
         import subprocess
 
