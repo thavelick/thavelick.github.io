@@ -20,7 +20,7 @@ def process_file(filepath):
     if meta:
         meta["content"] = "noindex"
     else:
-        meta = soup.new_tag("meta", **{"name": "robots", "content": "noindex"})
+        meta = soup.new_tag("meta", attrs={"name": "robots", "content": "noindex"})
         head.insert(0, meta)
 
     with open(filepath, "w", encoding="utf-8") as f:
