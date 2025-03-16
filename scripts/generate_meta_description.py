@@ -3,8 +3,9 @@ import llm
 from application import create_app
 from application.db import get_db
 
+
 def generate_meta_description(title, content):
-    model = llm.get_model("gemini-pro")  # Use gemini-pro model; ensure proper API key is set if required.
+    model = llm.get_model("4o-mini")
     # Define a JSON schema for a meta description (max 160 characters for consistency)
     schema = {
         "title": "MetaDescription",
@@ -13,10 +14,10 @@ def generate_meta_description(title, content):
             "meta_description": {
                 "title": "Meta Description",
                 "type": "string",
-                "maxLength": 160
+                "maxLength": 160,
             }
         },
-        "required": ["meta_description"]
+        "required": ["meta_description"],
     }
     prompt_text = (
         "Write a concise, engaging meta description for a blog post "
@@ -32,6 +33,7 @@ def generate_meta_description(title, content):
         print(f"Error generating meta description for title '{title}':", e)
         return ""
 
+
 def main():
     app = create_app()
     with app.app_context():
@@ -41,14 +43,20 @@ def main():
         ).fetchall()
         for post in posts:
             meta = generate_meta_description(post["title"], post["markdown_content"])
-            db.execute("UPDATE posts SET meta_description = ? WHERE id = ?", (meta, post["id"]))
+            db.execute(
+                "UPDATE posts SET meta_description = ? WHERE id = ?", (meta, post["id"])
+            )
             print(f"Updated post {post['id']} with meta description.")
         db.commit()
         import subprocess
-        result = subprocess.run(["sqlite3", "instance/blog.db", ".dump"], capture_output=True, text=True)
+
+        result = subprocess.run(
+            ["sqlite3", "instance/blog.db", ".dump"], capture_output=True, text=True
+        )
         with open("blog.sql", "w") as f:
             f.write(result.stdout)
         print("Database dumped to blog.sql")
+
 
 if __name__ == "__main__":
     main()
