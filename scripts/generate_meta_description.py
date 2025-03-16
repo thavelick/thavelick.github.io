@@ -35,12 +35,21 @@ def generate_meta_description(title, content):
 
 
 def main():
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--force', action='store_true', help='Force update meta description even if already exists')
+    args = parser.parse_args()
     app = create_app()
     with app.app_context():
         db = get_db()
-        posts = db.execute(
-            "SELECT id, title, markdown_content, meta_description FROM posts WHERE meta_description IS NULL OR meta_description = ''"
-        ).fetchall()
+        if args.force:
+            posts = db.execute(
+                "SELECT id, title, markdown_content, meta_description FROM posts"
+            ).fetchall()
+        else:
+            posts = db.execute(
+                "SELECT id, title, markdown_content, meta_description FROM posts WHERE meta_description IS NULL OR meta_description = ''"
+            ).fetchall()
         for post in posts:
             meta = generate_meta_description(post["title"], post["markdown_content"])
             db.execute(
