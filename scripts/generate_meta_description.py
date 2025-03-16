@@ -4,7 +4,7 @@ from application import create_app
 from application.db import get_db
 
 def generate_meta_description(title, content):
-    model = llm.get_model()  # Use default model; ensure OPENAI_API_KEY or other key is set if required.
+    model = llm.get_model("gemini-pro")  # Use gemini-pro model; ensure proper API key is set if required.
     # Define a JSON schema for a meta description (max 160 characters for consistency)
     schema = {
         "title": "MetaDescription",
@@ -44,6 +44,11 @@ def main():
             db.execute("UPDATE posts SET meta_description = ? WHERE id = ?", (meta, post["id"]))
             print(f"Updated post {post['id']} with meta description.")
         db.commit()
+        import subprocess
+        result = subprocess.run(["sqlite3", "instance/blog.db", ".dump"], capture_output=True, text=True)
+        with open("blog.sql", "w") as f:
+            f.write(result.stdout)
+        print("Database dumped to blog.sql")
 
 if __name__ == "__main__":
     main()
