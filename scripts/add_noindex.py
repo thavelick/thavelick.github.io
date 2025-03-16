@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 
 def process_file(filepath):
-    with open(filepath, "r", encoding="utf-8") as f:
+    with open(filepath, "r", encoding="utf-8", errors="replace") as f:
         content = f.read()
     soup = BeautifulSoup(content, "html.parser")
 
