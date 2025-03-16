@@ -2,6 +2,7 @@ CREATE TABLE IF NOT EXISTS posts (
                     id INTEGER PRIMARY KEY,
                     slug TEXT NOT NULL,
                     title TEXT,
+                    meta_description TEXT,
                     markdown_content TEXT,
                     publish_date DATETIME
                 );
