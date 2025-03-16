@@ -20,9 +20,9 @@ def generate_meta_description(title, content):
     }
     prompt_text = (
         "Write a concise, engaging meta description for a blog post "
-        "given the title and an excerpt of its content. "
+        "given the title and its content. "
         "Ensure the meta description is no more than 160 characters. "
-        f"Title: {title}\nContent: {content[:300]}"
+        f"Title: {title}\nContent: {content}"
     )
     response = model.prompt(prompt_text, schema=schema)
     try:
