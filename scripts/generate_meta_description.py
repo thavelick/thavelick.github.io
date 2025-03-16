@@ -1,4 +1,6 @@
 import json
+import argparse
+import subprocess
 import llm
 from application import create_app
 from application.db import get_db
@@ -20,24 +22,29 @@ def generate_meta_description(title, content):
         "required": ["meta_description"],
     }
     prompt_text = (
-        "Write a concise, engaging meta description for a blog post "
+        "Write a concise, engaging and non-imperative meta description for a blog post "
         "given the title and its content. "
-        "Ensure the meta description is no more than 160 characters and is not promotional. "
+        "Don't lead with imperative words like 'Discover', 'Explore', or 'Dive into'"
+        "Ensure the meta description is no more than 160 characters.\n"
+        "Example styles to emulate: \n\n"
+        "An overview of the ketogenic diet. Includes fundamental principles, allowed foods, meal planning considerations, and potential effects. \n"
+        "Ideas for decorating your home without breaking the bank. Features upcycling projects, thrifting finds, and easy crafting techniques. \n"
+        "Strategies for enhancing productivity while working remotely. Covers time management, focus techniques, and distraction mitigation. \n"
         f"Title: {title}\nContent: {content}"
     )
     response = model.prompt(prompt_text, schema=schema)
-    try:
-        result = json.loads(response.text())
-        return result.get("meta_description", "")
-    except Exception as e:
-        print(f"Error generating meta description for title '{title}':", e)
-        return ""
+    result = json.loads(response.text())
+    return result.get("meta_description", "")
 
 
 def main():
-    import argparse
+
     parser = argparse.ArgumentParser()
-    parser.add_argument('--force', action='store_true', help='Force update meta description even if already exists')
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Force update meta description even if already exists",
+    )
     args = parser.parse_args()
     app = create_app()
     with app.app_context():
@@ -57,7 +64,6 @@ def main():
             )
             print(f"Updated post {post['slug']} with meta description: {meta}")
         db.commit()
-        import subprocess
 
         result = subprocess.run(
             ["sqlite3", "instance/blog.db", ".dump"], capture_output=True, text=True
