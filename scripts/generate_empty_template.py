@@ -27,17 +27,16 @@ categories: blog
         f.write(content)
 
 if __name__ == "__main__":
-    force = False
-    args = sys.argv[1:]
-    if "--force" in args:
-        force = True
-        args.remove("--force")
-    if len(args) < 1:
-        print("Usage: {} [--force] <slug>".format(sys.argv[0]))
-        sys.exit(1)
+    import argparse
     import os
-    slug = args[0].strip("/").strip()
+    parser = argparse.ArgumentParser(
+        description="Generate an empty post template for use with import_post.py."
+    )
+    parser.add_argument("slug", help="Slug for the post")
+    parser.add_argument("--force", action="store_true", help="Force overwriting if file exists")
+    args = parser.parse_args()
+    slug = args.slug.strip("/").strip()
     os.makedirs("drafts", exist_ok=True)
     output_path = os.path.join("drafts", f"{slug}.md")
-    generate_template(output_path, slug, force)
+    generate_template(output_path, slug, args.force)
     print(f"Template written to {output_path}")
