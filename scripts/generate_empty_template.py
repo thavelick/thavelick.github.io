@@ -8,9 +8,9 @@ Usage:
 
 import sys
 
-def generate_template(filepath, slug):
+def generate_template(filepath, slug, force=False):
     import os
-    if os.path.exists(filepath):
+    if os.path.exists(filepath) and not force:
         print(f"Error: file {filepath} already exists.")
         sys.exit(1)
     import datetime
@@ -27,12 +27,17 @@ categories: blog
         f.write(content)
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: {} <slug>".format(sys.argv[0]))
+    force = False
+    args = sys.argv[1:]
+    if "--force" in args:
+        force = True
+        args.remove("--force")
+    if len(args) < 1:
+        print("Usage: {} [--force] <slug>".format(sys.argv[0]))
         sys.exit(1)
     import os
-    slug = sys.argv[1].strip("/").strip()
+    slug = args[0].strip("/").strip()
     os.makedirs("drafts", exist_ok=True)
     output_path = os.path.join("drafts", f"{slug}.md")
-    generate_template(output_path, slug)
+    generate_template(output_path, slug, force)
     print(f"Template written to {output_path}")
