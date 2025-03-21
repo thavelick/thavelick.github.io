@@ -9,10 +9,15 @@ Usage:
 import sys
 
 def generate_template(filepath, slug):
+    import os
+    if os.path.exists(filepath):
+        print(f"Error: file {filepath} already exists.")
+        sys.exit(1)
     import datetime
     current_date = datetime.date.today().strftime("%Y-%m-%d")
+    title = slug.replace('-', ' ').title()
     content = f"""---
-title:
+title: {title}
 slug: {slug}
 publish_date: {current_date}
 categories: blog
