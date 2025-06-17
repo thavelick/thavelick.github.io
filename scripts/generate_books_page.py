@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate application/templates/books.html from a CSV export.
+Generate books_from_goodreads.html from a CSV export.
 """
 import csv
 import os
@@ -30,7 +30,7 @@ def main():
         print("Usage: generate_books_page.py path/to/books.csv")
         sys.exit(1)
     csv_path = sys.argv[1]
-    output_path = os.path.join('application', 'templates', 'books.html')
+    output_path = 'books_from_goodreads.html'
     groups = defaultdict(list)
     with open(csv_path, newline='', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
@@ -45,7 +45,9 @@ def main():
     if 'Unknown Year' in groups:
         years.append('Unknown Year')
     html = generate_books_html(groups, years)
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    dir_name = os.path.dirname(output_path)
+    if dir_name:
+        os.makedirs(dir_name, exist_ok=True)
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(html)
     print(f"Written books page to {output_path}")
