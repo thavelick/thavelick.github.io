@@ -47,6 +47,8 @@ def main():
     if 'Unknown Year' in groups:
         years.append('Unknown Year')
     total = sum(len(groups[y]) for y in years)
+    for y in years:
+        print(f"{y}: {len(groups[y])}")
     html = generate_books_html(groups, years)
     dir_name = os.path.dirname(output_path)
     if dir_name:
