@@ -44,13 +44,16 @@ def main():
                 year = date_read.split('/')[0]
             else:
                 year = 'Unknown Year'
-            try:
-                year_int = int(year)
-            except ValueError:
-                continue
-            if year_int > 2108:
-                continue
-            groups[year].append(row)
+            if year == 'Unknown Year':
+                groups[year].append(row)
+            else:
+                try:
+                    year_int = int(year)
+                except ValueError:
+                    continue
+                if year_int > 2108:
+                    continue
+                groups[year].append(row)
     years = sorted([y for y in groups if y != 'Unknown Year'], reverse=True)
     if 'Unknown Year' in groups:
         years.append('Unknown Year')
