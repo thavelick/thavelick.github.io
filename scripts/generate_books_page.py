@@ -14,6 +14,8 @@ def generate_books_html(groups, years):
     lines.append('{% block content %}')
     lines.append('  <a href="/">Tristan Havelick.com</a>')
     lines.append("  <h1>What I've Been Reading</h1>")
+    total = sum(len(groups[y]) for y in years)
+    lines.append(f"  <p>Total books: {total}</p>")
     for year in years:
         lines.append(f'  <h2>{year}</h2>')
         lines.append('  <ol reversed>')
