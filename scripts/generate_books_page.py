@@ -14,8 +14,6 @@ def generate_books_html(groups, years):
     lines.append('{% block content %}')
     lines.append('  <a href="/">Tristan Havelick.com</a>')
     lines.append("  <h1>What I've Been Reading</h1>")
-    total = sum(len(groups[y]) for y in years)
-    lines.append(f"  <p>Total books: {total}</p>")
     for year in years:
         lines.append(f'  <h2>{year}</h2>')
         lines.append('  <ol reversed>')
@@ -48,6 +46,7 @@ def main():
     years = sorted([y for y in groups if y != 'Unknown Year'], reverse=True)
     if 'Unknown Year' in groups:
         years.append('Unknown Year')
+    total = sum(len(groups[y]) for y in years)
     html = generate_books_html(groups, years)
     dir_name = os.path.dirname(output_path)
     if dir_name:
@@ -55,6 +54,7 @@ def main():
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(html)
     print(f"Written books page to {output_path}")
+    print(f"Total books: {total}")
 
 if __name__ == '__main__':
     main()
