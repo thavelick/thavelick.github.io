@@ -13,7 +13,7 @@ def generate_books_html(groups, years):
     lines.append('{% block title %}Tristan Havelick -- Books{% endblock %}')
     lines.append('{% block content %}')
     lines.append('  <a href="/">Tristan Havelick.com</a>')
-    lines.append('  <h1>What I\\'ve Been Reading</h1>')
+    lines.append("  <h1>What I've Been Reading</h1>")
     for year in years:
         lines.append(f'  <h2>{year}</h2>')
         lines.append('  <ol reversed>')
