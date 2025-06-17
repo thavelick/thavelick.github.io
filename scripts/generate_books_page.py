@@ -20,7 +20,9 @@ def generate_books_html(groups, years):
         for book in groups[year]:
             title = book.get('Title', '').strip()
             author = book.get('Author', '').strip()
-            lines.append(f'      <li>{title} by {author}</li>')
+            pub_year = book.get('Original Publication Year', '').strip()
+            prefix = f'[{pub_year}] ' if pub_year else ''
+            lines.append(f'      <li>{prefix}{title} by {author}</li>')
         lines.append('  </ol>')
     lines.append('{% endblock %}')
     return '\n'.join(lines)
@@ -42,6 +44,12 @@ def main():
                 year = date_read.split('/')[0]
             else:
                 year = 'Unknown Year'
+            try:
+                year_int = int(year)
+            except ValueError:
+                continue
+            if year_int > 2108:
+                continue
             groups[year].append(row)
     years = sorted([y for y in groups if y != 'Unknown Year'], reverse=True)
     if 'Unknown Year' in groups:
