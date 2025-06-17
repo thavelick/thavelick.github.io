@@ -37,9 +37,9 @@ def main():
         for row in reader:
             if row.get('Exclusive Shelf', '').strip().lower() != 'read':
                 continue
-            date_added = row.get('Date Added', '').strip()
-            if date_added:
-                year = date_added.split('/')[0]
+            date_read = row.get('Date Read', '').strip()
+            if date_read:
+                year = date_read.split('/')[0]
             else:
                 year = 'Unknown Year'
             groups[year].append(row)
