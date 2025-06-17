@@ -35,6 +35,8 @@ def main():
     with open(csv_path, newline='', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
+            if row.get('Exclusive Shelf', '').strip().lower() != 'read':
+                continue
             date_added = row.get('Date Added', '').strip()
             if date_added:
                 year = date_added.split('/')[0]
