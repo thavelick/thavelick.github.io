@@ -41,19 +41,17 @@ def main():
                 continue
             date_read = row.get('Date Read', '').strip()
             if date_read:
-                year = date_read.split('/')[0]
+                year_part = date_read.split('/')[0]
+                try:
+                    year_int = int(year_part)
+                    if year_int > 2108:
+                        continue
+                    year = year_part
+                except ValueError:
+                    year = 'Unknown Year'
             else:
                 year = 'Unknown Year'
-            if year == 'Unknown Year':
-                groups[year].append(row)
-            else:
-                try:
-                    year_int = int(year)
-                except ValueError:
-                    continue
-                if year_int > 2108:
-                    continue
-                groups[year].append(row)
+            groups[year].append(row)
     years = sorted([y for y in groups if y != 'Unknown Year'], reverse=True)
     if 'Unknown Year' in groups:
         years.append('Unknown Year')
