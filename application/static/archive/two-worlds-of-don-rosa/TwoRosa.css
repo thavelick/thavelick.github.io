@@ -1,0 +1,73 @@
+body 
+{
+	background : #99CCCC;
+	color : black; 
+	font-family: sans-serif;
+	margin: 12pt;
+}
+
+.headline
+{
+	font-family: cursive;
+	font-weight: bolder;
+	font-size: x-large;
+	text-align: center;
+	margin: 0pt;
+	padding: 6pt;
+}
+
+.subline
+{
+	font-family: cursive;
+	text-indent: 10pt;
+}
+
+.horizlist
+{
+	text-indent: 20pt;
+}
+
+.title
+{
+	font-family: cursive;
+	font-weight: bold;
+	text-align: center; 
+}
+
+p
+{
+	text-indent: 10pt;
+	margin : 10pt
+}
+
+IMG.floating
+{
+	float : left;
+}
+
+A:link { text-decoration: none; color : blue}
+A:visited { text-decoration: none; color : maroon}
+A:active { text-decoration: none; color : maroon}
+A:hover { text-decoration: underline}
+A.contents-item
+{
+	font-family: cursive;
+	font-variant: small-caps;
+	font-size: large;
+	line-height: 2em;
+
+}
+A.contents-item:hover { text-decoration: none; color: navy}
+
+TD.dateline
+{
+	font-family: sans-serif;
+	font-weight: bold;
+	color: white;
+	font-size: small;
+	background-color: navy;
+	text-indent: 10pt; 
+}
+
+
+
