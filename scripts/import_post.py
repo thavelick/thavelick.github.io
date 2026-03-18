@@ -101,7 +101,20 @@ def import_post(post_path, db_path):
 
 
 def dump_database(db_path):
-    result = subprocess.check_output(["sqlite3", db_path, ".dump"], text=True)
+    abs_db_path = os.path.abspath(db_path)
+    result = subprocess.check_output(
+        [
+            "docker",
+            "run",
+            "--rm",
+            "-v",
+            f"{abs_db_path}:/db.sqlite:ro",
+            "sqlite3-compat",
+            "/db.sqlite",
+            ".dump",
+        ],
+        text=True,
+    )
     with open("blog.sql", "w", encoding="utf-8") as f:
         f.write(result)
 
