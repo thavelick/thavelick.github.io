@@ -6,4 +6,6 @@ context/
 **/__pycache__/
 public_html_frozen/
 public_html/
+drafts/
+scratch/
 .Trash
