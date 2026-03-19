@@ -42,7 +42,9 @@ def create_app(test_config=None):
         for post in posts:
             year = post["publish_date"][:4]
             posts_by_year.setdefault(year, []).append(post)
-        return render_template("blog.html", title="Tristan Havelick", posts_by_year=posts_by_year)
+        return render_template(
+            "blog.html", title="Tristan Havelick", posts_by_year=posts_by_year
+        )
 
     @app.route("/blogroll/")
     def blogroll():
@@ -89,6 +91,24 @@ def create_app(test_config=None):
             render_template("rss.xml", posts=posts_list, feed_pub_date=feed_pub_date),
             200,
             {"Content-Type": "text/xml"},
+        )
+
+    @app.route("/sitemap.xml")
+    def sitemap():
+        posts = Post.fetch_all()
+        pages = ["blog", "blogroll", "recipes", "books", "archive", "games"]
+        return (
+            render_template("sitemap.xml", posts=posts, pages=pages),
+            200,
+            {"Content-Type": "text/xml"},
+        )
+
+    @app.route("/robots.txt")
+    def robots():
+        return (
+            "Sitemap: https://www.tristanhavelick.com/sitemap.xml\n",
+            200,
+            {"Content-Type": "text/plain"},
         )
 
     @app.route("/404.html")

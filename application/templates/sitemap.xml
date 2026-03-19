@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.tristanhavelick.com/</loc>
+  </url>
+  {% for page in pages %}
+  <url>
+    <loc>https://www.tristanhavelick.com/{{ page }}/</loc>
+  </url>
+  {% endfor %}
+  {% for post in posts %}
+  <url>
+    <loc>https://www.tristanhavelick.com/{{ post.slug }}/</loc>
+    <lastmod>{{ post.publish_date[:10] }}</lastmod>
+  </url>
+  {% endfor %}
+</urlset>
