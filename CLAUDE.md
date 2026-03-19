@@ -10,7 +10,7 @@ Flask-based personal blog and website that generates static HTML files for GitHu
 
 - Install dependencies: `make deps` (uses uv)
 - Initialize database: `make init-db`
-- Restore database from backup: `make restore-db` (restores from blog.sql)
+- Restore database from backup: `make restore-db` (restores from blog.sql) — **NEVER run this; the local DB is the source of truth**
 - Run development server: `make dev` (Flask debug mode)
 - Run unit tests: `make test-unit`
 - Run integration tests: `make test-integration`
