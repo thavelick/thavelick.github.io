@@ -12,11 +12,11 @@
 
 ## Publishing a post
 
-1. Write a draft markdown file with YAML front-matter in `drafts/`:
+1. Scaffold a draft with prefilled front-matter (title, publish_date, default category): `./scripts/generate_empty_template.py my-new-post`. This writes `drafts/my-new-post.md`. Edit the body (and front-matter if needed):
     ```
     ---
-    slug: my-new-post
     title: My New Post
+    slug: my-new-post
     publish_date: 2026-05-10
     categories: blog
     ---
