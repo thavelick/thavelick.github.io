@@ -1,4 +1,17 @@
 {
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "f=$(jq -r '.tool_input.file_path // empty'); case \"$f\" in *.py) uvx ruff format \"$f\" >/dev/null && uvx ruff check --fix \"$f\" >/dev/null ;; esac"
+          }
+        ]
+      }
+    ]
+  },
   "permissions": {
     "ask": [
       "Bash(make restore-db*)"

@@ -22,8 +22,15 @@ def _make_db():
     return db_path, conn
 
 
-def _write_draft(directory, name, slug, title="A Post", date="2026-05-10",
-                 categories="blog", body="Body."):
+def _write_draft(
+    directory,
+    name,
+    slug,
+    title="A Post",
+    date="2026-05-10",
+    categories="blog",
+    body="Body.",
+):
     path = Path(directory) / name
     path.write_text(
         f"---\nslug: {slug}\ntitle: {title}\npublish_date: {date}\n"
@@ -112,8 +119,9 @@ class ImportPostTests(unittest.TestCase):
         shutil.rmtree(self.tmpdir)
 
     def test_insert_new_post(self):
-        draft = _write_draft(self.tmpdir, "hello.md", slug="hello",
-                             categories="blog, recipe")
+        draft = _write_draft(
+            self.tmpdir, "hello.md", slug="hello", categories="blog, recipe"
+        )
         import_posts.import_post(draft, self.conn)
         cur = self.conn.cursor()
         cur.execute("SELECT title FROM posts WHERE slug='hello'")
@@ -125,11 +133,13 @@ class ImportPostTests(unittest.TestCase):
         self.assertEqual(cur.fetchone()[0], 2)
 
     def test_update_replaces_categories(self):
-        draft1 = _write_draft(self.tmpdir, "hello.md", slug="hello",
-                              categories="blog, recipe")
+        draft1 = _write_draft(
+            self.tmpdir, "hello.md", slug="hello", categories="blog, recipe"
+        )
         import_posts.import_post(draft1, self.conn)
-        draft2 = _write_draft(self.tmpdir, "hello2.md", slug="hello",
-                              title="Updated", categories="til")
+        draft2 = _write_draft(
+            self.tmpdir, "hello2.md", slug="hello", title="Updated", categories="til"
+        )
         import_posts.import_post(draft2, self.conn)
         cur = self.conn.cursor()
         cur.execute("SELECT title FROM posts WHERE slug='hello'")
@@ -250,12 +260,17 @@ class MainTests(unittest.TestCase):
         old_cwd = os.getcwd()
         os.chdir(self.tmpdir)
         try:
-            return import_posts.main([
-                "--db", self.db_path,
-                "--drafts-dir", str(self.drafts),
-                "--imported-dir", str(self.imported),
-                *argv,
-            ])
+            return import_posts.main(
+                [
+                    "--db",
+                    self.db_path,
+                    "--drafts-dir",
+                    str(self.drafts),
+                    "--imported-dir",
+                    str(self.imported),
+                    *argv,
+                ]
+            )
         finally:
             os.chdir(old_cwd)
 
@@ -271,8 +286,7 @@ class MainTests(unittest.TestCase):
         conn = sqlite3.connect(self.db_path)
         cur = conn.cursor()
         cur.execute("SELECT slug FROM posts ORDER BY slug")
-        self.assertEqual([r[0] for r in cur.fetchall()],
-                         ["post-a", "post-b"])
+        self.assertEqual([r[0] for r in cur.fetchall()], ["post-a", "post-b"])
         conn.close()
 
         moved = sorted(self.imported.iterdir())

@@ -132,9 +132,7 @@ def move_to_imported(draft_path, imported_dir):
     timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
     destination = imported_dir / f"{draft_path.stem}.{timestamp}.md"
     if destination.exists():
-        raise FileExistsError(
-            f"Refusing to overwrite existing file: {destination}"
-        )
+        raise FileExistsError(f"Refusing to overwrite existing file: {destination}")
     shutil.move(draft_path, destination)
     return destination
 
@@ -143,9 +141,15 @@ def main(argv=None):
     script_dir = os.path.dirname(os.path.abspath(__file__))
     parser = argparse.ArgumentParser()
     parser.add_argument("path", nargs="?")
-    parser.add_argument("--db", default=os.path.join(script_dir, "..", "instance", "blog.db"))
-    parser.add_argument("--drafts-dir", default=os.path.join(script_dir, "..", "drafts"))
-    parser.add_argument("--imported-dir", default=os.path.join(script_dir, "..", "drafts-imported"))
+    parser.add_argument(
+        "--db", default=os.path.join(script_dir, "..", "instance", "blog.db")
+    )
+    parser.add_argument(
+        "--drafts-dir", default=os.path.join(script_dir, "..", "drafts")
+    )
+    parser.add_argument(
+        "--imported-dir", default=os.path.join(script_dir, "..", "drafts-imported")
+    )
     args = parser.parse_args(argv)
 
     drafts = [Path(args.path)] if args.path else collect_drafts(args.drafts_dir)
