@@ -42,6 +42,13 @@ freeze: # Generate static files
 	@echo "Generating static files.."
 	uv run python application/freeze.py
 	@echo "Done."
+
+import: # Import all drafts/*.md, dump blog.sql, move to drafts-imported/
+	uv run python scripts/import_posts.py
+
+import-one: # Import a single draft (Usage: make import-one POST=path/to/draft.md)
+	@if [ -z "$(POST)" ]; then echo "Usage: make import-one POST=path/to/draft.md" && exit 1; fi
+	uv run python scripts/import_posts.py "$(POST)"
 # -----------------------------------------------------------
 # CAUTION: If you have a file with the same name as make
 # command, you need to add it to .PHONY below, otherwise it
