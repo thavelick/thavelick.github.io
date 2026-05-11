@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run python
 """
-Generate an empty post template for use with import_post.py.
+Generate an empty post template for use with import_posts.py.
 
 Usage:
     ./generate_empty_template.py <slug>
@@ -35,7 +35,7 @@ if __name__ == "__main__":
     import os
 
     parser = argparse.ArgumentParser(
-        description="Generate an empty post template for use with import_post.py."
+        description="Generate an empty post template for use with import_posts.py."
     )
     parser.add_argument("slug", help="Slug for the post")
     parser.add_argument(
