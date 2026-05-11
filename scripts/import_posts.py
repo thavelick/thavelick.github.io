@@ -134,7 +134,7 @@ def move_to_imported(draft_path, imported_dir):
         raise FileExistsError(
             f"Refusing to overwrite existing file: {destination}"
         )
-    shutil.move(str(draft_path), str(destination))
+    shutil.move(draft_path, destination)
     return destination
 
 

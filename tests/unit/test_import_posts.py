@@ -1,4 +1,5 @@
 import os
+import shutil
 import sqlite3
 import tempfile
 import unittest
@@ -108,9 +109,7 @@ class ImportPostTests(unittest.TestCase):
     def tearDown(self):
         self.conn.close()
         os.unlink(self.db_path)
-        for f in Path(self.tmpdir).iterdir():
-            f.unlink()
-        os.rmdir(self.tmpdir)
+        shutil.rmtree(self.tmpdir)
 
     def test_insert_new_post(self):
         draft = _write_draft(self.tmpdir, "hello.md", slug="hello",
@@ -163,13 +162,7 @@ class CollectDraftsTests(unittest.TestCase):
         self.tmpdir = tempfile.mkdtemp()
 
     def tearDown(self):
-        for f in Path(self.tmpdir).rglob("*"):
-            if f.is_file():
-                f.unlink()
-        for d in sorted(Path(self.tmpdir).rglob("*"), reverse=True):
-            if d.is_dir():
-                d.rmdir()
-        os.rmdir(self.tmpdir)
+        shutil.rmtree(self.tmpdir)
 
     def test_returns_md_only_sorted(self):
         (Path(self.tmpdir) / "b.md").write_text("x", encoding="utf-8")
@@ -196,13 +189,7 @@ class MoveToImportedTests(unittest.TestCase):
         self.imported.mkdir()
 
     def tearDown(self):
-        for f in Path(self.tmpdir).rglob("*"):
-            if f.is_file():
-                f.unlink()
-        for d in sorted(Path(self.tmpdir).rglob("*"), reverse=True):
-            if d.is_dir():
-                d.rmdir()
-        os.rmdir(self.tmpdir)
+        shutil.rmtree(self.tmpdir)
 
     def test_moves_with_timestamp(self):
         draft = Path(self.tmpdir) / "foo.md"
@@ -257,13 +244,7 @@ class MainTests(unittest.TestCase):
 
     def tearDown(self):
         os.unlink(self.db_path)
-        for f in Path(self.tmpdir).rglob("*"):
-            if f.is_file():
-                f.unlink()
-        for d in sorted(Path(self.tmpdir).rglob("*"), reverse=True):
-            if d.is_dir():
-                d.rmdir()
-        os.rmdir(self.tmpdir)
+        shutil.rmtree(self.tmpdir)
 
     def _run_main(self, argv):
         old_cwd = os.getcwd()
