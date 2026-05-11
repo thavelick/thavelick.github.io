@@ -15,7 +15,6 @@ class RoutesTestCase(unittest.TestCase):
             }
         )
         with self.app.app_context():
-
             db.init_db()
             con = db.get_db()
             with open("tests/data.sql", "r", encoding="utf-8") as f:
@@ -95,11 +94,11 @@ class RoutesTestCase(unittest.TestCase):
         response = self.client.get("/nonexistentpage")
         self.assertEqual(response.status_code, 404)
 
-
     def test_styles_css(self):
         response = self.client.get("/styles.css")
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.headers.get("Content-Type"), "text/css")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -10,7 +10,7 @@ freezer = Freezer(app)
 @freezer.register_generator
 def catchall():
     for post in Post.fetch_all():
-        yield {"path": f"{post["slug"]}/"}
+        yield {"path": f"{post['slug']}/"}
 
     archive_dir = os.path.join("application", "static", "archive")
     for root, _, files in os.walk(archive_dir):

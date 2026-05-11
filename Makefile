@@ -49,6 +49,21 @@ import: # Import all drafts/*.md, dump blog.sql, move to drafts-imported/
 import-one: # Import a single draft (Usage: make import-one POST=path/to/draft.md)
 	@if [ -z "$(POST)" ]; then echo "Usage: make import-one POST=path/to/draft.md" && exit 1; fi
 	./scripts/import_posts.py "$(POST)"
+
+lint: # Run ruff lint + format check on Python files
+	@echo "Running ruff check.."
+	uvx ruff check .
+	@echo "Running ruff format check.."
+	uvx ruff format --check .
+
+format: # Format Python files with ruff and auto-fix lint
+	@echo "Formatting Python files with ruff.."
+	uvx ruff format .
+	uvx ruff check --fix .
+
+install-hooks: # Wire tools/git-hooks/ into this repo via core.hooksPath
+	@echo "Setting core.hooksPath to tools/git-hooks.."
+	git config core.hooksPath tools/git-hooks
 # -----------------------------------------------------------
 # CAUTION: If you have a file with the same name as make
 # command, you need to add it to .PHONY below, otherwise it
