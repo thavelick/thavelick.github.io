@@ -1,4 +1,5 @@
 #!/bin/sh
 # Wired up by `make install-hooks` (sets core.hooksPath).
 set -e
-exec make lint
+make lint
+exec make test-unit
