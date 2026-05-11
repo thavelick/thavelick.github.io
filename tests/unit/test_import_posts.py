@@ -250,12 +250,12 @@ class MainTests(unittest.TestCase):
         old_cwd = os.getcwd()
         os.chdir(self.tmpdir)
         try:
-            return import_posts.main(
-                argv,
-                db_path=self.db_path,
-                drafts_dir=str(self.drafts),
-                imported_dir=str(self.imported),
-            )
+            return import_posts.main([
+                "--db", self.db_path,
+                "--drafts-dir", str(self.drafts),
+                "--imported-dir", str(self.imported),
+                *argv,
+            ])
         finally:
             os.chdir(old_cwd)
 

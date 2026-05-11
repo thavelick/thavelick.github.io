@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run python
+import argparse
 import datetime
 import os
 import shutil
@@ -138,28 +139,22 @@ def move_to_imported(draft_path, imported_dir):
     return destination
 
 
-def main(argv=None, db_path=None, drafts_dir=None, imported_dir=None):
-    if argv is None:
-        argv = sys.argv[1:]
-
+def main(argv=None):
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    if db_path is None:
-        db_path = os.path.join(script_dir, "..", "instance", "blog.db")
-    if drafts_dir is None:
-        drafts_dir = os.path.join(script_dir, "..", "drafts")
-    if imported_dir is None:
-        imported_dir = os.path.join(script_dir, "..", "drafts-imported")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("path", nargs="?")
+    parser.add_argument("--db", default=os.path.join(script_dir, "..", "instance", "blog.db"))
+    parser.add_argument("--drafts-dir", default=os.path.join(script_dir, "..", "drafts"))
+    parser.add_argument("--imported-dir", default=os.path.join(script_dir, "..", "drafts-imported"))
+    args = parser.parse_args(argv)
 
-    if argv:
-        drafts = [Path(argv[0])]
-    else:
-        drafts = collect_drafts(drafts_dir)
+    drafts = [Path(args.path)] if args.path else collect_drafts(args.drafts_dir)
 
     if not drafts:
         print("No drafts to import.")
         return 0
 
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect(args.db)
     imported = []
     current = None
     try:
@@ -173,9 +168,9 @@ def main(argv=None, db_path=None, drafts_dir=None, imported_dir=None):
     finally:
         conn.close()
 
-    dump_database(db_path)
+    dump_database(args.db)
     for draft in imported:
-        move_to_imported(draft, imported_dir)
+        move_to_imported(draft, args.imported_dir)
     print(f"Imported {len(imported)} post(s).")
     return 0
 
