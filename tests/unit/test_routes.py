@@ -1,6 +1,6 @@
 import unittest
-from application import create_app
-from application import db
+
+from application import create_app, db
 
 
 class RoutesTestCase(unittest.TestCase):

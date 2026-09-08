@@ -9,6 +9,10 @@ import sys
 from pathlib import Path
 
 
+class DraftFormatError(ValueError):
+    """Raised when a draft file is missing required front matter structure."""
+
+
 def parse_post(filepath):
     with open(filepath, "r", encoding="utf-8") as f:
         lines = f.read().splitlines()
@@ -16,14 +20,18 @@ def parse_post(filepath):
         try:
             sep_index = lines[1:].index("---") + 1
         except ValueError:
-            raise Exception("Draft file missing closing front matter separator '---'")
+            raise DraftFormatError(
+                "Draft file missing closing front matter separator '---'"
+            ) from None
         front_matter_lines = lines[1:sep_index]
         markdown_content = "\n".join(lines[sep_index + 1 :]).strip()
     else:
         try:
             sep_index = lines.index("---")
         except ValueError:
-            raise Exception("Draft file missing front matter separator '---'")
+            raise DraftFormatError(
+                "Draft file missing front matter separator '---'"
+            ) from None
         front_matter_lines = lines[:sep_index]
         markdown_content = "\n".join(lines[sep_index + 1 :]).strip()
 
@@ -48,7 +56,9 @@ def get_category_id(conn, category_name):
 
 def normalize_publish_date(date_str):
     try:
-        dt = datetime.datetime.strptime(date_str, "%Y-%m-%d")
+        dt = datetime.datetime.strptime(date_str, "%Y-%m-%d").replace(
+            tzinfo=datetime.UTC
+        )
     except ValueError:
         raise ValueError("publish_date must be in YYYY-MM-DD format: " + date_str)
     return dt.strftime("%Y-%m-%d 00:00:00")
@@ -129,7 +139,7 @@ def move_to_imported(draft_path, imported_dir):
     draft_path = Path(draft_path)
     imported_dir = Path(imported_dir)
     imported_dir.mkdir(parents=True, exist_ok=True)
-    timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+    timestamp = datetime.datetime.now(tz=datetime.UTC).strftime("%Y%m%d-%H%M%S")
     destination = imported_dir / f"{draft_path.stem}.{timestamp}.md"
     if destination.exists():
         raise FileExistsError(f"Refusing to overwrite existing file: {destination}")
@@ -166,7 +176,7 @@ def main(argv=None):
             current = draft
             import_post(draft, conn)
             imported.append(draft)
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 - CLI boundary: report any import failure
         print(f"Error importing {current}: {e}", file=sys.stderr)
         return 1
     finally:

@@ -17,7 +17,7 @@ def generate_template(filepath, slug, force=False):
         sys.exit(1)
     import datetime
 
-    current_date = datetime.date.today().strftime("%Y-%m-%d")
+    current_date = datetime.datetime.now(tz=datetime.UTC).strftime("%Y-%m-%d")
     title = slug.replace("-", " ").title()
     content = f"""---
 title: {title}

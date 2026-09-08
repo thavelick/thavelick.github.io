@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "f=$(jq -r '.tool_input.file_path // empty'); case \"$f\" in *.py) uvx ruff format \"$f\" >/dev/null && uvx ruff check --fix \"$f\" >/dev/null ;; esac"
+            "command": "f=$(jq -r '.tool_input.file_path // empty'); case \"$f\" in *.py) uvx ruff@0.16.4 format \"$f\" >/dev/null && uvx ruff@0.16.4 check --fix \"$f\" >/dev/null ;; esac"
           }
         ]
       }

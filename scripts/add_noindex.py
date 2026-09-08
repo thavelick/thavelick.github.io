@@ -1,5 +1,6 @@
-import os
 import glob
+import os
+
 from bs4 import BeautifulSoup
 
 

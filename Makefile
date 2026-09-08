@@ -52,14 +52,14 @@ import-one: # Import a single draft (Usage: make import-one POST=path/to/draft.m
 
 lint: # Run ruff lint + format check on Python files
 	@echo "Running ruff check.."
-	uvx ruff check .
+	uvx ruff@0.16.4 check .
 	@echo "Running ruff format check.."
-	uvx ruff format --check .
+	uvx ruff@0.16.4 format --check .
 
 format: # Format Python files with ruff and auto-fix lint
 	@echo "Formatting Python files with ruff.."
-	uvx ruff format .
-	uvx ruff check --fix .
+	uvx ruff@0.16.4 format .
+	uvx ruff@0.16.4 check --fix .
 
 install-hooks: # Wire tools/git-hooks/ into this repo via core.hooksPath
 	@echo "Setting core.hooksPath to tools/git-hooks.."

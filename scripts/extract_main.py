@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-import sys
 import os
+import sys
+
 from bs4 import BeautifulSoup
 from html_to_markdown import convert_to_markdown
 
@@ -40,7 +41,7 @@ def extract_main_content(file_path):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: {} path/to/file.html".format(sys.argv[0]))
+        print(f"Usage: {sys.argv[0]} path/to/file.html")
         sys.exit(1)
     file_path = sys.argv[1]
     main_content = extract_main_content(file_path)
@@ -95,7 +96,7 @@ def main():
     final_content = front_matter + markdown_content
     with open(output_path, "w", encoding="utf-8") as out_f:
         out_f.write(final_content)
-    print("Main content extracted to {}".format(output_path))
+    print(f"Main content extracted to {output_path}")
 
 
 if __name__ == "__main__":

@@ -8,7 +8,6 @@ from unittest.mock import patch
 
 from scripts import import_posts
 
-
 SCHEMA_PATH = Path(__file__).resolve().parents[2] / "application" / "schema.sql"
 
 
@@ -69,7 +68,7 @@ class ParsePostTests(unittest.TestCase):
             f.write("---\nslug: foo\ntitle: Foo\nNo closer.\n")
             path = f.name
         try:
-            with self.assertRaises(Exception):
+            with self.assertRaises(import_posts.DraftFormatError):
                 import_posts.parse_post(path)
         finally:
             os.unlink(path)

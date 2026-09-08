@@ -1,14 +1,15 @@
 """Flask website for TristanHavelick.com."""
 
+import mimetypes
 import os
+from datetime import UTC, datetime
+
 from flask import Flask, render_template
 from werkzeug.exceptions import NotFound
 
 from . import db
-from .models import Post, Category
 from .markdown_utils import render_markdown
-import mimetypes
-from datetime import datetime
+from .models import Category, Post
 
 
 def create_app(test_config=None):
@@ -75,7 +76,9 @@ def create_app(test_config=None):
         posts_list = []
         for post in posts:
             post_dict = dict(post)
-            dt = datetime.strptime(post_dict["publish_date"], "%Y-%m-%d %H:%M:%S")
+            dt = datetime.strptime(
+                post_dict["publish_date"], "%Y-%m-%d %H:%M:%S"
+            ).replace(tzinfo=UTC)
             post_dict["publish_date"] = dt.strftime("%a, %d %b %Y %H:%M:%S")
             if "markdown_content" in post_dict:
                 post_dict["article_content"] = render_markdown(
@@ -121,7 +124,9 @@ def create_app(test_config=None):
         post = Post.fetch_by_slug(path_without_trailing_slash)
         if post:
             post = dict(post)
-            dt = datetime.strptime(post["publish_date"], "%Y-%m-%d %H:%M:%S")
+            dt = datetime.strptime(post["publish_date"], "%Y-%m-%d %H:%M:%S").replace(
+                tzinfo=UTC
+            )
             post["publish_date"] = dt
             if "markdown_content" in post:
                 post["article_content"] = render_markdown(post["markdown_content"])
@@ -139,7 +144,7 @@ def create_app(test_config=None):
             if content_type is None:
                 content_type = (
                     "text/html; charset=utf-8"
-                    if path.endswith(".html") or path.endswith(".htm")
+                    if path.endswith((".html", ".htm"))
                     else "application/octet-stream"
                 )
             return content, 200, {"Content-Type": content_type}

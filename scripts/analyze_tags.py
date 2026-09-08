@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-from bs4 import BeautifulSoup
 import os
+
+from bs4 import BeautifulSoup
 
 
 def main():
@@ -17,7 +18,7 @@ def main():
     )
     args = parser.parse_args()
     selected_tags = (
-        set(x.strip().lower() for x in args.tags.split(",")) if args.tags else None
+        {x.strip().lower() for x in args.tags.split(",")} if args.tags else None
     )
 
     for filepath in args.filepaths:

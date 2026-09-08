@@ -1,7 +1,9 @@
-import json
 import argparse
+import json
 import subprocess
+
 import llm
+
 from application import create_app
 from application.db import get_db
 
@@ -66,7 +68,10 @@ def main():
         db.commit()
 
         result = subprocess.run(
-            ["sqlite3", "instance/blog.db", ".dump"], capture_output=True, text=True
+            ["sqlite3", "instance/blog.db", ".dump"],
+            capture_output=True,
+            text=True,
+            check=True,
         )
         with open("blog.sql", "w") as f:
             f.write(result.stdout)
